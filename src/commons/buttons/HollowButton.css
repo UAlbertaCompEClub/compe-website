@@ -1,0 +1,16 @@
+.buttonHollow {
+    background-color: transparent;
+    border-radius: 35px;
+    border: 4px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 12px 40px;
+    /* text-decoration: none; */
+}
+
+.buttonHollow:hover {
+    background-color: transparent;
+}
