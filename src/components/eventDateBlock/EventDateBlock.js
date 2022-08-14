@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
 import blockStyle from '../Block';
-import EventEntry from './EventEntry';
-import "./EventEntry.css";
+import { EventDateEntry } from './eventDateSegment/EventDateEntry';
+import "./EventDateBlock.css";
 import '../Block.css'
-
-import { HackEdDesc, HackEdGraphic } from './hackEd/HackEd';
-import { HackEdBetaDesc, HackEdBetaGraphic } from './hackEdBeta/HackEdBeta';
-
 
 const fade = (percentage) => ({
   transform: 'translateY(' + 50*percentage +'px)',
@@ -17,7 +13,7 @@ const fade = (percentage) => ({
 }
 );
 
-function EventBlock({ height, id }) {
+function EventDateBlock({ height, id }) {
   useEffect(
     () => {
       const toBeObserved = document.querySelectorAll(".faded");
@@ -49,20 +45,26 @@ function EventBlock({ height, id }) {
   );
   return (
     <div style={blockStyle(height)} className="block">
-      <div className="event-block block-content" id={"event-block" + id}>
-        <h1 className="heading event-heading">Events</h1>
-        <div className="event-grid" id="event-grid">
-          <EventEntry
-            id={1}
-            name={"HackEd"}
-            image={<HackEdGraphic />}
-            descr={<HackEdDesc />}
+      <div className="eventdate-block block-content" id={"eventdate-block" + id}>
+        <h1 className="heading eventdate-heading">Events</h1>
+        <div className="eventdate-grid" id="eventdate-grid">
+          <EventDateEntry
+            text={"Registration Begins"}
+            month={"Nov"}
+            day={"1st"}
+            time={"9AM"}
           />
-          <EventEntry
-            id={2}
-            name={"HackEd Beta"}
-            image={<HackEdBetaGraphic />}
-            descr={<HackEdBetaDesc />}
+          <EventDateEntry
+            text={"Registration Ends"}
+            month={"Nov"}
+            day={"1st"}
+            time={"9AM"}
+          />
+          <EventDateEntry
+            text={"The Event"}
+            month={"Feb"}
+            day={"1st"}
+            time={"9AM-3PM"}
           />
         </div>
       </div>
@@ -70,4 +72,4 @@ function EventBlock({ height, id }) {
   );
 }
 
-export default EventBlock;
+export default EventDateBlock;

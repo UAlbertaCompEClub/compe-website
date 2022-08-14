@@ -12,32 +12,36 @@ import SocialsBlock from './components/SocialsBlock';
 import EventBlock from './components/prevEvents/EventBlock';
 import ProjectBlock from './components/projects/ProjectBlock';
 import AboutUsBlock from './components/aboutUs/AboutUsBlock';
+import EventDateBlock from './components/eventDateBlock/EventDateBlock';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <NavBar /> */}
+        <NavBar />
             <LandingBlock
-              height = { 80 }
-              id = { 1 }
-            />
+              height = {95}
+              id = {1}
+              />
+            <EventDateBlock
+              id = {2}
+              />
             <ProjectBlock
               height={100}
-              id={2}
-            />
+              id={3}
+              />
             <AboutUsBlock
               height={100}
-              id={3}
-            />
+              id={4}
+              />
             <EventBlock
               height={100}
-              id={3}
-            />
+              id={5}
+              />
             <SocialsBlock
               height={10}
-              id={4}
-            />
+              id={6}
+              />
       </div>
     )
   };

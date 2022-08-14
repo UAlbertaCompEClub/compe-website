@@ -7,11 +7,12 @@ class NavBar extends Component {
       <nav className= "nav" id="navbar">
         <div className="nav-content">
           <ul className="nav-items">
-            <li className="nav-item">About Me</li>
-            <li className="nav-item">Experience</li>
-            <li className="nav-item">Projects</li>
-            <li className="nav-item">Skills</li>
-            <li className="nav-item">Contact</li>
+            <li className="nav-item">Home</li>
+            <li className="nav-item">Overview</li>
+            <li className="nav-item">About</li>
+            <li className="nav-item">Register</li>
+            <li className="nav-item">FAQ</li>
+            <li className="nav-item">Sponsor Us</li>
           </ul>
         </div>
       </nav>

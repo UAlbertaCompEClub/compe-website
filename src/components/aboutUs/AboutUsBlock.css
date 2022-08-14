@@ -1,5 +1,5 @@
 .about-us-content {
-    width: 80vw;
+    /* width: 80vw; */
     display: flex;
     /* flex-direction: row-reverse; */
     margin: auto;
@@ -10,16 +10,19 @@
 }
 
 .about-us-img-container {
+    background-color: white;
     width: 40%;
+    height: 100%;
     /* margin-left: 0; */
     /* padding: 0; */
+    overflow: hidden;
     margin: auto;
     /* margin-right: 0; */
 }
 
 .about-us-img {
-    width: 35vw;
-    height: 35vw;
+    /* width: 35vw;
+    height: 35vw; */
 
     width: 130vh;
     height: 130vh;
@@ -30,7 +33,17 @@
     margin-top: -20vh;
 
     border-radius: 50%;
+    /* animation: rotation 200s infinite linear; */
+    z-index: 5;
     /* margin-left: 5vw; */
+}
+
+.team-img {
+    width: auto;
+    height: 130vh;
+    object-fit: cover;
+    border-radius: 65vh;
+    z-index: 4;
 }
 
 .about-us-text {
@@ -68,8 +81,8 @@
 }
 
 .desc-link:hover {
-    filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);}
-
+    filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);
+}
 
 @media screen and (max-width: 1500px) {
     .about-us-img {
@@ -96,4 +109,10 @@
         width: 200vw;
         height: 200vw;
     }
+}
+
+@keyframes rotation {
+    from { transform: rotate(0deg); }
+
+    to { transform: rotate(360deg); }
 }
