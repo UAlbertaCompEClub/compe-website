@@ -2,10 +2,9 @@
   /* border-bottom: 1px solid #fff; */
 }
 
-.faq-grid {
+.faq-panels {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
+  grid-template-columns: auto auto auto;
   column-gap: 3vw;
   row-gap: 3vh;
 }
@@ -71,8 +70,8 @@
   justify-content: center;
 }
 
-.faq-entry:hover > div {
-  transform: scale(1.01);
+.faq-question:hover {
+  text-decoration: underline;
 }
 
 /* help obtained from https://stackoverflow.com/questions

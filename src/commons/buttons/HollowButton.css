@@ -1,16 +1,23 @@
 .buttonHollow {
-    background-color: transparent;
     border-radius: 35px;
     border: 4px solid #ffffff;
+    /* border: 4px solid transparent; */
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: #000;
+    font-weight: bold;
     font-family: inherit;
     font-size: inherit;
-    padding: 12px 40px;
+    padding: 20px 48px;
+
+    background: -moz-linear-gradient(center bottom, #7300ba 0%, #a600de 34%, #f55fff 100%);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #7300ba), color-stop(0.33, #a600de), color-stop(1, #f55fff));
+    /* -webkit-border-image: linear-gradient(34deg, #7300ba 0%, #8400c6 11.33%, #a600de 34%, #c900f5 54%, #f55fff 94%) 21 30 30 21 repeat repeat; */
     /* text-decoration: none; */
 }
 
 .buttonHollow:hover {
-    background-color: transparent;
+    /* border: 4px solid #ffffff; */
+    background: transparent;
+    color: #fff;
 }

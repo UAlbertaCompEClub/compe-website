@@ -13,6 +13,7 @@ import EventBlock from './components/prevEvents/EventBlock';
 import ProjectBlock from './components/projects/ProjectBlock';
 import AboutUsBlock from './components/aboutUs/AboutUsBlock';
 import EventDateBlock from './components/eventDateBlock/EventDateBlock';
+import FaqBlock from './components/faqBlock/FaqBlock';
 
 class App extends Component {
   render() {
@@ -38,9 +39,13 @@ class App extends Component {
               height={100}
               id={5}
               />
+            <FaqBlock
+              height={100}
+              id={6}
+              />
             <SocialsBlock
               height={10}
-              id={6}
+              id={7}
               />
       </div>
     )

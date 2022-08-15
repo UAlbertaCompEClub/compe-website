@@ -1,11 +1,12 @@
 import graphic from './HackEdLogo.svg';
 import "../EventEntry.css";
 import HollowButton from '../../../commons/buttons/HollowButton';
+import GradientImg from '../../../commons/gradient/GradientImg';
 
 function HackEdGraphic() {
     return (
         <div className="event-img-container">
-            <img src={graphic} className="event-graphic" alt="HackEd Logo" />
+            <GradientImg img={graphic} className="event-graphic" alt="HackEd Logo" />
         </div>
     );
 }
