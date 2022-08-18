@@ -6,3 +6,15 @@
 .gradient-general {
 
 }
+
+.gradient-border {
+    background: -moz-linear-gradient(center bottom, #8b2fc4 0%, #a600de 34%, #f55fff 100%);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #7300ba), color-stop(0.33, #a600de), color-stop(1, #f55fff));
+
+    background-origin: border-box;
+    -moz-background-origin: border;
+
+    border: 8px solid transparent;
+    border-radius: 35px;
+    box-shadow: inset -999px 0 0 #000;
+}

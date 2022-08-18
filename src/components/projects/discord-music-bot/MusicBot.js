@@ -1,9 +1,10 @@
 import botImg from './musicBot.svg';
+import GradientImg from '../../../commons/gradient/GradientImg'
 
 function BotGraphic() {
     return (
         <div className="img-container">
-            <img src={botImg} className="bot-img" alt="Discord Logo" />
+            <GradientImg img={botImg} className="bot-img" alt="Discord Logo" />
         </div>
     );
 }

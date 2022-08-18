@@ -108,7 +108,7 @@ function FaqBlock({ height, id }) {
 
   return (
     <div style={blockStyle(height)} className="block">
-      <div className="faq-block block-content" id={"faq-block" + id}>
+      <div className="faq-block" id={"faq-block" + id}>
         <h1 className="heading faq-heading">FAQs</h1>
         <div className="faq-panels" id="faq-grid">
           <FaqSection

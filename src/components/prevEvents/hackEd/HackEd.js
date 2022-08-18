@@ -6,7 +6,7 @@ import GradientImg from '../../../commons/gradient/GradientImg';
 function HackEdGraphic() {
     return (
         <div className="event-img-container">
-            <GradientImg img={graphic} className="event-graphic" alt="HackEd Logo" />
+            <img src={graphic} className="event-graphic" alt="HackEd Logo" />
         </div>
     );
 }

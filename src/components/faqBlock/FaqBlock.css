@@ -2,9 +2,21 @@
   /* border-bottom: 1px solid #fff; */
 }
 
+.faq-answer {
+  padding: 20pt;
+}
+
+.faq-answer-container {
+  margin: 2rem 0 2rem 0;
+  border: 8px solid white;
+  border-radius: 35px;
+  width: 100%;
+  box-shadow: inset -999px 0 0 #000;
+}
+
 .faq-panels {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 30% 30% 30%;
   column-gap: 3vw;
   row-gap: 3vh;
 }
