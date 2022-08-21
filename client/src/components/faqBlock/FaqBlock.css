@@ -1,0 +1,109 @@
+.faq-block {
+  /* border-bottom: 1px solid #fff; */
+}
+
+.faq-answer {
+  padding: 20pt;
+}
+
+.faq-panels {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  column-gap: 3vw;
+  row-gap: 3vh;
+}
+
+.faq-entry {
+  flex: auto;
+  height: auto;
+  display: contents;
+}
+
+.faq-content {
+  /* width: 50vw; */
+  min-height: 6rem;
+  margin: auto 20vw auto 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.faq-content :is(h1, h2, h3, h4) {
+  text-align: center;
+  margin: auto 0 auto 0;
+}
+
+
+.faq-heading {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.faq-title {
+  margin-bottom: 0;
+}
+
+.desc {
+  /* margin: 1rem; */
+  display: inline;
+  list-style: none;
+}
+
+/* .faq-desc {
+  margin-bottom: auto;
+} */
+
+.faq-desc-container {
+  display: flex;
+  margin: auto 0 auto 0;
+}
+
+.faq-date-container {
+  width: 30%;
+  margin: auto 0 auto 0;
+}
+
+.faq-date-container :is(h1, h2) {
+  font-weight: lighter;
+}
+
+.faq-date-day {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.faq-question:hover {
+  text-decoration: underline;
+}
+
+/* help obtained from https://stackoverflow.com/questions
+/15161674/responsive-design-rearrange-element-positions-with-css */
+@media screen and (max-width: 768px)
+{
+  .faq-logo {
+    transform: scale(1);
+  }
+  
+  .faq-content {
+    margin-top: 10vh;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse; 
+    /* height: 60vh; */
+   }
+
+  .faq-logo {
+    height: 20vw;
+  }
+}
+
+
+@media screen and (max-width: 550px)
+{
+  .faq-logo {
+    height: 40vw;
+  }
+}
