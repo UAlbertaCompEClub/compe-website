@@ -10,8 +10,8 @@ import TextBlock from './components/TextBlock';
 import LandingBlock from './components/landing/LandingBlock';
 import SocialsBlock from './components/SocialsBlock';
 import EventBlock from './components/prevEvents/EventBlock';
-import ProjectBlock from './components/projects/ProjectBlock';
 import AboutUsBlock from './components/aboutUs/AboutUsBlock';
+import OverviewBlock from './components/overviewBlock/OverviewBlock';
 import EventDateBlock from './components/eventDateBlock/EventDateBlock';
 import FaqBlock from './components/faqBlock/FaqBlock';
 import RegisterBlock from './components/registerBlock/RegisterBlock';
@@ -28,9 +28,8 @@ class App extends Component {
             <EventDateBlock
               id = {2}
               />
-            <ProjectBlock
-              height={100}
-              id={3}
+            <OverviewBlock 
+              id = {3}
               />
             <AboutUsBlock
               height={100}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import blockStyle from '../Block';
 import { EventDateEntry } from './eventDateSegment/EventDateEntry';
 import "./EventDateBlock.css";
@@ -14,59 +14,66 @@ const fade = (percentage) => ({
 );
 
 function EventDateBlock({ height, id }) {
-  useEffect(
-    () => {
-      const toBeObserved = document.querySelectorAll(".faded");
-      // const toBeObserved = document.getElementsByClassName('prj-content');
+  //0 is none, 1 is company details, 2 is participant details
+  var [panelVisibleId, setPanelVisibleId] = useState(2);
+  var handlePanelSelection = id => {
+    (panelVisibleId === id) ? setPanelVisibleId(0) : setPanelVisibleId(id);
+  };
+  var EventDatesParticipants = () => {
+    return (<div className="eventdate-grid bordered-container-padded" id="eventdate-grid">
+      <EventDateEntry
+        text={"Registration Begins"}
+        month={"Nov"}
+        day={"1st"}
+        time={"9AM"}
+      />
+      <EventDateEntry
+        text={"Registration Ends"}
+        month={"Nov"}
+        day={"1st"}
+        time={"9AM"}
+      />
+      <EventDateEntry
+        text={"The Event"}
+        month={"Feb"}
+        day={"1st"}
+        time={"9AM-3PM"}
+      />
+    </div>);
+  };
+  var EventDatesCompanies = () => {
+    return (<div className="eventdate-grid bordered-container-padded" id="eventdate-grid">
+      <EventDateEntry
+        text={"Registration Begins"}
+        month={"Nov"}
+        day={"1st"}
+        time={"9AM"}
+      />
+      <EventDateEntry
+        text={"Registration Ends"}
+        month={"Nov"}
+        day={"1st"}
+        time={"9AM"}
+      />
+      <EventDateEntry
+        text={"The Event"}
+        month={"Feb"}
+        day={"1st"}
+        time={"9AM-3PM"}
+      />
+    </div>);
+  }
 
-      // root is the browser viewport / screen
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(entry => {
-          if (entry['isIntersecting'] === true) {
-            entry.target.classList.add("in-view");
-            console.log('Target is visible in the screen');
-          }
-          else {
-            if (entry.target.classList.contains("in-view")) {
-              // entry.target.classList.remove("in-view");
-              observer.unobserve(entry.target);
-            };
-            console.log('Target is not visible in the screen');
-          }
-        }, { threshold: [0, 1] });
-
-        });
-
-      toBeObserved.forEach(observed => {
-        observer.observe(observed);
-        // observed.style.opacity = 0.5;
-      });
-    }, []
-  );
   return (
     <div style={blockStyle(height)} className="block">
       <div className="eventdate-block block-content" id={"eventdate-block" + id}>
-        <h1 className="heading eventdate-heading">Events</h1>
-        <div className="eventdate-grid" id="eventdate-grid">
-          <EventDateEntry
-            text={"Registration Begins"}
-            month={"Nov"}
-            day={"1st"}
-            time={"9AM"}
-          />
-          <EventDateEntry
-            text={"Registration Ends"}
-            month={"Nov"}
-            day={"1st"}
-            time={"9AM"}
-          />
-          <EventDateEntry
-            text={"The Event"}
-            month={"Feb"}
-            day={"1st"}
-            time={"9AM-3PM"}
-          />
+        <h1 className="heading eventdate-heading">Dates</h1>
+        <div className="tabbed-panel">
+          <h3 className="highlighted-text" onClick={e => handlePanelSelection(1)}>Companies</h3>
+          <h3 className="highlighted-text" onClick={e => handlePanelSelection(2)}>Participants</h3>
         </div>
+        {panelVisibleId === 1 && <EventDatesParticipants />}
+        {panelVisibleId === 2 && <EventDatesCompanies />}
       </div>
     </div>
   );

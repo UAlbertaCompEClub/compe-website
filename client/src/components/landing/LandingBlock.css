@@ -41,6 +41,12 @@
     z-index: 2;
 }
 
+.landing-logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
 .main-heading {
     font-size: 10vh;
     /* display: flex; */

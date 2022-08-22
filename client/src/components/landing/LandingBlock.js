@@ -9,7 +9,10 @@ function LandingBlock({ height, id }) {
         <div className={"block"}>
             <div className="landing-content" id={"project-block" + id}>
                 <div className="landing-text text-main" id="landing-text-1">
-                    <h1 className='main-heading faded text-main'>Career++</h1>
+                    <div className='landing-logo-container'>
+                        <h1 className='main-heading faded text-main'>Career</h1>
+                        <h1 className='main-heading faded gradient-header'>++</h1>
+                    </div>
                     <h2 className='sub-heading faded text-main'>Presented by the Computer Engineering Club</h2>
                 </div>
                 <div className='landing-img-container faded'>

@@ -3,10 +3,6 @@
     -webkit-filter: drop-shadow(-1px -1px 0px #f896ff) drop-shadow(2px -1px 0px #f896ff) drop-shadow(2px 2px 0px #f896ff) drop-shadow(-1px 2px 0px #f896ff);
 }
 
-.gradient-general {
-
-}
-
 .gradient-border {
     background: -moz-linear-gradient(center bottom, #8b2fc4 0%, #a600de 34%, #f55fff 100%);
     background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #7300ba), color-stop(0.33, #a600de), color-stop(1, #f55fff));
@@ -19,11 +15,15 @@
     box-shadow: inset -999px 0 0 #000;
 }
 
-.gradient-text {
+.gradient-text, .gradient-header {
     /* -webkit-text-stroke: 2px #f896ff; */
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #7300ba), color-stop(0.33, #a600de), color-stop(1, #f55fff));
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.gradient-header {
+    /* -webkit-text-stroke: 1px #f896ff; */
 }
 
 .colored-text {
