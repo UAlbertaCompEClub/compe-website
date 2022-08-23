@@ -8,6 +8,9 @@
 }
 
 .event-block, .eventdate-block {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   padding: 5vw;
   width: 80vw;
 }

@@ -1,17 +1,16 @@
 .event-entry {
   flex: auto;
-  height: auto;
-  display: contents;
+  height: 100%;
 }
 
 .event-content {
-  /* width: 50vw; */
+  width: 100%;
   display: flex;
   flex-direction: row;
 }
 
 .event-heading {
-  margin: 0;
+  margin: 0 auto 3vh auto;
   padding: 0;
   text-align: left;
 }
@@ -21,18 +20,21 @@
 }
 
 .event-text {
-  width: 70%;
+  width: 6fr;
   text-align: left;
   margin: auto;
 }
 
 .event-img-container {
+  height: auto;
   display: block;
+  display: flex;
 }
 
 .event-graphic {
-  width: 100%;
   margin: 3vw;
+  width: 20vw;
+  object-fit: contain;
 }
 
 .event-log {
@@ -50,11 +52,9 @@
 } */
 
 .event-desc-container {
+  width: 6fr;
   display: block;
-  height: 20vh;
-  flex-direction: column;
-  justify-content: space-between;
-  /* justify-content: end; */
+  height: auto;
 }
 
 .event-link {
@@ -63,24 +63,6 @@
   margin-bottom: 0;
   text-decoration: underline;
   text-underline-offset: 5px;
-}
-
-.faded {
-  opacity: 0;
-  transition: opacity 250ms ease-in;
-  transform: translateY(50px);
-  transition-property: transform, opacity;
-  transition-duration: 1s;
-  transition-timing-function: linear;
-}
-
-.faded.in-view {
-  transform: none;
-  opacity: 1;
-}
-
-.event-entry:hover > div {
-  transform: scale(1.01);
 }
 
 /* help obtained from https://stackoverflow.com/questions

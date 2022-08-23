@@ -1,11 +1,11 @@
-import graphic from './HackEdBetaLogo.svg';
+import graphic from './HackEdBetaLogo.png';
 import "../EventEntry.css";
 import HollowButton from '../../../commons/buttons/HollowButton';
 
 function HackEdBetaGraphic() {
     return (
         <div className="event-img-container">
-            <img src={graphic} className="event-graphic" alt="HackEdBeta Logo" />
+            <img src={graphic} className="event-graphic hacked-beta-graphic" alt="HackEdBeta Logo" />
         </div>
     );
 }
@@ -22,7 +22,7 @@ function HackEdBetaDesc() {
 
 function HackEdBetaLink() {
     return (
-        <a href='http://albertaloop.ca/' className="highlighted-text event-link text-main">
+        <a href='https://hackedbeta.compeclub.com/' className="highlighted-text event-link text-main">
             <HollowButton text={"Link"}/>
         </a>
     );

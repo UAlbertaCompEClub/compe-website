@@ -20,7 +20,7 @@ function EventDateBlock({ height, id }) {
     (panelVisibleId === id) ? setPanelVisibleId(0) : setPanelVisibleId(id);
   };
   var EventDatesParticipants = () => {
-    return (<div className="eventdate-grid bordered-container-padded" id="eventdate-grid">
+    return (<div className="eventdate-grid gradient-border-padded" id="eventdate-grid">
       <EventDateEntry
         text={"Registration Begins"}
         month={"Nov"}
@@ -42,7 +42,7 @@ function EventDateBlock({ height, id }) {
     </div>);
   };
   var EventDatesCompanies = () => {
-    return (<div className="eventdate-grid bordered-container-padded" id="eventdate-grid">
+    return (<div className="eventdate-grid gradient-border-padded" id="eventdate-grid">
       <EventDateEntry
         text={"Registration Begins"}
         month={"Nov"}

@@ -5,9 +5,9 @@ import "../Block.css"
 function EventEntry({ id, name, image, descr }) {
     return (
       <div className="event-entry" id={"event-entry" + id}>
-        <div className="event-content faded">
+        <div className="event-content gradient-border-padded faded">
             <div className="event-text text-main">
-                <h4 className="event-title text-main">{ name }</h4>
+                <h3 className="event-title text-main colored-text">{ name }</h3>
                 { descr }
             </div>
             {image}

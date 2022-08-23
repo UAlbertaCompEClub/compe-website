@@ -25,10 +25,10 @@ class App extends Component {
               height = {95}
               id = {1}
               />
+            <OverviewBlock
+              id={2}
+            />
             <EventDateBlock
-              id = {2}
-              />
-            <OverviewBlock 
               id = {3}
               />
             <AboutUsBlock

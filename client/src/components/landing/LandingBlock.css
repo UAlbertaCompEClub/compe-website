@@ -1,4 +1,9 @@
 .landing-content {
+    z-index: 2;
+    position: relative;
+}
+
+.landing-content, .landing-overlay, .landing-underlay {
     width: 80vw;
     display: flex;
     /* flex-direction: row-reverse; */
@@ -7,6 +12,57 @@
     max-height: 100%;
     /* margin-left: 0;
     margin-right: 10vw; */
+}
+
+.landing-overlay {
+    position: relative;
+    z-index: 10;
+}
+
+.landing-underlay {
+    position: relative;
+    z-index: 5;
+}
+
+.blob-img {
+    /* rotate: 180deg; */
+    image-rendering: optimizeSpeed;
+    aspect-ratio: 1.25;
+    width: 50vw;
+    margin-left: -40vw;
+    opacity: 40%;
+    filter: invert(45%) sepia(19%) saturate(1822%) hue-rotate(248deg) brightness(85%) contrast(88%);
+
+    /* mask-image: url(./floaters/line.svg);
+    mask-size: 5px;
+    mask-repeat: repeat; */
+    transform: rotate(-30deg);
+    /* animation: float 10s ease-in-out infinite; */
+    /* color: #a74fad */
+}
+
+.landing-background {
+    margin-top: -20vw;
+    margin-left: -130vw;
+    /* mask-image: url(./floaters/line.svg); */
+    background-size: 5px;
+    background-repeat: repeat;
+}
+
+.landing-background-img {
+    rotate: -30deg;
+    width: 120vw;
+    mask-image: url(./floaters/line.svg);
+    mask-repeat: repeat;
+    mask-size: 5px 100px;
+}
+
+.floater-img {
+    aspect-ratio: 1.5;
+    width: 50vw;
+    image-rendering: optimizeSpeed;
+    margin-left: -100vw;
+    filter: invert(45%) sepia(19%) saturate(1822%) hue-rotate(248deg) brightness(95%) contrast(88%);
 }
 
 .landing-img-container {
@@ -73,8 +129,14 @@
 }
 
 .desc-link:hover {
-    filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);}
+    filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);
+}
 
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(100px, 100px) }
+  100% { transform: translate(0, 0); }
+}
 
 @media screen and (max-width: 1500px) {
     .landing-img {

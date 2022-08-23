@@ -18,35 +18,6 @@ const fade = (percentage) => ({
 );
 
 function EventBlock({ height, id }) {
-  useEffect(
-    () => {
-      const toBeObserved = document.querySelectorAll(".faded");
-      // const toBeObserved = document.getElementsByClassName('prj-content');
-
-      // root is the browser viewport / screen
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(entry => {
-          if (entry['isIntersecting'] === true) {
-            entry.target.classList.add("in-view");
-            console.log('Target is visible in the screen');
-          }
-          else {
-            if (entry.target.classList.contains("in-view")) {
-              // entry.target.classList.remove("in-view");
-              observer.unobserve(entry.target);
-            };
-            console.log('Target is not visible in the screen');
-          }
-        }, { threshold: [0, 1] });
-
-        });
-
-      toBeObserved.forEach(observed => {
-        observer.observe(observed);
-        // observed.style.opacity = 0.5;
-      });
-    }, []
-  );
   return (
     <div style={blockStyle(height)} className="block">
       <div className="event-block block-content" id={"event-block" + id}>

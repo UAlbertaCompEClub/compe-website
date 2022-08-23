@@ -3,11 +3,10 @@ import './OverviewBlock.css';
 
 function OverviewBlock({ id }) {
     return (
-        <div className="block">
+        <div className="block overview-block">
             <div className="overview-content" id={"project-block" + id}>
                 <div className="overview-text" id="overview-text">
-                    <h1 className='main-heading faded text-main'>Overview</h1>
-                    <h2 className='sub-heading faded text-main'>Presented by the Computer Engineering Club</h2>
+                    <h2 className="colored-text">Are you ready to find your next job?</h2>
                     <p>
                         We make it easy to find jobs in 2022!
                         At Career Fair Canada, connect with hiring managers and apply for jobs with companies hiring in Calgary!

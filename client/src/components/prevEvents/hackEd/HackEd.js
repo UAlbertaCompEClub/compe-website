@@ -11,7 +11,6 @@ function HackEdGraphic() {
     );
 }
 
-
 function HackEdDesc() {
     return (
         <div className="event-desc-container">
@@ -24,7 +23,7 @@ function HackEdDesc() {
 
 function HackEdLink() {
     return (
-        <a href='http://albertaloop.ca/' className="highlighted-text event-link text-main">
+        <a href='https://hacked.compeclub.com/' className="highlighted-text event-link text-main">
             <HollowButton text={"Link"} />
         </a>
     );

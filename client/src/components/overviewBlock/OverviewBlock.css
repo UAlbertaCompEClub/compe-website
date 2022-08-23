@@ -1,10 +1,18 @@
+.overview-block {
+    padding-top: 10vh;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
 .overview-content {
-    /* width: 80vw; */
+    width: 80vw;
     display: flex;
     /* flex-direction: row-reverse; */
     margin: auto;
 
     max-height: 100%;
+    justify-content: center;
     /* margin-left: 0;
     margin-right: 10vw; */
 }
@@ -38,16 +46,9 @@
     /* margin-left: 5vw; */
 }
 
-.team-img {
-    width: auto;
-    height: 130vh;
-    object-fit: cover;
-    border-radius: 65vh;
-    z-index: 4;
-}
-
 .overview-text {
-    width: 60%;
+    width: 80%;
+    text-align: center;
     display: flex;
     flex-direction: column;
     margin: auto;

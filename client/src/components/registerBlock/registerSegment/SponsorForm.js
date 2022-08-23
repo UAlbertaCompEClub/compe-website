@@ -56,7 +56,9 @@ function SponsorForm() {
           </div>
         </div>
         {failed && <h4 className="gradient-text"><i>One or more fields have not been filled out!</i></h4>}
-        <HollowButton text="Submit" onClick={checkResponse}/>
+        <a className='highlighted-text'>
+          <HollowButton text="Submit" onClick={checkResponse} />
+        </a>
     </div>
   );
 }
