@@ -1,4 +1,5 @@
 import React from 'react';
+import GradientImg from '../commons/gradient/GradientImg';
 import githubLogo from "../socials/github.svg";
 import linkedinLogo from "../socials/linkedin.svg";
 import emailIcon from "../socials/mail.svg";
@@ -19,13 +20,13 @@ function SocialsBlock({ height, id }) {
 
           <div className="socials-content" id={"socials-content-" + id}>
               <a href="https://github.com/itsfeas">
-                <img src={githubLogo} className="socials-icon highlighted" alt="Github Logo" />
+                <GradientImg img={githubLogo} className="socials-icon highlighted" />
               </a>
               <a href="https://www.linkedin.com/in/amf-fiaz/">
-                <img src={linkedinLogo} className="socials-icon highlighted" alt="LinkedIn Logo" />
+                <GradientImg img={linkedinLogo} className="socials-icon highlighted" />
               </a>
               <a href="mailto:mfiaz@ualberta.ca">
-                <img src={emailIcon} className="socials-icon highlighted" alt="Email Icon" />
+                <GradientImg img={emailIcon} className="socials-icon highlighted" />
               </a>
           </div>
         </div>

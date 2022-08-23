@@ -15,6 +15,9 @@ function OverviewBlock({ id }) {
                         Stop planning and start acting by attending this job fair, kickstart your career journey today!
                     </p>
                 </div>
+                <div className="overview-text gradient-border-padded" id="overview-text">
+                    <h3 className="text-main">Career++ will run from 12:00 PM to 3:00 PM in the Donadeo Innovation Center for Engineering at the University of Alberta North Campus</h3>
+                </div>
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ import "../RegisterBlock.css";
 import "../../Block.css"
 import FormField from "./formComponents/FormField";
 import FormLargeField from "./formComponents/FormLargeField";
-import HollowButton from "../../../commons/buttons/HollowButton";
+import { HollowerButton } from "../../../commons/buttons/HollowButton";
 
 function SponsorForm() {
   var [failed, setFailed] = useState(false);
@@ -52,12 +52,12 @@ function SponsorForm() {
             <FormField fieldId={"company"} label={"Company Name"} />
           </div>
           <div className="register-fields-col">
-            <FormLargeField fieldId={"additional"} label={"Additional Questions/Comments"} />
+            <FormLargeField fieldId={"additional"} label={"Additional Questions/Comments? (such as specific positions you are hiring for, etc)"} />
           </div>
         </div>
         {failed && <h4 className="gradient-text"><i>One or more fields have not been filled out!</i></h4>}
         <a className='highlighted-text'>
-          <HollowButton text="Submit" onClick={checkResponse} />
+          <HollowerButton text="Submit" onClick={checkResponse} />
         </a>
     </div>
   );

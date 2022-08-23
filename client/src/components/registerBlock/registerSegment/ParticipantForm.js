@@ -4,7 +4,7 @@ import "../RegisterBlock.css";
 import "../../Block.css"
 import FormField from "./formComponents/FormField";
 import FormLargeField from "./formComponents/FormLargeField";
-import HollowButton from "../../../commons/buttons/HollowButton";
+import { HollowerButton } from "../../../commons/buttons/HollowButton";
 import FormDropdownField from './formComponents/FormDropdownField';
 
 function ParticipantForm() {
@@ -60,7 +60,7 @@ function ParticipantForm() {
         </div>
         {failed && <h4 className="gradient-text"><i>One or more fields have not been filled out!</i></h4>}
         <a className='highlighted-text'>
-          <HollowButton text="Submit" onClick={checkResponse}/>
+          <HollowerButton text="Submit" onClick={checkResponse}/>
         </a>
     </div>
   );

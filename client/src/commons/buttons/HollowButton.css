@@ -1,17 +1,15 @@
-/* .buttonHollow {
+.buttonHollower {
     border-radius: 35px;
     border: 4px solid #ffffff;
     display: inline-block;
     cursor: pointer;
     color: #fff;
+    background: transparent;
     font-weight: bold;
     font-family: inherit;
     font-size: inherit;
     padding: 20px 48px;
-
-    background: -moz-linear-gradient(center bottom, #7300ba 0%, #a600de 34%, #f55fff 100%);
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #7300ba), color-stop(0.33, #a600de), color-stop(1, #f55fff));
-} */
+}
 
 .buttonHollow {
     display: inline-block;

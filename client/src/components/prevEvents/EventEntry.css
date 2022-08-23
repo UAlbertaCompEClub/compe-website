@@ -1,3 +1,11 @@
+.event-block, .eventdate-block {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 5vw;
+  width: 100%;
+}
+
 .event-entry {
   flex: auto;
   height: 100%;
@@ -10,9 +18,9 @@
 }
 
 .event-heading {
-  margin: 0 auto 3vh auto;
+  /* margin: 0 auto 3vh auto; */
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .event-title {

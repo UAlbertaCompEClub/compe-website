@@ -4,15 +4,15 @@
     /* flex-direction: row-reverse; */
     margin: auto;
 
-    max-height: 100%;
-    /* margin-left: 0;
-    margin-right: 10vw; */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .about-us-img-container {
     background-color: white;
-    width: 40%;
-    height: 100%;
+    width: 100%;
+    object-fit: contain;
     /* margin-left: 0; */
     /* padding: 0; */
     overflow: hidden;
@@ -29,8 +29,6 @@
     /* display: flex; */
     object-fit: cover;
     margin: auto;
-    margin-left: 0;
-    margin-top: -20vh;
 
     border-radius: 50%;
     /* animation: rotation 200s infinite linear; */

@@ -26,9 +26,9 @@ function EventDateTime({month, day, time}) {
 
   return (
     <div className="eventdate-date-container">
-      <h3 className="text-date eventdate-date-month">{month}</h3>
+      <h3 className="text-date eventdate-date-month colored-text">{month}</h3>
       {parseDate(day)}
-      <h4 className="text-date eventdate-date-time">{time}</h4>
+      <h4 className="text-date eventdate-date-time colored-text">{time}</h4>
     </div>
   );
 }

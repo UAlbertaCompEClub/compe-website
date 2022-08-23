@@ -8,8 +8,6 @@ const aboutUsStyle = (height) => ({
     // padding: '10vh',
     // 'border-bottom': '1px solid gray',
     'align-items': 'flex-start',
-    'min-height': height + 'vh',
-    'max-height': '100vh',
     'overflow': 'hidden'
 }
 )
@@ -17,12 +15,12 @@ const aboutUsStyle = (height) => ({
 function AboutUsBlock({ height, id }) {
     return (
         <div style={ aboutUsStyle(height)} className="block">
-            <div className="about-us-content" id={"project-block" + id}>
+            <div className="about-us-content" id={"about-us-block"}>
                 <div className="about-us-text" id="about-us-text">
                     <h1 className='main-heading faded text-main'>About Us</h1>
-                    <h2 className='sub-heading faded text-main'>Presented by the Computer Engineering Club</h2>
+                    <h2 className='sub-heading faded text-main colored-text'>The Computer Engineering Club</h2>
                     <p>
-                        The University of Alberta Computer Engineering Club was founded in !@#$%^&*(year) with the goals of bringing Computer Engineering students together, organizing specialized events and initiatives, and advocating to larger bodies — such as the Engineering Students’ Society, the Faculty of Engineering, and the Students’ Union. In recent years however, we have expanded our scope to include students in Computer Science, and Data Science fields who share similar interests in industry.
+                        For over fifteen years, the University of Alberta's Computer Engineering Club has bought Computer Engineering students together, organized specialized events and initiatives, and advocated to larger bodies — such as the Engineering Students’ Society, the Faculty of Engineering, and the Students’ Union. In recent years however, we have expanded our scope to include students in Computer Science, and Data Science fields who share similar interests in industry.
                         We have a longstanding history of running large-scale events focused around educational and hands-on learning for programming and design, such as HackED and HackED Beta. Now, we are excited to announce a completely new endeavor, with the goal of connecting undergraduate students to employers and businesses in a way that is unprecedented on our campus: Career++.
                     </p>
                 </div>

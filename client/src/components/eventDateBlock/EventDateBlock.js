@@ -4,21 +4,9 @@ import { EventDateEntry } from './eventDateSegment/EventDateEntry';
 import "./EventDateBlock.css";
 import '../Block.css'
 
-const fade = (percentage) => ({
-  transform: 'translateY(' + 50*percentage +'px)',
-  opacity: percentage,
-  // 'transition-property': 'transform, opacity',
-  // 'transition-duration': '1s',
-  // 'transition-timing-function': 'linear'
-}
-);
-
 function EventDateBlock({ height, id }) {
-  //0 is none, 1 is company details, 2 is participant details
-  var [panelVisibleId, setPanelVisibleId] = useState(2);
-  var handlePanelSelection = id => {
-    (panelVisibleId === id) ? setPanelVisibleId(0) : setPanelVisibleId(id);
-  };
+  //0 is none, 2 is company details, 1 is participant details
+  var [panelVisibleId, setPanelVisibleId] = useState(1);
   var EventDatesParticipants = () => {
     return (<div className="eventdate-grid gradient-border-padded" id="eventdate-grid">
       <EventDateEntry
@@ -44,7 +32,7 @@ function EventDateBlock({ height, id }) {
   var EventDatesCompanies = () => {
     return (<div className="eventdate-grid gradient-border-padded" id="eventdate-grid">
       <EventDateEntry
-        text={"Registration Begins"}
+        text={"Early Bird Pricing"}
         month={"Nov"}
         day={"1st"}
         time={"9AM"}
@@ -58,7 +46,7 @@ function EventDateBlock({ height, id }) {
       <EventDateEntry
         text={"The Event"}
         month={"Feb"}
-        day={"1st"}
+        day={"20th"}
         time={"9AM-3PM"}
       />
     </div>);
@@ -69,8 +57,8 @@ function EventDateBlock({ height, id }) {
       <div className="eventdate-block block-content" id={"eventdate-block" + id}>
         <h1 className="heading eventdate-heading">Dates</h1>
         <div className="tabbed-panel">
-          <h3 className="highlighted-text" onClick={e => handlePanelSelection(1)}>Companies</h3>
-          <h3 className="highlighted-text" onClick={e => handlePanelSelection(2)}>Participants</h3>
+          <h3 className={`${(panelVisibleId === 1) ? "tabbed-panel-selected" : "tabbed-panel-option"}`} onClick={e => setPanelVisibleId(1)}>Participants</h3>
+          <h3 className={`${(panelVisibleId === 2) ? "tabbed-panel-selected" : "tabbed-panel-option"}`} onClick={e => setPanelVisibleId(2)}>Companies</h3>
         </div>
         {panelVisibleId === 1 && <EventDatesParticipants />}
         {panelVisibleId === 2 && <EventDatesCompanies />}
