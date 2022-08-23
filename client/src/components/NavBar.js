@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import navLinker from "./../commons/observer/navLinker";
 import "./NavBar.css";
 
 class NavBar extends Component {
   render() {
+    var link = () => {
+      navLinker()
+    }
     return (
       <nav className= "nav" id="navbar">
         <div className="nav-content">
