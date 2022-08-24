@@ -21,6 +21,7 @@
 
 .landing-underlay {
     position: relative;
+    margin-left: -100%;
     z-index: 5;
 }
 
@@ -42,16 +43,19 @@
 }
 
 .landing-background {
-    margin-top: -20vw;
-    margin-left: -135vw;
+    display: flex;
+    align-items: left;
+    margin-top: -30vh;
+    margin-left: -130vh;
     /* mask-image: url(./floaters/line.svg); */
     background-size: 5px;
     background-repeat: repeat;
 }
 
 .landing-background-img {
+    min-width:1500px;
     rotate: -30deg;
-    width: 120vw;
+    width: 120vh;
     mask-image: url(./floaters/line.svg);
     mask-repeat: repeat;
     mask-size: 5px 100px;
@@ -74,18 +78,15 @@
 }
 
 .landing-img {
-    width: 35vw;
-    height: 35vw;
-
-    width: 130vh;
-    height: 130vh;
+    width: 100vh;
+    height: 100vh;
     /* display: flex; */
     object-fit: cover;
     margin: auto;
-    margin-left: 0;
-    margin-top: -20vh;
+    margin-right: 5vw;
+    margin-top: -11vh;
 
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .landing-text {
@@ -140,10 +141,10 @@
 
 @media screen and (max-width: 1500px) {
     .landing-img {
-        margin-left: -30vw;
+        /* margin-left: -30vw;
         margin-top: -10vh;
         width: 120vh;
-        height: 120vh;
+        height: 120vh; */
     }
 }
 

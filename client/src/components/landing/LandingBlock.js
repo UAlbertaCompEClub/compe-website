@@ -17,7 +17,7 @@ var LandingBlock = React.forwardRef((props, ref) => {
         <div className="block" id={id} ref={ref}>
             <div className="landing-content">
                 <div className="landing-overlay">
-                    <div className="landing-text text-main" id="landing-text-1">
+                    <div className="landing-text text-main" id="landing-text">
                         <div className='landing-logo-container'>
                             <h1 className='main-heading faded text-main'>Career</h1>
                             <h1 className='main-heading faded gradient-header'>++</h1>
@@ -26,11 +26,10 @@ var LandingBlock = React.forwardRef((props, ref) => {
                     </div>
                     <div className='landing-img-container faded'>
                         <GradientImg img={landingGraphic} className="landing-img" alt="Cool Graphic" />
-                        <div className='landing-img'></div>
+                        {/* <div className='landing-img'></div> */}
                     </div>
                 </div>
                 <div className="landing-underlay">
-                    <img src={blob1} className="blob-img" alt="Cool Graphic" />
                     <div className="landing-background">
                         <img src={background} className="landing-background-img" alt="Cool Graphic" />
                     </div>
