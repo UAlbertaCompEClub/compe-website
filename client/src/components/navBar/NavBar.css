@@ -38,13 +38,19 @@
 }
 
 .nav-item-selected, .nav-item:hover {
-  color: darkviolet;
+  color: rgb(184, 28, 215);
   cursor: pointer;
-  text-decoration: underline;
 }
 
-.nav-item-selected {
-  color: blueviolet;
+.anchor-base,
+.anchor-base:hover,
+.anchor-base:visited,
+.anchor-base:focus,
+.anchor-base:active {
+  text-decoration: none;
+  color: inherit;
+  outline: 0;
+  cursor: auto;
 }
 
 @media screen and (max-width: 800px)

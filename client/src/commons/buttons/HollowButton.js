@@ -2,7 +2,7 @@ import "./HollowButton.css";
 
 function HollowButton({ text, ...props }) {
     return (
-        <button class="buttonHollow" {...props}>
+        <button className="buttonHollow" {...props}>
             <span className="gradient-text-small">{text}</span>
         </button>
     );
@@ -10,7 +10,7 @@ function HollowButton({ text, ...props }) {
 
 function HollowerButton({ text, ...props }) {
     return (
-        <button class="buttonHollower" {...props}>
+        <button className="buttonHollower" {...props}>
             <span className="text-main">{text}</span>
         </button>
     );

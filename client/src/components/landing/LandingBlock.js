@@ -3,14 +3,19 @@ import React, { useEffect } from 'react';
 import './LandingBlock.css'
 import clubLogo from './LandingGraphic.svg';
 import blob1 from './blob/blob.svg';
+import navLinker from "../pageState/observer/navLinker";
 import floater1 from './floaters/line.svg';
 import background from './background/background.svg';
 import "./animations/randFloat.css"
 import GradientImg from '../../commons/gradient/GradientImg';
 
-function LandingBlock({ height }) {
+var LandingBlock = React.forwardRef((props, ref) => {
+    var id = "landing-block";
+    useEffect(() => {
+       navLinker(ref.current, props.setBlock, id)
+    }, []);
     return (
-        <div className="block" id="landing-block">
+        <div className="block" id={id} ref={ref}>
             <div className="landing-content">
                 <div className="landing-overlay">
                     <div className="landing-text text-main" id="landing-text-1">
@@ -32,7 +37,6 @@ function LandingBlock({ height }) {
                 </div>
             </div>
         </div>
-    );
-}
+)});
 
 export default LandingBlock;

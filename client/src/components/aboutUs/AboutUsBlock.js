@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './AboutUsBlock.css';
+import navLinker from "../pageState/observer/navLinker";
 import compELogo from './compeLogoWhite.svg';
-import teamPic from './teamPic.jpg'
 
 const aboutUsStyle = () => ({
     display: 'flex',
@@ -12,9 +12,13 @@ const aboutUsStyle = () => ({
 }
 )
 
-function AboutUsBlock() {
+var AboutUsBlock = React.forwardRef((props, ref) => {
+    var id = "about-us-block";
+    useEffect(() => {
+        navLinker(ref.current, props.setBlock, id);
+    }, []);
     return (
-        <div style={aboutUsStyle()} className="block" id="about-us-block">
+        <div style={aboutUsStyle()} className="block" id={id} ref={ref}>
             <div className="about-us-content">
                 <div className="about-us-text" id="about-us-text">
                     <h1 className='main-heading faded text-main'>About Us</h1>
@@ -30,7 +34,6 @@ function AboutUsBlock() {
                 </div>
             </div>
         </div>
-    );
-}
+)});
 
 export default AboutUsBlock;

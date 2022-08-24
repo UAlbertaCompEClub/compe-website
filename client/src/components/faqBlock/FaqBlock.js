@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
 import blockStyle from '../Block';
+import navLinker from "../pageState/observer/navLinker";
 import { FaqEntry } from './faqSegment/FaqEntry';
 import { FaqSection } from "./faqSegment/FaqSection";
 import "./FaqBlock.css";
 import '../Block.css'
 
-function FaqBlock() {
+var FaqBlock = React.forwardRef((props, ref) => {
+  var id = "faq-block";
+  useEffect(() => {
+    navLinker(ref.current, props.setBlock, id);
+  }, []);
   const generalFaqs = () => {
     return (
       <>
@@ -98,7 +103,7 @@ function FaqBlock() {
   }
 
   return (
-    <div style={blockStyle()} className="block" id="faq-block">
+    <div style={blockStyle()} className="block" id={id} ref={ref}>
       <div className="faq-block">
         <h1 className="heading faq-heading">FAQs</h1>
         <div className="faq-panels" id="faq-grid">
@@ -117,7 +122,6 @@ function FaqBlock() {
         </div>
       </div>
     </div>
-  );
-}
+  )});
 
 export default FaqBlock;

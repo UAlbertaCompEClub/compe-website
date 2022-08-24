@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import blockStyle from '../Block';
 import { EventDateEntry } from './eventDateSegment/EventDateEntry';
+import navLinker from "../pageState/observer/navLinker";
 import "./EventDateBlock.css";
 import '../Block.css'
 
-function EventDateBlock() {
+
+var EventDateBlock = React.forwardRef((props, ref) => {
+  var id = "eventdate-block";
+  useEffect(() => {
+    navLinker(ref.current, props.setBlock, id);
+  }, []);
   //0 is none, 2 is company details, 1 is participant details
   var [panelVisibleId, setPanelVisibleId] = useState(1);
   var EventDatesParticipants = () => {
@@ -53,7 +59,7 @@ function EventDateBlock() {
   }
 
   return (
-    <div style={blockStyle()} className="block" id="eventdate-block">
+    <div style={blockStyle()} className="block" id={id} ref={ref}>
       <div className="eventdate-block block-content">
         <h1 className="heading eventdate-heading">Dates</h1>
         <div className="tabbed-panel">
@@ -64,7 +70,6 @@ function EventDateBlock() {
         {panelVisibleId === 2 && <EventDatesCompanies />}
       </div>
     </div>
-  );
-}
+  )});
 
 export default EventDateBlock;

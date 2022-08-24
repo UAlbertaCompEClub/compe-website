@@ -1,11 +1,11 @@
 import React from 'react';
-import GradientImg from '../commons/gradient/GradientImg';
-import githubLogo from "../socials/github.svg";
-import linkedinLogo from "../socials/linkedin.svg";
-import emailIcon from "../socials/mail.svg";
+import GradientImg from '../../commons/gradient/GradientImg';
+import githubLogo from "../../socials/github.svg";
+import linkedinLogo from "../../socials/linkedin.svg";
+import emailIcon from "../../socials/mail.svg";
 
-import blockStyle from './Block';
-import './Block.css';
+import blockStyle from '../Block';
+import '../Block.css';
 import './SocialsBlock.css'
 
 function SocialsBlock() {
