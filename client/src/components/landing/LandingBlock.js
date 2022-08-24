@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 // import landingStyle from './Block';
 import './LandingBlock.css'
-import clubLogo from './LandingGraphic.svg';
+import landingGraphic from './LandingGraphic.svg';
 import blob1 from './blob/blob.svg';
 import navLinker from "../pageState/observer/navLinker";
 import floater1 from './floaters/line.svg';
 import background from './background/background.svg';
-import "./animations/randFloat.css"
 import GradientImg from '../../commons/gradient/GradientImg';
 
 var LandingBlock = React.forwardRef((props, ref) => {
@@ -26,7 +25,8 @@ var LandingBlock = React.forwardRef((props, ref) => {
                         <h2 className='sub-heading faded text-main'>Presented by the Computer Engineering Club</h2>
                     </div>
                     <div className='landing-img-container faded'>
-                        <GradientImg img={clubLogo} className="landing-img" alt="Cool Graphic" />
+                        <GradientImg img={landingGraphic} className="landing-img" alt="Cool Graphic" />
+                        <div className='landing-img'></div>
                     </div>
                 </div>
                 <div className="landing-underlay">

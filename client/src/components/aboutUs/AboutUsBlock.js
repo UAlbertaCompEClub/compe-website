@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './AboutUsBlock.css';
 import navLinker from "../pageState/observer/navLinker";
 import compELogo from './compeLogoWhite.svg';
+import GradientImg from '../../commons/gradient/GradientImg';
 
 const aboutUsStyle = () => ({
     display: 'flex',
@@ -29,7 +30,8 @@ var AboutUsBlock = React.forwardRef((props, ref) => {
                     </p>
                 </div>
                 <div className='about-us-img-container'>
-                    <img src={compELogo} className="about-us-img about-us-img-animated"/>
+                    <GradientImg img={compELogo} className="about-us-img" alt="Cool Graphic" />
+                    {/* <img src={compELogo} className="about-us-img about-us-img-animated"/> */}
                     {/* <img src={teamPic} className="team-img"/> */}
                 </div>
             </div>

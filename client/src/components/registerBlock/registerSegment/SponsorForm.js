@@ -21,7 +21,8 @@ function SponsorForm() {
     console.log("log", firstName, lastName, title, email, company);
     (isEmpty(firstName) || isEmpty(lastName) || isEmpty(title) || isEmpty(email) || isEmpty(company))? setFailed(true) : setFailed(false);
     if (!failed) {
-      fetch("https://docs.google.com/forms/d/e/1FAIpQLSeddsZIZHJ84MwW62YHYjtNX6Y5pXG6gsksTxls88Agn4AglA/formResponse?usp=pp_url&entry.1398323061=FIRST_NAME&entry.1509660360=LAST_NAME&entry.802216155=TITLE&entry.1387214098=EMAIL&entry.987011643=COMPANY&entry.1377794354=ADDITIONAL");
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSeddsZIZHJ84MwW62YHYjtNX6Y5pXG6gsksTxls88Agn4AglA/formResponse?usp=pp_url&entry.1398323061=FIRST_NAME&entry.1509660360=LAST_NAME&entry.802216155=TITLE&entry.1387214098=EMAIL&entry.987011643=COMPANY&entry.1377794354=ADDITIONAL")
+        .catch(); // intentionally intended to be like this
       // fetch('https://docs.google.com/forms/d/e/1FAIpQLSeddsZIZHJ84MwW62YHYjtNX6Y5pXG6gsksTxls88Agn4AglA/formResponse', {
       //   method: 'POST',
       //   headers: {
