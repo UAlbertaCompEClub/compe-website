@@ -8,10 +8,10 @@ import background from './background/background.svg';
 import "./animations/randFloat.css"
 import GradientImg from '../../commons/gradient/GradientImg';
 
-function LandingBlock({ height, id }) {
+function LandingBlock({ height }) {
     return (
-        <div className="block">
-            <div className="landing-content" id={"landing-block" + id}>
+        <div className="block" id="landing-block">
+            <div className="landing-content">
                 <div className="landing-overlay">
                     <div className="landing-text text-main" id="landing-text-1">
                         <div className='landing-logo-container'>

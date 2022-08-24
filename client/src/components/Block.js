@@ -1,6 +1,6 @@
 // import styles from "./Block.css";
 
-const blockStyle = (height) => ( {
+const blockStyle = () => ( {
   display: 'flex',
   padding: '10vh',
   'align-items': 'flex-start',

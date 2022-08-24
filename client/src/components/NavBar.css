@@ -37,11 +37,10 @@
   margin-left: 3vh;
 }
 
-.nav-item:hover {
+.nav-item-selected, .nav-item:hover {
   color: darkviolet;
   cursor: pointer;
   text-decoration: underline;
-  text-underline-offset: 5px;
 }
 
 .nav-item-selected {

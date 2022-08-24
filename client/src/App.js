@@ -23,34 +23,14 @@ class App extends Component {
         <NavBar />
             <LandingBlock
               height = {95}
-              id = {1}
               />
-            <OverviewBlock
-              id={2}
-            />
-            <EventDateBlock
-              id = {3}
-              />
-            <AboutUsBlock
-              height={100}
-              id={4}
-              />
-            <EventBlock
-              height={100}
-              id={5}
-              />
-            <FaqBlock
-              height={100}
-              id={6}
-              />
-            <RegisterBlock
-              height={100}
-              id={7}
-              />
-            <SocialsBlock
-              height={10}
-              id={8}
-              />
+            <OverviewBlock />
+            <EventDateBlock />
+            <AboutUsBlock />
+            <EventBlock />
+            <FaqBlock />
+            <RegisterBlock />
+            <SocialsBlock />
       </div>
     )
   };

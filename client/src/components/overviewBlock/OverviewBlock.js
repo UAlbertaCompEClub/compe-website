@@ -1,10 +1,10 @@
 import React from 'react';
 import './OverviewBlock.css';
 
-function OverviewBlock({ id }) {
+function OverviewBlock() {
     return (
-        <div className="block overview-block">
-            <div className="overview-content" id={"project-block" + id}>
+        <div className="block overview-block" id="overview-block">
+            <div className="overview-content">
                 <div className="overview-text" id="overview-text">
                     <h2 className="colored-text">Are you ready to find your next job?</h2>
                     <p>

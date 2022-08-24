@@ -3,7 +3,7 @@ import './AboutUsBlock.css';
 import compELogo from './compeLogoWhite.svg';
 import teamPic from './teamPic.jpg'
 
-const aboutUsStyle = (height) => ({
+const aboutUsStyle = () => ({
     display: 'flex',
     // padding: '10vh',
     // 'border-bottom': '1px solid gray',
@@ -12,10 +12,10 @@ const aboutUsStyle = (height) => ({
 }
 )
 
-function AboutUsBlock({ height, id }) {
+function AboutUsBlock() {
     return (
-        <div style={ aboutUsStyle(height)} className="block">
-            <div className="about-us-content" id={"about-us-block"}>
+        <div style={aboutUsStyle()} className="block" id="about-us-block">
+            <div className="about-us-content">
                 <div className="about-us-text" id="about-us-text">
                     <h1 className='main-heading faded text-main'>About Us</h1>
                     <h2 className='sub-heading faded text-main colored-text'>The Computer Engineering Club</h2>

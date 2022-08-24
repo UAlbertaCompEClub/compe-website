@@ -8,9 +8,9 @@ import blockStyle from './Block';
 import './Block.css';
 import './SocialsBlock.css'
 
-function SocialsBlock({ height, id }) {
+function SocialsBlock() {
   return (
-    <div className="footer-block">
+    <div className="footer-block" id="footer-block">
       <div className="footer">
           <p className="footer-text">Built with React</p>
           <p className="divider">|</p>
@@ -18,7 +18,7 @@ function SocialsBlock({ height, id }) {
           {/* <p className="footer-text">Property Muhammad Fiaz</p> */}
           <p className="divider">|</p>
 
-          <div className="socials-content" id={"socials-content-" + id}>
+          <div className="socials-content" id={"socials-content"}>
               <a href="https://github.com/itsfeas">
                 <GradientImg img={githubLogo} className="socials-icon highlighted" />
               </a>

@@ -7,10 +7,10 @@ import '../Block.css'
 import { HackEdDesc, HackEdGraphic } from './hackEd/HackEd';
 import { HackEdBetaDesc, HackEdBetaGraphic } from './hackEdBeta/HackEdBeta';
 
-function EventBlock({ height, id }) {
+function EventBlock() {
   return (
-    <div style={blockStyle(height)} className="block">
-      <div className="event-block block-content" id={"event-block" + id}>
+    <div style={blockStyle()} className="block" id="event-block">
+      <div className="event-block block-content">
         <h1 className="heading event-heading">Previous Events</h1>
         <div className="event-grid" id="event-grid">
           <EventEntry

@@ -5,16 +5,7 @@ import { FaqSection } from "./faqSegment/FaqSection";
 import "./FaqBlock.css";
 import '../Block.css'
 
-const fade = (percentage) => ({
-  transform: 'translateY(' + 50*percentage +'px)',
-  opacity: percentage,
-  // 'transition-property': 'transform, opacity',
-  // 'transition-duration': '1s',
-  // 'transition-timing-function': 'linear'
-}
-);
-
-function FaqBlock({ height, id }) {
+function FaqBlock() {
   const generalFaqs = () => {
     return (
       <>
@@ -107,8 +98,8 @@ function FaqBlock({ height, id }) {
   }
 
   return (
-    <div style={blockStyle(height)} className="block">
-      <div className="faq-block" id={"faq-block" + id}>
+    <div style={blockStyle()} className="block" id="faq-block">
+      <div className="faq-block">
         <h1 className="heading faq-heading">FAQs</h1>
         <div className="faq-panels" id="faq-grid">
           <FaqSection
@@ -123,7 +114,6 @@ function FaqBlock({ height, id }) {
             heading={"Companies"}
             questions={companiesFaqs()}
           />
-           
         </div>
       </div>
     </div>

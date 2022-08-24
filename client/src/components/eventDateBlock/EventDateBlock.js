@@ -4,7 +4,7 @@ import { EventDateEntry } from './eventDateSegment/EventDateEntry';
 import "./EventDateBlock.css";
 import '../Block.css'
 
-function EventDateBlock({ height, id }) {
+function EventDateBlock() {
   //0 is none, 2 is company details, 1 is participant details
   var [panelVisibleId, setPanelVisibleId] = useState(1);
   var EventDatesParticipants = () => {
@@ -53,8 +53,8 @@ function EventDateBlock({ height, id }) {
   }
 
   return (
-    <div style={blockStyle(height)} className="block">
-      <div className="eventdate-block block-content" id={"eventdate-block" + id}>
+    <div style={blockStyle()} className="block" id="eventdate-block">
+      <div className="eventdate-block block-content">
         <h1 className="heading eventdate-heading">Dates</h1>
         <div className="tabbed-panel">
           <h3 className={`${(panelVisibleId === 1) ? "tabbed-panel-selected" : "tabbed-panel-option"}`} onClick={e => setPanelVisibleId(1)}>Participants</h3>

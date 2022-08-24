@@ -1,14 +1,14 @@
-var navLinker = (block, navBarItem) => { 
-    var observer = () => {IntersectionObserver((block, navBarItem) => {
-            if (block[0]['isIntersecting'] === true) {
-                if (block[0]['intersectionRatio'] === 1) {
-                    navBarItem.state.isVisible = true;
-                }
-                else navBarItem.state.isVisible = true;
+var navLinker = ({block, navBarItem}) => { 
+    new IntersectionObserver(() => {
+        if (block['isIntersecting'] === true) {
+            if (block['intersectionRatio'] === 1) {
+                navBarItem.state.isVisible = true;
             }
-        }, { threshold: [0, 1] });
-    };
-    observer(block, navBarItem);
+            else navBarItem.state.isVisible = true;
+        }
+    }, { threshold: [0, 1] });
+    // console.log(block, navBarItem)
+    // observer(block, navBarItem);
 };
 
 export default navLinker;
