@@ -15,6 +15,7 @@
 }
 
 .footer-link {
+    color: white;
     text-underline-offset: 5px;
 }
 
@@ -28,6 +29,16 @@
     /* margin-left: 5vw; */
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    /* margin-bottom: -3vh; */
+}
+
+.socials-icon {
+    object-fit:scale-down;
+    /* height: 120%; */
+    filter: invert(100%) sepia(38%) saturate(0%) hue-rotate(163deg) brightness(111%) contrast(100%);
 }
 
 .socials-icon {
@@ -36,9 +47,12 @@
     margin: 5px;
 }
 
-@media screen and (max-width: 800px)
+@media screen and (max-aspect-ratio: 6/5)
 {
-    .divider, .footer-text {
+    .divider, .unecessary-footer-text {
         display: none;
+    }
+    .footer {
+        flex-direction: column;
     }
 }
