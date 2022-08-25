@@ -44,3 +44,14 @@
   justify-content: left;
   row-gap: 10px;
 }
+
+@media screen and (max-aspect-ratio: 6/5) {
+  .register-fields-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 40vh;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+}

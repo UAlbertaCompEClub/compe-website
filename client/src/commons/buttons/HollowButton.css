@@ -1,4 +1,5 @@
 .buttonHollower {
+    text-align: center;
     border-radius: 35px;
     border: 4px solid #ffffff;
     display: inline-block;
@@ -12,7 +13,7 @@
 }
 
 .buttonHollow {
-    display: inline-block;
+    text-align: center;
     cursor: pointer;
     color: #fff;
     font-weight: inherit;
@@ -36,3 +37,7 @@
     box-shadow: none;
     background: transparent;
 }
+
+/* @media screen and (max-aspect-ratio: 6/5) {
+
+} */

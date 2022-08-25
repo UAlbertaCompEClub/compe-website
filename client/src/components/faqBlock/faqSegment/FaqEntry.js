@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../FaqBlock.css";
+import "../../../commons/borderedContainers/borderedContainers.css";
 
 function FaqEntry({ question, answer }) {
   const [answerVisible, setAnswerVisible] = useState(false)

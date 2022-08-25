@@ -7,36 +7,6 @@
   /* height: 100vh; */
 }
 
-.eventdate-block {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  padding: 5vw;
-  width: 80vw;
-}
-
-.bordered-container, .bordered-container-padded {
-  margin: 2rem 0 2rem 0;
-  border: 8px solid white;
-  border-radius: 35px;
-  width: 100%;
-}
-
-.bordered-container-padded {
-  padding: 2rem;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
-.event-grid {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  column-gap: 3vw;
-  row-gap: 3vh;
-}
-
 .highlighted:hover {
   color: gray;
   filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);
@@ -62,11 +32,3 @@
   } */
 }
 
-@media screen and (max-width: 550px)
-{
-  .event-grid {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 50vh;
-  }
-}

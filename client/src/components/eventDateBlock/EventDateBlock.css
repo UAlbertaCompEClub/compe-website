@@ -1,5 +1,8 @@
 .eventdate-block {
-  /* border-bottom: 1px solid #fff; */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 5vw;
 }
 
 .eventdate-grid {
@@ -8,12 +11,6 @@
   grid-template-rows: auto;
   column-gap: 3vw;
   row-gap: 3vh;
-}
-
-.eventdate-entry {
-  flex: auto;
-  height: auto;
-  display: contents;
 }
 
 .eventdate-content {
@@ -71,36 +68,21 @@
   justify-content: center;
 }
 
-.eventdate-entry:hover > div {
-  transform: scale(1.01);
-}
-
-/* help obtained from https://stackoverflow.com/questions
-/15161674/responsive-design-rearrange-element-positions-with-css */
-@media screen and (max-width: 768px)
-{
-  .eventdate-logo {
-    transform: scale(1);
-  }
-  
+@media screen and (max-aspect-ratio: 6/5) {
   .eventdate-content {
-    margin-top: 10vh;
+    margin: auto 0 auto 0;
+    padding: 5vh 0 5vh 0;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column-reverse;
-    flex-direction: column-reverse; 
-    /* height: 60vh; */
-   }
+    flex-direction: column-reverse;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
 
-  .eventdate-logo {
-    height: 20vw;
-  }
-}
-
-
-@media screen and (max-width: 550px)
-{
-  .eventdate-logo {
-    height: 40vw;
+  .eventdate-desc-container, .eventdate-date-container {
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
   }
 }

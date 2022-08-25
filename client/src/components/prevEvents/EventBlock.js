@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import blockStyle from '../Block';
 import EventEntry from './EventEntry';
-import "./EventEntry.css";
+import "./EventBlock.css";
 import '../Block.css'
 
 import { HackEdDesc, HackEdGraphic } from './hackEd/HackEd';

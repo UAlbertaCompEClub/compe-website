@@ -1,5 +1,5 @@
 import graphic from './HackEdLogo.svg';
-import "../EventEntry.css";
+import "../EventBlock.css";
 import HollowButton from '../../../commons/buttons/HollowButton';
 import GradientImg from '../../../commons/gradient/GradientImg';
 

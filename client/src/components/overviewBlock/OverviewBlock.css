@@ -86,24 +86,7 @@
     filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);
 }
 
-@media screen and (max-width: 1500px) {
-    .overview-img {
-        margin-left: -30vw;
-        margin-top: -10vh;
-        width: 120vh;
-        height: 120vh;
-    }
-}
-
-@media screen and (max-width:1000px) {
-    .overview-content {
-        /* margin-top: -10vh; */
-        margin-bottom: 0;
-        max-height: 100vh;
-    }   
-}
-
-@media screen and (max-width: 800px)
+@media screen and (max-aspect-ratio: 6/5)
 {
     .overview-img {
         margin-left: -80vw;
@@ -111,10 +94,8 @@
         width: 200vw;
         height: 200vw;
     }
-}
 
-@keyframes rotation {
-    from { transform: rotate(0deg); }
-
-    to { transform: rotate(360deg); }
+    .overview-content {
+        width: 100%;
+    }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./EventEntry.css";
+import "./EventBlock.css";
 import "../Block.css"
 
 function EventEntry({ id, name, image, descr }) {

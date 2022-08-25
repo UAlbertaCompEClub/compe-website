@@ -1,5 +1,5 @@
 import graphic from './HackEdBetaLogo.png';
-import "../EventEntry.css";
+import "../EventBlock.css";
 import HollowButton from '../../../commons/buttons/HollowButton';
 
 function HackEdBetaGraphic() {

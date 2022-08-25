@@ -77,14 +77,7 @@
   text-decoration: underline;
 }
 
-/* help obtained from https://stackoverflow.com/questions
-/15161674/responsive-design-rearrange-element-positions-with-css */
-@media screen and (max-width: 768px)
-{
-  .faq-logo {
-    transform: scale(1);
-  }
-  
+@media screen and (max-aspect-ratio: 6/5) {  
   .faq-content {
     margin-top: 10vh;
     display: -webkit-flex;
@@ -93,16 +86,16 @@
     flex-direction: column-reverse; 
     /* height: 60vh; */
    }
-
-  .faq-logo {
-    height: 20vw;
+  .faq-panels {
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 3vw;
+    row-gap: 3vh;
   }
-}
-
-
-@media screen and (max-width: 550px)
-{
-  .faq-logo {
-    height: 40vw;
+  .faq-section {
+    text-align: center;
+  }
+  .faq-container {
+    margin-top: 1vh;
   }
 }
