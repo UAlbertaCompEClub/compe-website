@@ -3,7 +3,7 @@ import "../RegisterBlock.css";
 import '../../Block.css';
 import '../../../commons/panel/tabbed/TabbedPanel.css';
 import { SponsorForm } from './SponsorForm';
-import { ParticipantForm } from './ParticipantForm';
+import { ParticipantEventbrite } from './ParticipantEventbrite';
 
 function RegisterSection() {
   //0 is none, 1 is company form, 2 is participant form
@@ -16,7 +16,7 @@ function RegisterSection() {
       </div>
       <div>
         {formVisibleId === 1 && <SponsorForm />}
-        {formVisibleId === 2 && <ParticipantForm />}
+        {formVisibleId === 2 && <ParticipantEventbrite />}
       </div>
     </div>
   );

@@ -10,7 +10,11 @@ function SponsorForm() {
   var [failed, setFailed] = useState(false);
   var [submitted, setSubmitted] = useState(false);
   var isEmpty = (value) => { if (value == "" || !value ) {return true} return false };
-  var getField = (id) => { return document.getElementById("register_"+id).value };
+  var getField = (id) => { 
+    var field = document.getElementById("register_"+id).value;
+    field = field.split(' ').join('+');
+    return encodeURI(field);
+  };
   var checkResponse = () => {
     var firstName = getField("firstName");
     var lastName = getField("lastName");
@@ -18,13 +22,15 @@ function SponsorForm() {
     var email = getField("email");
     var company = getField("company");
     var additional = getField("additional");
-    console.log("log", firstName, lastName, title, email, company);
+    console.log("log", firstName, lastName, title, email, company, additional);
     (isEmpty(firstName) || isEmpty(lastName) || isEmpty(title) || isEmpty(email) || isEmpty(company))? setFailed(true) : setFailed(false);
     if (!failed) {
-      fetch("https://docs.google.com/forms/d/e/1FAIpQLSeddsZIZHJ84MwW62YHYjtNX6Y5pXG6gsksTxls88Agn4AglA/formResponse?usp=pp_url&entry.1398323061=FIRST_NAME&entry.1509660360=LAST_NAME&entry.802216155=TITLE&entry.1387214098=EMAIL&entry.987011643=COMPANY&entry.1377794354=ADDITIONAL")
-        .catch(); // intentionally intended to be like this
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSeddsZIZHJ84MwW62YHYjtNX6Y5pXG6gsksTxls88Agn4AglA/formResponse?usp=pp_url&"+"entry.1398323061="+firstName+"&"+"entry.1509660360="+lastName+"&"+"entry.802216155="+title+"&"+"entry.1387214098="+email+"&"+"entry.987011643="+company+"&"+"entry.1377794354="+additional,
+        { mode: 'no-cors' });
+        // .catch(); // intentionally intended to be like this
       // fetch('https://docs.google.com/forms/d/e/1FAIpQLSeddsZIZHJ84MwW62YHYjtNX6Y5pXG6gsksTxls88Agn4AglA/formResponse', {
       //   method: 'POST',
+      //   mode: 'no-cors',
       //   headers: {
       //     'Content-Type': 'application/json',
       //   },
@@ -37,6 +43,7 @@ function SponsorForm() {
       //     "entry.1377794354": additional
       //   }),
       // });
+      // fetch("https://docs.google.com/forms/d/e/1FAIpQLSeddsZIZHJ84MwW62YHYjtNX6Y5pXG6gsksTxls88Agn4AglA/formResponse?usp=pp_url&entry.1398323061=FIRST+NAME&entry.1509660360=LAST+NASHADHDHHDSHS&entry.802216155=TITLE&entry.1387214098=EMAIL@&entry.987011643=COMPANY&entry.660671123=A&entry.1289980565=Software+Development&entry.1377794354=COMMENTS")
     }
   };
 
