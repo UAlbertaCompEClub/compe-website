@@ -13,25 +13,13 @@ var EventDateBlock = React.forwardRef((props, ref) => {
   }, []);
   //0 is none, 2 is company details, 1 is participant details
   var [panelVisibleId, setPanelVisibleId] = useState(1);
-  var EventDatesParticipants = () => {
+  var EventDatesStudents = () => {
     return (<div className="eventdate-grid gradient-border-padded" id="eventdate-grid">
       <EventDateEntry
-        text={"Registration Begins"}
-        month={"Nov"}
-        day={"1st"}
-        time={"9AM"}
-      />
-      <EventDateEntry
-        text={"Registration Ends"}
-        month={"Nov"}
-        day={"1st"}
-        time={"9AM"}
-      />
-      <EventDateEntry
-        text={"The Event"}
-        month={"Feb"}
-        day={"1st"}
-        time={"9AM-3PM"}
+        text={"Career++ Event"}
+        month={"Jan."}
+        day={"20th"}
+        time={"11AM-3PM"}
       />
     </div>);
   };
@@ -39,21 +27,21 @@ var EventDateBlock = React.forwardRef((props, ref) => {
     return (<div className="eventdate-grid gradient-border-padded" id="eventdate-grid">
       <EventDateEntry
         text={"Early Bird Pricing"}
-        month={"Nov"}
-        day={"1st"}
-        time={"9AM"}
+        month={"Oct."}
+        day={"14th"}
+        time={"11:59PM"}
       />
       <EventDateEntry
         text={"Registration Ends"}
-        month={"Nov"}
-        day={"1st"}
-        time={"9AM"}
+        month={"Dec."}
+        day={"16th"}
+        time={"11:59PM"}
       />
       <EventDateEntry
-        text={"The Event"}
-        month={"Feb"}
+        text={"Career++ Event"}
+        month={"Jan."}
         day={"20th"}
-        time={"9AM-3PM"}
+        time={"11AM-3PM"}
       />
     </div>);
   }
@@ -63,11 +51,12 @@ var EventDateBlock = React.forwardRef((props, ref) => {
       <div className="eventdate-block block-content">
         <h1 className="heading eventdate-heading">Dates</h1>
         <div className="tabbed-panel">
-          <h3 className={`${(panelVisibleId === 1) ? "tabbed-panel-selected" : "tabbed-panel-option"}`} onClick={e => setPanelVisibleId(1)}>Participants</h3>
+          <h3 className={`${(panelVisibleId === 1) ? "tabbed-panel-selected" : "tabbed-panel-option"}`} onClick={e => setPanelVisibleId(1)}>Students</h3>
           <h3 className={`${(panelVisibleId === 2) ? "tabbed-panel-selected" : "tabbed-panel-option"}`} onClick={e => setPanelVisibleId(2)}>Companies</h3>
         </div>
-        {panelVisibleId === 1 && <EventDatesParticipants />}
+        {panelVisibleId === 1 && <EventDatesStudents />}
         {panelVisibleId === 2 && <EventDatesCompanies />}
+        <h2 style={{textAlign:"center"}}>Note, students do NOT need to register to attend Career++</h2>
       </div>
     </div>
   )});

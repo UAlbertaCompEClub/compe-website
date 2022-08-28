@@ -11,7 +11,9 @@ function EventBlock() {
   return (
     <div style={blockStyle()} className="block" id="event-block">
       <div className="event-block block-content">
-        <h1 className="heading event-heading">Previous Events</h1>
+        <h1 className="heading event-heading">Other Events</h1>
+        <h3 style={{textAlign:"center"}}>While Career++ is a new initiative, our club has phenomenal successful and
+        experience running the following large-scale events. </h3>
         <div className="event-grid" id="event-grid">
           <EventEntry
             id={1}
