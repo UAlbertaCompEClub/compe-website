@@ -56,7 +56,7 @@ var EventDateBlock = React.forwardRef((props, ref) => {
         </div>
         {panelVisibleId === 1 && <EventDatesStudents />}
         {panelVisibleId === 2 && <EventDatesCompanies />}
-        <h2 style={{textAlign:"center"}}>Note, students do NOT need to register to attend Career++</h2>
+        {[0,1].includes(panelVisibleId) && <h2 style={{textAlign:"center"}}>Note, students do NOT need to register to attend Career++</h2> }
       </div>
     </div>
   )});
