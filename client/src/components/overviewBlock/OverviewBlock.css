@@ -99,4 +99,8 @@
     .overview-content {
         width: 100%;
     }
+
+    .main-heading {
+        font-size: 8vh;
+    }
 }
