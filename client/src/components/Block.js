@@ -2,7 +2,7 @@
 
 const blockStyle = () => ( {
   display: 'flex',
-  padding: '7vh',
+  padding: '5vh',
   'align-items': 'center',
   'height': 'auto'
   }

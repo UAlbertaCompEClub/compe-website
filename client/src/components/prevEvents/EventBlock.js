@@ -17,13 +17,13 @@ function EventBlock() {
         <div className="event-grid" id="event-grid">
           <EventEntry
             id={1}
-            name={"HackEd"}
+            name={"HackED"}
             image={<HackEdGraphic />}
             descr={<HackEdDesc />}
           />
           <EventEntry
             id={2}
-            name={"HackEd Beta"}
+            name={"HackED Beta"}
             image={<HackEdBetaGraphic />}
             descr={<HackEdBetaDesc />}
           />
