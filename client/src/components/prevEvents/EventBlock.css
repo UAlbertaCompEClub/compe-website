@@ -29,6 +29,7 @@
   /* margin: 0 auto 3vh auto; */
   padding: 0;
   text-align: center;
+  /* overflow-wrap: break-word; */
 }
 
 .event-title {
@@ -105,5 +106,8 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
+  }
+  .event-heading {
+    font-size: 4.3vh;
   }
 }
