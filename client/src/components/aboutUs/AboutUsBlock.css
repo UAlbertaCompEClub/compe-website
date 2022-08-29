@@ -42,7 +42,6 @@
 
 .main-heading {
     font-size: 10vh;
-    /* display: flex; */
     margin-bottom: 0;
 }
 
@@ -83,6 +82,7 @@
     }
     .about-us-text {
         text-align: center;
+        width:90%;
     }
     .about-us-img {
         /* margin-left: -80vw; */
@@ -94,5 +94,11 @@
     }
     .about-us-img-container {
         overflow: visible;
+    }
+
+    .main-heading {
+        font-size: 10vh;
+        justify-content: center;
+        display: flex;
     }
 }

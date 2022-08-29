@@ -98,5 +98,14 @@
 
     .overview-content {
         width: 100%;
+        line-height: 2.0em;
+    }
+
+    .overview-text {
+        width: 90%;
+    }
+
+    .main-heading {
+        font-size: 8vh;
     }
 }
