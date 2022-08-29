@@ -6,7 +6,7 @@ import GradientImg from '../../commons/gradient/GradientImg';
 
 const aboutUsStyle = () => ({
     display: 'flex',
-    // padding: '10vh',
+    padding: '5vw',
     // 'border-bottom': '1px solid gray',
     'align-items': 'flex-start',
     'overflow': 'hidden'
