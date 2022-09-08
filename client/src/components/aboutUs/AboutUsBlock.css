@@ -3,6 +3,7 @@
     display: flex;
     /* flex-direction: row-reverse; */
     margin: auto;
+    padding-left: 5vw;
 
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -82,7 +83,7 @@
     }
     .about-us-text {
         text-align: center;
-        width:90%;
+        width: 90%;
     }
     .about-us-img {
         /* margin-left: -80vw; */
