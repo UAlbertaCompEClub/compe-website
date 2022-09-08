@@ -29,6 +29,7 @@
   /* margin: 0 auto 3vh auto; */
   padding: 0;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .event-title {
@@ -81,13 +82,20 @@
 }
 
 @media screen and (max-aspect-ratio: 6/5) {
+  .event-block, .eventdate-block {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 2vw;
+    width: 100%;
+  }
 
   .event-content {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
-    padding: 5vh;
+    padding: 2vh;
     /* height: 60vh; */
   }
   .event-text {
@@ -105,5 +113,8 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
+  }
+  .event-heading {
+    font-size: 4.3vh;
   }
 }
