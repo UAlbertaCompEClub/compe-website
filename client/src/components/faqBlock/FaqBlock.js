@@ -16,7 +16,7 @@ var FaqBlock = React.forwardRef((props, ref) => {
       <>
         <FaqEntry
           question={"Where and when is Career++ happening?"}
-          answer={"January 20th, location TBD"}
+          answer={"January 20th at Donadeo Innovation Center for Engineering at the University of Alberta North Campus"}
         />
         <FaqEntry
           question={"Where can I ask additional questions?"}
@@ -39,7 +39,8 @@ var FaqBlock = React.forwardRef((props, ref) => {
         />
         <FaqEntry
           question={"What should I do now to prepare for this event?"}
-          answer={"We have a list of resources here: Resources Link and Engineering Employee Center Resource Vault. You can also attend Stacey’s presentation (POTENTIALLY)."}
+          answer={"We have a list of resources here: TODO!!!."}  
+          // TODO: can add part about Stacey’s presentation once confirmed
         />
         <FaqEntry
           question={"Who can attend?"}
@@ -59,7 +60,7 @@ var FaqBlock = React.forwardRef((props, ref) => {
         />
         <FaqEntry
           question={"What companies are attending?"}
-          answer={"Please check the website for more details about the companies."}
+          answer={"Please check the companies tab for more details about which companies are attending."}
         />
         <FaqEntry
           question={"Had a great career fair experience, what should you do next?"}
@@ -67,7 +68,7 @@ var FaqBlock = React.forwardRef((props, ref) => {
         />
         <FaqEntry
           question={"What time should we be there?"}
-          answer={"Between 10 AM to 5 PM, excluding a lunch break from 12 PM - 1 PM"}
+          answer={"Between 11 AM to 3 PM"}
         />
         <FaqEntry
           question={"Will there be food at this event?"}
@@ -82,17 +83,17 @@ var FaqBlock = React.forwardRef((props, ref) => {
       <>
         <FaqEntry
           question={"How do I register and by when?"}
-          answer={"You can register by filling in the registration form here:"}
+          answer={"You can register by filling in the registration form in the registration section"}
         />
         <FaqEntry
           question={"Cancellation Policy?"}
           answer={`Grace Period: full refund will be granted if written notification of cancellation is received via email within 48-hours of registration. Cancellations received after 5:00 PM (MT) on December 16th 2022 are ineligible for grace period. \n
             Cancellations made outside of the 48-hour grace period but before 5:00 PM (MT) on December 16th, 2022 will be charged a $100 cancellation fee to cover administration and processing costs. \n
-            Cancellations made after 5:00 PM (MT) on December 16th,2022 will be charged the full fee.`}
+            Cancellations made after 5:00 PM (MT) on December 16th, 2022 will be charged the full fee.`}
         />
         <FaqEntry
           question={"How early should I show up to set up my booth?"}
-          answer={"Please plan to be there by 9:30 AM so that we can open the doors to students at 10 AM."}
+          answer={"Please plan to be there by 10:30 AM so that we can open the doors to students at 11 AM."}
         />
         <FaqEntry
           question={"For when are students looking for a position?"}
