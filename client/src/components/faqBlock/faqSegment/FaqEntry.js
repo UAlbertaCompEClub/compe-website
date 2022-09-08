@@ -10,7 +10,7 @@ function FaqEntry({ question, answer }) {
 
   const AnswerReturn = ({ answer }) => {
     return (
-      <div className="faq-answer-container bordered-container">
+      <div className="faq-answer-container">
         <p className="text-faq faq-answer">A: {answer}</p>
       </div>
     );

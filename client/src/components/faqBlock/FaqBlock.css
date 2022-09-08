@@ -3,7 +3,8 @@
 }
 
 .faq-answer {
-  padding: 20pt;
+  padding: 10pt;
+  font-style: italic;
 }
 
 .faq-panels {
@@ -11,6 +12,7 @@
   grid-template-columns: 30% 30% 30%;
   column-gap: 3vw;
   row-gap: 3vh;
+  line-height: 2.5em;
 }
 
 .faq-entry {
@@ -91,6 +93,7 @@
     grid-template-columns: 100%;
     column-gap: 3vw;
     row-gap: 3vh;
+    line-height: 1.5em;
   }
   .faq-section {
     text-align: center;
