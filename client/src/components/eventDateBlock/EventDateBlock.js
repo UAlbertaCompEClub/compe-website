@@ -17,7 +17,7 @@ var EventDateBlock = React.forwardRef((props, ref) => {
     return (<div className="eventdate-grid gradient-border-padded" id="eventdate-grid">
       <EventDateEntry
         text={"Career++ Event"}
-        month={"Jan."}
+        month={"Jan"}
         day={"20th"}
         time={"11AM-3PM"}
       />
@@ -27,19 +27,19 @@ var EventDateBlock = React.forwardRef((props, ref) => {
     return (<div className="eventdate-grid gradient-border-padded" id="eventdate-grid">
       <EventDateEntry
         text={"Early Bird Pricing"}
-        month={"Oct."}
-        day={"14th"}
+        month={"Oct"}
+        day={"21st"}
         time={"11:59PM"}
       />
       <EventDateEntry
         text={"Registration Ends"}
-        month={"Dec."}
+        month={"Dec"}
         day={"16th"}
         time={"11:59PM"}
       />
       <EventDateEntry
         text={"Career++ Event"}
-        month={"Jan."}
+        month={"Jan"}
         day={"20th"}
         time={"11AM-3PM"}
       />

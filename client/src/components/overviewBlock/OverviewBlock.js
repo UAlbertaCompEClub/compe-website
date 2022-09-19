@@ -16,7 +16,7 @@ function OverviewBlock() {
                     internships, what each company and their recruitment process is like, and how to stand out as an applicant. </h4>
                 </div>
                 <div className="overview-text gradient-border-padded" id="overview-text">
-                    <h3 className="text-main">Career++ will run from <em>11:00 AM to 3:00 PM</em> in the Donadeo Innovation Center for Engineering at the University of Alberta North Campus</h3>
+                    <h3 className="text-main">Career++ will run from <em>11:00 AM to 3:00 PM</em> in the Donadeo Innovation Center for Engineering at the University of Alberta North Campus (tentatively)</h3>
                 </div>
             </div>
         </div>

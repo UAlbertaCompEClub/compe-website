@@ -9,8 +9,8 @@ function StudentEventbrite() {
     <div className="register-form gradient-border-padded">
       <h2 className="register-section-subheader">Student RSVP</h2>
       <h4 className="register-section-subheader">Please check out our EventBrite here for updates (optional)!</h4>
-        <a className='highlighted-text' href='https://www.eventbrite.ca/'>
-          <HollowButton text="Link"/>
+        <a className='highlighted-text' href='https://www.eventbrite.ca/e/career-undergraduate-tech-career-fair-tickets-420977193117'>
+          <HollowButton text="Click Here"/>
         </a>
     </div>
   );
