@@ -27,13 +27,23 @@ function SponsorForm() {
     if (!failed) {
       fetch("https://docs.google.com/forms/d/e/1FAIpQLSeddsZIZHJ84MwW62YHYjtNX6Y5pXG6gsksTxls88Agn4AglA/formResponse?usp=pp_url&"+"entry.1398323061="+firstName+"&"+"entry.1509660360="+lastName+"&"+"entry.802216155="+title+"&"+"entry.1387214098="+email+"&"+"entry.987011643="+company+"&"+"entry.1377794354="+additional,
         { mode: 'no-cors' });
+      setSubmitted(true);
     }
   };
 
-  return (
-    <div className="register-form bordered-container-padded">
-      <h2 className="register-section-subheader">Company Registration</h2>
-      <h4 className="register-section-subheader">We will reach out to you once you submit this form!</h4>
+  var SubmittedDisplay = () => {
+    return(
+      <>
+        <h3>Thank you for filling out the form!</h3>
+        <h3 className="colored-text">We will reach out to you with more details.</h3>
+      </>
+    );
+  }
+
+  var Form = () => {
+    return(
+      <>
+        <h4 className="register-section-subheader">We will reach out to you once you submit this form!</h4>
         <div className="register-fields-container">
           <div className="register-fields-col">
             <FormField fieldId={"firstName"} label={"First Name"} />
@@ -50,6 +60,15 @@ function SponsorForm() {
         <a className='highlighted-text'>
           <HollowerButton text="Submit" onClick={checkResponse} />
         </a>
+      </>
+    );
+  }
+
+  return (
+    <div className="register-form bordered-container-padded">
+      <h2 className="register-section-subheader">Company Registration</h2>
+      {!submitted && Form()}
+      {submitted && SubmittedDisplay()}
     </div>
   );
 }
