@@ -2,7 +2,7 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  padding: 5vw;
+  padding: 7vw;
 }
 
 .eventdate-grid {
@@ -30,7 +30,7 @@
 
 .eventdate-heading {
   margin: 0;
-  padding: 0;
+  padding-bottom: 30px;
   text-align: center;
 }
 

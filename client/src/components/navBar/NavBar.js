@@ -1,5 +1,4 @@
-import React, { Component, useState } from 'react';
-import navLinker from "../pageState/observer/navLinker";
+import React from 'react';
 import "./NavBar.css";
 
 var NavBar = ({visibleBlock}) => {
@@ -18,7 +17,6 @@ var NavBar = ({visibleBlock}) => {
           <NavBarEntry visibleBlock={visibleBlock} blockId="eventdate-block" text="Dates" />
           <NavBarEntry visibleBlock={visibleBlock} blockId="about-us-block" text="About" />
           <NavBarEntry visibleBlock={visibleBlock} blockId="faq-block" text="FAQ" />
-          <NavBarEntry visibleBlock={visibleBlock} blockId="register-block" text="Register" />
         </ul>
       </div>
     </nav>
