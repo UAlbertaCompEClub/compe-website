@@ -29,7 +29,7 @@ var EventDateBlock = React.forwardRef((props, ref) => {
           </ul>
         </h2>
         <h3 className='colored-text'>Note, students do NOT need to register to attend Career++. However, we will create an optional eventbrite in a bit so that we can collect resumes to share with any companies interested in them.
-        This info will be shared on our <a href="https://discord.gg/Dgd4hXA4eP" target="_blank" rel="noopener noreferrer">discord</a>- join if you haven't already! </h3>
+        This info will be shared on our <a href="https://discord.gg/Dgd4hXA4eP" target="_blank" rel="noopener noreferrer">discord</a> - join if you haven't already! </h3>
       </div>
     </div>
   )});

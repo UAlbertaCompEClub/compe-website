@@ -1,16 +1,23 @@
 {
     "General": {
-        "Where and when is Career++ happening?": "January 18 -19th. The remote aspect will occur on the 18th and the in-person (on the 19th) will - tentatively - be at Donadeo Innovation Center for Engineering at the University of Alberta North Campus",
-        "How will the remote aspect work": "TODO!!!",
-        "What will the in-person fair be like": "TODO!!!",
-        "Where can I ask additional questions?": "Please reach out to us at external@compeclub.com or on discord (students)!"
+        "Where and when is Career++ happening?": "January 18 - 19th. The remote aspect will occur on the 18th and the in-person (on the 19th) will - tentatively - be at Donadeo Innovation Center for Engineering at the University of Alberta North Campus",
+        "How will the remote aspect work?": "TODO!!!",
+        "What will the in-person fair be like?": "The in-person part will be like a traditional career fair where each company has its own booth (table size is around  72\" x 32\" and students walk around freely to network with companies of interest. Companies are encouraged to bring some form of promotional material to hand out to students!",
+        "Where can I ask additional questions?": "Please reach out to us at external@compeclub.com or on discord (students)!",
+        "Why is there a virtual and in-person element?": "We decided to add a new virtual aspect to make the career fair more accessible for companies and students outside of Edmonton and since we noticed the presentation sessions were a complete hit last year!",
+        "Can I only attend one or both aspects of the fair": "The virtual and in-person aspects do not overlap so that you can attend both if you choose! This is highly recommended for students since it's likely that companies will only be present for 1 of them.",
+        "Will there be food at the in-person event?": "There will only be food served for company representatives and volunteers.",
+        "Who is the intended audience for this event?": "This fair is meant for students interested in the tech field and companies hiring for tech roles like Software Developer, Data Scientist, ML Engineer and more - not restricted to Engineering or CS students or 'purely' tech companies."
     },
     "Companies/Orgs": {
         "How do I register and by when?": "You can register by reaching out to Umer at external@compeclub.com. The deadline is December 15th but the early pricing deadline is October 20th.",
         "What is the Cancellation Policy?": "Grace Period: full refund will be granted if written notification of cancellation is received via email within 48-hours of registration. Cancellations received after 5:00 PM (MT) on December 15th 2023 are ineligible for grace period. Cancellations made outside of the 48-hour grace period but before 5:00 PM (MST) on December 16th, 2022 will be charged a $100 cancellation fee to cover administration and processing costs. Cancellations made after 5:00 PM (MT) on December 15th, 2023 will be charged the full fee.",
         "How early should I show up to set up my booth for the in-person fair?": "Please plan to be there by 10:30 AM at the latest so that we can open the doors to students at 11 AM. You can also ship any marketing/promotional material in advance. Please let us know by December 15th if you need this.",
         "For when are students looking for a position?": "Most students will be looking for a Summer 2024 position (given when this event takes place) starting in May or June, however some students may be seeking a Fall 2024 internship or new grad position starting around May or September.",
-        "How many students can we expect to speak to?": "Last year (our first Career++ event), we had around 1000 participants, primarily Computer Science and Engineering students with a few visitors from NAIT and MacEwan! We expect similar numbers this year."
+        "How many students can we expect to speak to?": "Last year (our first Career++ event), we had around 1000 participants, primarily Computer Science and Engineering students with a few visitors from NAIT and MacEwan! We expect similar numbers this year.",
+        "How many representatives should we bring?": "The maximum number of reps allowed from each company is 4 for the physical portion and 6 for the virtual.",
+        "Can we access students' resumes in advance or after the event?": "Yes! We will collect resumes to share before the fair - please indicate your interest in this when/after registering",
+        "Are there other ways we can connect with students": "Yes! This year we are looking to do smaller-scale events with individual companies at a time to help promote your brand and raise student awareness of the current and future opportunities you offer. This could be focused on going over the application process and providing tips for it, an in-depth exploration of different roles available, or even a technical workshop to teach students a valuable skill. If this new event style is of interest, please let us know!"
     },
     "Students": {
         "Is there any cost for students?": "No, this is free for students to attend!",
@@ -21,7 +28,6 @@
         "Should I bring a physical copy of my resume?": "Most companies prefer students apply online to the job postings that they are interested in and will not accept physical resumes",
         "What companies are attending?": "Please check the companies tab for more details about which companies are attending closer to the event.",
         "Had a great career fair experience, what should you do next?": "Ask if you can connect with the recruiter/company rep on LinkedIn with a personal message. Visit the company website and peruse their job opportunities.",
-        "What time should we be there?": "Between 10 AM to 3 PM for the 18th (virtually!!) and 11 AM - 3 PM on the 19th (MST). A detailed schedule of the virtual program will be shared closer to.",
-        "Will there be food at this event?": "No, there will be no food served to the students at this event"
+        "What time should we be there?": "Between 10 AM to 3 PM for the 18th (virtually!!) and 11 AM - 3 PM on the 19th (MST). A detailed schedule of the virtual program will be shared closer to."
     }
 }
