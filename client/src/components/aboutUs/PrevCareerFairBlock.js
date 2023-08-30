@@ -24,7 +24,7 @@ const PrevCareerFairBlock = () => {
     <AutoplaySlider
       play={true}
       cancelOnInteraction={false} // should stop playing on user interaction
-      interval={6000}
+      interval={2000}
       style={carouselStyle()}
     >
       <div data-src={image1} />
