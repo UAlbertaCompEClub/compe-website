@@ -1,11 +1,11 @@
 import React from 'react';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import image1 from "./careerphotos/CompEClubFair1.jpg";
-import image2 from "./careerphotos/CompEClubFair2.jpg";
-import image3 from "./careerphotos/CompEClubFair3.jpg";
-import image4 from "./careerphotos/CompEClubFair4.jpg";
-import image5 from "./careerphotos/CompEClubFair5.jpg";
-import image6 from "./careerphotos/CompEClubFair6.jpg";
+import image1 from "./careerphotos/Career1.jpg";
+import image2 from "./careerphotos/Career2.jpg";
+import image3 from "./careerphotos/Career3.jpg";
+import image4 from "./careerphotos/Career4.jpg";
+import image5 from "./careerphotos/Career5.jpg";
+import image6 from "./careerphotos/Career6.jpg";
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 
