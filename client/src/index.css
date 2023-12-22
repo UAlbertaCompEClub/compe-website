@@ -13,9 +13,9 @@ code {
     monospace;
 }
 
-path {
+/* path {
   fill: linear-gradient(34deg, rgba(115, 0, 186, 1) 0%, rgba(245, 95, 255, 1) 100%);
-}
+} */
 
 .h1 .h2 .h3 .h4 .p {
   color: white;
