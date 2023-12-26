@@ -74,22 +74,24 @@ export default function EventCard({ event }) {
           >
             {event.description}
           </Typography>
-          <Link
-            sx={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              display: "block",
-              paddingLeft: "2rem",
-              fontSize: "18px",
-            }}
-            underline="none"
-            href={event.link}
-            target="_blank"
-            rel="noopener"
-          >
-            Event Website
-          </Link>
+          {event.link && (
+            <Link
+              sx={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                display: "block",
+                paddingLeft: "2rem",
+                fontSize: "18px",
+              }}
+              underline="none"
+              href={event.link}
+              target="_blank"
+              rel="noopener"
+            >
+              Event Website
+            </Link>
+          )}
         </CardContent>
       </CardActionArea>
     </Card>

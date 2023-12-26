@@ -5,9 +5,9 @@ import EventCard from "./EventCard";
 import events from "./events.json";
 import Typography from "@mui/material/Typography";
 
-const id = "event-block";
+const id = "events";
 
-var EventBlock = React.forwardRef((props, ref) => {
+const EventBlock = React.forwardRef((props, ref) => {
   useEffect(() => {
     navLinker(ref.current, props.setBlock, id);
   }, []);
@@ -20,13 +20,17 @@ var EventBlock = React.forwardRef((props, ref) => {
       <Typography gutterBottom variant="h5" component="div">
         We host everything from hackathons and career fairs to game nights!
       </Typography>
-      <Grid container spacing={6}>
+      <Grid container spacing={6} justifyContent="center" paddingY="1rem">
         {events.map((event) => (
           <Grid>
             <EventCard event={event} />
           </Grid>
         ))}
       </Grid>
+      <Typography gutterBottom variant="h5" component="div" marginTop="2rem">
+        Check out all our planned events in the calendar below!
+      </Typography>
+      {/* TODO: insert Google calendar component here*/}
     </div>
   );
 });

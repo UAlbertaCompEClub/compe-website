@@ -26,7 +26,7 @@ var NavBar = ({ visibleBlock }) => {
           />
           <NavBarEntry
             visibleBlock={visibleBlock}
-            blockId="event-block"
+            blockId="events"
             text="Events"
           />
           <NavBarEntry
