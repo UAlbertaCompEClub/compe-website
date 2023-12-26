@@ -10,7 +10,6 @@ const id = "event-block";
 var EventBlock = React.forwardRef((props, ref) => {
   useEffect(() => {
     navLinker(ref.current, props.setBlock, id);
-    console.log("fired");
   }, []);
 
   return (
