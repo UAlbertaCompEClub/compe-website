@@ -13,12 +13,10 @@ export default function EventCard({ event }) {
 
   const handleHover = () => {
     setIsHovered(true);
-    console.log("enter");
   };
 
   const handleLeave = () => {
     setIsHovered(false);
-    console.log("exit");
   };
 
   return (
@@ -27,7 +25,6 @@ export default function EventCard({ event }) {
         width: 400,
         height: 325,
         position: "relative",
-        transition: "height 0.3s ease-in-out",
         overflow: "hidden",
         backgroundColor: "#90A890",
       }}
@@ -37,8 +34,14 @@ export default function EventCard({ event }) {
         onMouseLeave={handleLeave}
         sx={{
           "&:hover": {
-            backgroundColor: "transparent",
-            opacity: 1,
+            backgroundColor: "inherit",
+            transition: "none",
+          },
+          "&:hover .MuiCardActionArea-focusHighlight": {
+            backgroundColor: "inherit",
+          },
+          "& .MuiTouchRipple-root": {
+            display: "none",
           },
         }}
       >
