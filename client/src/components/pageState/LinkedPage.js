@@ -4,7 +4,6 @@ import LandingBlock from "../landing/LandingBlock";
 import SocialsBlock from "../socialsBlock/SocialsBlock";
 import AboutUsBlock from "../aboutUs/AboutUsBlock";
 import PrevCareerFairBlock from "../aboutUs/PrevCareerFairBlock";
-import OverviewBlock from "../overviewBlock/OverviewBlock";
 import EventBlock from "../eventBlock/EventBlock";
 import FaqBlock from "../faqBlock/FaqBlock";
 
@@ -34,7 +33,6 @@ class LinkedPage extends Component {
           setBlock={this.setVisibleBlock}
           height={95}
         />
-        <OverviewBlock />
         <EventBlock
           ref={this.eventDatesBlockRef}
           setBlock={this.setVisibleBlock}
