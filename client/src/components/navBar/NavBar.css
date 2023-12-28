@@ -15,12 +15,14 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+  font-weight: bold;
 }
 
 .nav-items {
   padding: 0 1rem;
   list-style: none;
   text-align: center;
+  font-weight: 600;
 }
 
 .nav-item {
@@ -32,7 +34,7 @@
 }
 
 .nav-item-selected, .nav-item:hover {
-  color: rgb(225, 252, 193);
+  color: rgb(235, 251, 216);
   cursor: pointer;
 }
 
