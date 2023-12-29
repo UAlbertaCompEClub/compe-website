@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Career++",
+    "description": "Career++ is the first ever tech-focused career fair on campus. We launched in January 2023 with over 1000 attendees across all Edmonton post-secondary institutions.",
+    "img": "/images/career_plus_plus.svg",
+    "link": "https://careerplusplus.compeclub.com/"
+  },
+  {
+    "title": "HackED Beta",
+    "description": "HackEd Beta is 24 hour competition where students complete for prizes by creating either a software and/or hardware project in teams during Reading Week. This event is designed for beginner hackers!",
+    "img": "/images/hacked_beta.svg",
+    "link": "https://hackedbeta.compeclub.com/"
+  },
+  {
+    "title": "HackED",
+    "description": "Similar to HackEd Beta, HackEd is 24 hour competition where students complete for prizes by creating either a software and/or hardware project in January. This event is designed for hackers of all experience levels!",
+    "img": "/images/hacked.svg",
+    "link": "https://hacked.compeclub.com/"
+  },
+  {
+    "title": "ECE Grad",
+    "description": "Celebrate your freedom with your friends and classmates in the ECE Department! More details will be shared on discord closer to April. Proudly co-hosted with Electrical Engineering Club and Engineering Physics Club!",
+    "img": "/images/ece_grad.svg"
+  },
+  {
+    "title": "Geer Week",
+    "description": "Hosted by the ESS, GEER Week is a light-hearted, friendly competition between the discipline clubs in Engineering. Compete for the glory of our discipline by participating in various events such as Battle of the Bands, Movie Night, and more!"
+  },
+  {
+    "title": "General & Special AGM",
+    "description": "We have 2 AGMs every year to share our club's purpose and upcoming events as well as vote new executives. Junior positions are done in September (Special) and Senior are done in April (General). More info in Discord closer to - everyone interested in encouraged to run!"
+  }
+]
