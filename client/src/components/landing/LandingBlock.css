@@ -5,6 +5,7 @@
 
 .logo {
     width: 30%;
+    max-height: 35vh;
 }
 
 @media screen and (max-aspect-ratio: 6/5) {
