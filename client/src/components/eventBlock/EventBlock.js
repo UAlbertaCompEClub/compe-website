@@ -12,7 +12,7 @@ const id = "events";
 const EventBlock = React.forwardRef((props, ref) => {
   useEffect(() => {
     navLinker(ref.current, props.setBlock, id);
-  }, []);
+  }, [ref, props.setBlock]);
 
   return (
     <div className="block" id={id} ref={ref}>
@@ -23,8 +23,8 @@ const EventBlock = React.forwardRef((props, ref) => {
         We host everything from hackathons and career fairs to game nights!
       </Typography>
       <Grid container spacing={6} justifyContent="center" paddingY="1rem">
-        {events.map((event) => (
-          <Grid>
+        {events.map((event, idx) => (
+          <Grid key={idx}>
             <EventCard event={event} />
           </Grid>
         ))}

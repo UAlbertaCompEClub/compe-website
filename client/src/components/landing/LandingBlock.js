@@ -28,11 +28,12 @@ theme.typography.h5 = {
   },
 };
 
+const id = "landing";
+
 var LandingBlock = React.forwardRef((props, ref) => {
-  var id = "landing";
   useEffect(() => {
     navLinker(ref.current, props.setBlock, id);
-  }, []);
+  }, [ref, props.setBlock]);
 
   return (
     <div className="block" id={id} ref={ref}>

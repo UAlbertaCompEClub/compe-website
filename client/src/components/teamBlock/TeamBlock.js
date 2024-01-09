@@ -11,7 +11,7 @@ const id = "team";
 const TeamBlock = React.forwardRef((props, ref) => {
   useEffect(() => {
     navLinker(ref.current, props.setBlock, id);
-  }, []);
+  }, [ref, props.setBlock]);
 
   return (
     <div className="block" id={id} ref={ref}>
@@ -19,8 +19,8 @@ const TeamBlock = React.forwardRef((props, ref) => {
         Senior Executives
       </Typography>
       <Grid container spacing={6} justifyContent="center" paddingY="1rem">
-        {seniorExecs.map((teamMember) => (
-          <Grid>
+        {seniorExecs.map((teamMember, idx) => (
+          <Grid key={idx}>
             <TeamMemberCard teamMember={teamMember} />
           </Grid>
         ))}
@@ -29,8 +29,8 @@ const TeamBlock = React.forwardRef((props, ref) => {
         Junior Executives
       </Typography>
       <Grid container spacing={6} justifyContent="center" paddingY="1rem">
-        {juniorExecs.map((teamMember) => (
-          <Grid>
+        {juniorExecs.map((teamMember, idx) => (
+          <Grid key={idx}>
             <TeamMemberCard teamMember={teamMember} />
           </Grid>
         ))}

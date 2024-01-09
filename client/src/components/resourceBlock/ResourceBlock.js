@@ -7,7 +7,7 @@ const id = "resources";
 const ResourceBlock = React.forwardRef((props, ref) => {
   useEffect(() => {
     navLinker(ref.current, props.setBlock, id);
-  }, []);
+  }, [ref, props.setBlock]);
 
   const flexStyle = {
     fontSize: "22px",
@@ -54,15 +54,15 @@ const ResourceBlock = React.forwardRef((props, ref) => {
         <Grid item xs={12} md={8}>
           <Typography variant="body1" style={flexStyle}>
             Some key content includes:
-            <ul style={{ margin: "4px" }}>
-              <li>Internship/job board links</li>
-              <li>Interview prep resources</li>
-              <li>Resume making resources</li>
-              <li>Cool reads</li>
-              <li>Interesting hackathons to consider participating in</li>
-              <li>And more!</li>
-            </ul>
           </Typography>
+          <ul style={{ margin: "4px", ...flexStyle }}>
+            <li>Internship/job board links</li>
+            <li>Interview prep resources</li>
+            <li>Resume making resources</li>
+            <li>Cool reads</li>
+            <li>Interesting hackathons to consider participating in</li>
+            <li>And more!</li>
+          </ul>
         </Grid>
         <Grid
           item
