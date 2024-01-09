@@ -1,6 +1,6 @@
 .nav {
   top: 0px;
-  padding: 0.25rem 2rem;
+  padding: 0.25rem 0.5rem;
   background-color: #253E1E;
   position: sticky;
   z-index: 1000;
@@ -19,7 +19,7 @@
 }
 
 .nav-items {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   list-style: none;
   text-align: center;
   font-weight: 600;
@@ -51,11 +51,13 @@
 
 @media screen and (max-width: 800px)
 {
+  .nav {
+    justify-content: center;
+  }
   .nav-item:hover {
     text-underline-offset: 3px;
   }
-  .nav-items {
-    margin-left: 6vw;
-    margin-right: 6vw;
+  .nav-logo {
+    display: none;
   }
 }

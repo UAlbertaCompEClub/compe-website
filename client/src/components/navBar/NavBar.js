@@ -20,7 +20,7 @@ const NavBar = ({ visibleBlock }) => {
   return (
     <nav className="nav">
       <div className="nav-logo">
-        <img src="/compE.svg" width="36" alt="" />
+        <img src="/compE.svg" width="25" alt="" />
         Computer Engineering Club
       </div>
       <ul className="nav-items">
