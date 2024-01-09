@@ -29,7 +29,7 @@ theme.typography.h5 = {
 };
 
 var LandingBlock = React.forwardRef((props, ref) => {
-  var id = "landing-block";
+  var id = "landing";
   useEffect(() => {
     navLinker(ref.current, props.setBlock, id);
   }, []);
