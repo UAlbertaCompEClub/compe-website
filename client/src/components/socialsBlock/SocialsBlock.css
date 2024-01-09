@@ -1,14 +1,12 @@
 .footer-block {
-    background-color: #42654A;
+    background-color: #253E1E;
     display: flex;
-    padding: 7vh;
+    padding: 0.5rem;
     align-items: flex-start;
     height: auto;
-    border-top: 2px solid white;
 }
 
 .footer {
-    /* height: 10vh; */
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -45,6 +43,17 @@
     width: 35px;
     height: 35px;
     margin: 5px;
+}
+
+.highlighted:hover {
+  color: gray;
+  filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);
+  transform: scale(1.1);
+}
+
+.highlighted-text:hover {
+  filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);
+  text-decoration: underline;
 }
 
 @media screen and (max-aspect-ratio: 6/5)

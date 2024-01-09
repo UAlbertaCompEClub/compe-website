@@ -11,10 +11,6 @@ code {
     monospace;
 }
 
-/* path {
-  fill: linear-gradient(34deg, rgba(115, 0, 186, 1) 0%, rgba(245, 95, 255, 1) 100%);
-} */
-
 .h1 .h2 .h3 .h4 .p {
   color: white;
 }
@@ -25,13 +21,14 @@ code {
   margin-top: 0;
 }
 
+.block {
+  background-color: #42654A;
+  overflow: hidden;
+  padding: 4rem;
+}
 
-/* roboto-regular*/
-/* @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'),
-       url('./fonts/roboto.woff') format('woff'),
-       url('./fonts/roboto.woff2') format('woff2'); 
-} */
+@media screen and (max-aspect-ratio: 6/5) {
+  .block {
+    padding: 2rem;
+  }
+}

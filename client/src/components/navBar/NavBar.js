@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "@mui/material";
 import "./NavBar.css";
 
@@ -26,7 +25,7 @@ const NavBar = ({ visibleBlock }) => {
       <ul className="nav-items">
         <NavBarEntry
           visibleBlock={visibleBlock}
-          blockId="landing-block"
+          blockId="landing"
           text="HOME"
         />
         <NavBarEntry
@@ -36,12 +35,12 @@ const NavBar = ({ visibleBlock }) => {
         />
         <NavBarEntry
           visibleBlock={visibleBlock}
-          blockId="about-us-block"
+          blockId="resources"
           text="RESOURCES"
         />
         <NavBarEntry
           visibleBlock={visibleBlock}
-          blockId="faq-block"
+          blockId="team"
           text="OUR TEAM"
         />
       </ul>

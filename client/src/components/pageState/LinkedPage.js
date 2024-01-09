@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import NavBar from "../navBar/NavBar";
 import LandingBlock from "../landing/LandingBlock";
 import SocialsBlock from "../socialsBlock/SocialsBlock";
-import AboutUsBlock from "../aboutUs/AboutUsBlock";
-import PrevCareerFairBlock from "../aboutUs/PrevCareerFairBlock";
 import EventBlock from "../eventBlock/EventBlock";
+import TeamBlock from "../teamBlock/TeamBlock";
+import ResourceBlock from "../resourceBlock/ResourceBlock";
 
 class LinkedPage extends Component {
   constructor(props) {
     super(props);
-    this.myRef = React.createRef();
-    this.eventDatesBlockRef = React.createRef();
-    this.landingBlockRef = React.createRef();
-    this.aboutUsBlockRef = React.createRef();
+    this.homeRef = React.createRef();
+    this.eventsRef = React.createRef();
+    this.resourcesRef = React.createRef();
+    this.teamRef = React.createRef();
   }
 
   state = {
@@ -27,19 +27,16 @@ class LinkedPage extends Component {
       <>
         <NavBar visibleBlock={this.state.visibleBlock} />
         <LandingBlock
-          ref={this.landingBlockRef}
+          ref={this.homeRef}
           setBlock={this.setVisibleBlock}
           height={95}
         />
-        <EventBlock
-          ref={this.eventDatesBlockRef}
+        <EventBlock ref={this.eventsRef} setBlock={this.setVisibleBlock} />
+        <ResourceBlock
+          ref={this.resourcesRef}
           setBlock={this.setVisibleBlock}
         />
-        <AboutUsBlock
-          ref={this.aboutUsBlockRef}
-          setBlock={this.setVisibleBlock}
-        />
-        <PrevCareerFairBlock />
+        <TeamBlock ref={this.teamRef} setBlock={this.setVisibleBlock} />
         <SocialsBlock />
       </>
     );
