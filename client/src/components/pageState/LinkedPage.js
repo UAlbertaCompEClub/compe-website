@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import NavBar from "../navBar/NavBar";
 import LandingBlock from "../landing/LandingBlock";
 import SocialsBlock from "../socialsBlock/SocialsBlock";
-import AboutUsBlock from "../aboutUs/AboutUsBlock";
-import PrevCareerFairBlock from "../aboutUs/PrevCareerFairBlock";
 import EventBlock from "../eventBlock/EventBlock";
 import TeamBlock from "../teamBlock/TeamBlock";
 
@@ -36,11 +34,6 @@ class LinkedPage extends Component {
           ref={this.eventDatesBlockRef}
           setBlock={this.setVisibleBlock}
         />
-        <AboutUsBlock
-          ref={this.aboutUsBlockRef}
-          setBlock={this.setVisibleBlock}
-        />
-        <PrevCareerFairBlock />
         <TeamBlock ref={this.aboutUsBlockRef} setBlock={this.setVisibleBlock} />
         <SocialsBlock />
       </>

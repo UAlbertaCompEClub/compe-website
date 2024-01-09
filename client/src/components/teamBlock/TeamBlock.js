@@ -25,7 +25,7 @@ const TeamBlock = React.forwardRef((props, ref) => {
           </Grid>
         ))}
       </Grid>
-      <Typography gutterBottom variant="h3" component="div">
+      <Typography gutterBottom variant="h3" component="div" marginTop="2.5rem">
         Junior Executives
       </Typography>
       <Grid container spacing={6} justifyContent="center" paddingY="1rem">
