@@ -5,6 +5,7 @@ import SocialsBlock from "../socialsBlock/SocialsBlock";
 import AboutUsBlock from "../aboutUs/AboutUsBlock";
 import PrevCareerFairBlock from "../aboutUs/PrevCareerFairBlock";
 import EventBlock from "../eventBlock/EventBlock";
+import TeamBlock from "../teamBlock/TeamBlock";
 
 class LinkedPage extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class LinkedPage extends Component {
           setBlock={this.setVisibleBlock}
         />
         <PrevCareerFairBlock />
+        <TeamBlock ref={this.aboutUsBlockRef} setBlock={this.setVisibleBlock} />
         <SocialsBlock />
       </>
     );

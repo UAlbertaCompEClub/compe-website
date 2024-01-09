@@ -41,7 +41,7 @@ const NavBar = ({ visibleBlock }) => {
         />
         <NavBarEntry
           visibleBlock={visibleBlock}
-          blockId="faq-block"
+          blockId="team"
           text="OUR TEAM"
         />
       </ul>
