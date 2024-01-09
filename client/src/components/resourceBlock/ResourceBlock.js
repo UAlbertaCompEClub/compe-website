@@ -15,7 +15,7 @@ const ResourceBlock = React.forwardRef((props, ref) => {
   };
 
   const linkStyle = {
-    color: "#EBFBD8",
+    color: "#C36D59",
   };
 
   return (
@@ -31,7 +31,7 @@ const ResourceBlock = React.forwardRef((props, ref) => {
             industry as a whole. Check them out{" "}
             <Link
               sx={linkStyle}
-              underline="none"
+              underline="hover"
               href="https://github.com/UAlbertaCompEClub/CompE_Resources"
               target="_blank"
               rel="noopener"
@@ -80,7 +80,7 @@ const ResourceBlock = React.forwardRef((props, ref) => {
             experienced upper year students. Join our{" "}
             <Link
               sx={linkStyle}
-              underline="none"
+              underline="hover"
               href="https://discord.gg/Unr9cEVc4h"
               target="_blank"
               rel="noopener"
