@@ -22,7 +22,7 @@ const images = importAll(
 
 const PhotoGallery = () => {
   return (
-    <div className="block" style={{ justifyContent: "center" }}>
+    <div style={{ justifyContent: "center" }}>
       <AutoplaySlider
         play={true}
         cancelOnInteraction={false} // should stop playing on user interaction

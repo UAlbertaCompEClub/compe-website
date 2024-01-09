@@ -23,6 +23,13 @@ code {
 
 .block {
   background-color: #42654A;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #253E1E;
   overflow: hidden;
+  padding: 4rem;
+}
+
+@media screen and (max-aspect-ratio: 6/5) {
+  .block {
+    padding: 2rem;
+  }
 }

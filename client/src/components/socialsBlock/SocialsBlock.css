@@ -1,14 +1,12 @@
 .footer-block {
-    background-color: #42654A;
+    background-color: #253E1E;
     display: flex;
-    padding: 7vh;
+    padding: 0.5rem;
     align-items: flex-start;
     height: auto;
-    border-top: 2px solid white;
 }
 
 .footer {
-    /* height: 10vh; */
     display: flex;
     flex-direction: row;
     margin: auto;
