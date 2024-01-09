@@ -47,6 +47,17 @@
     margin: 5px;
 }
 
+.highlighted:hover {
+  color: gray;
+  filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);
+  transform: scale(1.1);
+}
+
+.highlighted-text:hover {
+  filter: invert(48%) sepia(6%) saturate(6%) hue-rotate(329deg) brightness(102%) contrast(89%);
+  text-decoration: underline;
+}
+
 @media screen and (max-aspect-ratio: 6/5)
 {
     .divider, .unecessary-footer-text {

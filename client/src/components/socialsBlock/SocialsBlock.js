@@ -1,4 +1,3 @@
-import "../Block.css";
 import "./SocialsBlock.css";
 
 function SocialsBlock() {

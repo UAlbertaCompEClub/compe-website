@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import path from 'path';
-import LinkedPage from './components/pageState/LinkedPage';
+import React, { Component } from "react";
+import LinkedPage from "./components/pageState/LinkedPage";
 
 class App extends Component {
   render() {
@@ -8,9 +7,8 @@ class App extends Component {
       <div className="App">
         <LinkedPage />
       </div>
-    )
-  };
-
+    );
+  }
 }
 
 export default App;
