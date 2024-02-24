@@ -27,6 +27,7 @@
 
 .nav-item {
   display: inline-block;
+  color: white;
 }
 
 .nav-item:not(:first-child) {

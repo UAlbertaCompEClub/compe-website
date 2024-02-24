@@ -26,11 +26,7 @@ class LinkedPage extends Component {
     return (
       <>
         <NavBar visibleBlock={this.state.visibleBlock} />
-        <LandingBlock
-          ref={this.homeRef}
-          setBlock={this.setVisibleBlock}
-          height={95}
-        />
+        <LandingBlock ref={this.homeRef} setBlock={this.setVisibleBlock} />
         <EventBlock ref={this.eventsRef} setBlock={this.setVisibleBlock} />
         <ResourceBlock
           ref={this.resourcesRef}
