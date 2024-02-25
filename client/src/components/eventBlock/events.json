@@ -24,10 +24,12 @@
   },
   {
     "title": "Geer Week",
-    "description": "Hosted by the ESS, GEER Week is a light-hearted, friendly competition between the discipline clubs in Engineering. Compete for the glory of our discipline by participating in various events such as Battle of the Bands, Movie Night, and more!"
+    "description": "Hosted by the ESS, GEER Week is a light-hearted, friendly competition between the discipline clubs in Engineering. Compete for the glory of our discipline by participating in various events such as Battle of the Bands, Movie Night, and more!",
+    "img": "/images/events/geer_week.svg"
   },
   {
     "title": "General & Special AGM",
-    "description": "We have 2 AGMs every year to share our club's purpose and upcoming events as well as vote new executives. Junior positions are done in September (Special) and Senior are done in April (General). More info in Discord closer to - everyone interested in encouraged to run!"
+    "description": "We have 2 AGMs every year to share our club's purpose and upcoming events as well as vote new executives. Junior positions are done in September (Special) and Senior are done in April (General). More info in Discord closer to - everyone interested in encouraged to run!",
+    "img": "/images/events/agm.svg"
   }
 ]
