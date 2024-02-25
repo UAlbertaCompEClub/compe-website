@@ -22,10 +22,18 @@ const EventBlock = React.forwardRef((props, ref) => {
       <Typography gutterBottom variant="h5" component="div">
         We host everything from hackathons and career fairs to game nights!
       </Typography>
-      <Grid container spacing={6} justifyContent="center" paddingY="1rem">
+      <Grid
+        container
+        spacing={6}
+        justifyContent="center"
+        paddingY="1rem"
+        columns={3}
+      >
         {events.map((event, idx) => (
-          <Grid key={idx}>
-            <EventCard event={event} />
+          <Grid key={idx} xl={1}>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <EventCard event={event} />
+            </div>
           </Grid>
         ))}
       </Grid>
