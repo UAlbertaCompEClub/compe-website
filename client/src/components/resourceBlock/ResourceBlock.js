@@ -4,19 +4,26 @@ import { Link, Grid, Typography } from "@mui/material";
 
 const id = "resources";
 
+const flexStyle = {
+  fontSize: "22px",
+  marginBottom: "1rem",
+};
+
+const linkStyle = {
+  color: "#C36D59",
+};
+
+const textBgStyle = {
+  backgroundColor: "#253E1E",
+  borderRadius: "8px",
+  fontSize: "22px",
+  paddingInline: "1rem",
+};
+
 const ResourceBlock = React.forwardRef((props, ref) => {
   useEffect(() => {
     navLinker(ref.current, props.setBlock, id);
   }, [ref, props.setBlock]);
-
-  const flexStyle = {
-    fontSize: "22px",
-    marginBottom: "2rem",
-  };
-
-  const linkStyle = {
-    color: "#C36D59",
-  };
 
   return (
     <div className="block" id={id} ref={ref}>
@@ -24,8 +31,8 @@ const ResourceBlock = React.forwardRef((props, ref) => {
         Resources
       </Typography>
       <Grid container spacing={2} alignItems="center">
-        <Grid item xs={12} md={8}>
-          <Typography variant="body1" style={flexStyle}>
+        <Grid item xs={12} md={8} style={textBgStyle}>
+          <Typography style={flexStyle}>
             Over the years, our club has compiled resources for CompE Students
             to foster a positive community and uncover the black box of the tech
             industry as a whole. Check them out{" "}
@@ -51,11 +58,11 @@ const ResourceBlock = React.forwardRef((props, ref) => {
         </Grid>
       </Grid>
       <Grid container spacing={2} alignItems="center">
-        <Grid item xs={12} md={8}>
-          <Typography variant="body1" style={flexStyle}>
+        <Grid item xs={12} md={8} style={textBgStyle}>
+          <Typography style={{ ...flexStyle, marginBottom: 6 }}>
             Some key content includes:
           </Typography>
-          <ul style={{ margin: "4px", ...flexStyle }}>
+          <ul style={{ ...flexStyle, marginTop: 0 }}>
             <li>Internship/job board links</li>
             <li>Interview prep resources</li>
             <li>Resume making resources</li>
@@ -74,7 +81,7 @@ const ResourceBlock = React.forwardRef((props, ref) => {
         </Grid>
       </Grid>
       <Grid container spacing={2} alignItems="center">
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={8} style={textBgStyle}>
           <Typography variant="body1" style={flexStyle}>
             Also, our club offers resume reviews throughout the year from
             experienced upper year students. Join our{" "}
