@@ -22,10 +22,18 @@ const EventBlock = React.forwardRef((props, ref) => {
       <Typography gutterBottom variant="h5" component="div">
         We host everything from hackathons and career fairs to game nights!
       </Typography>
-      <Grid container spacing={6} justifyContent="center" paddingY="1rem">
+      <Grid
+        container
+        spacing={6}
+        justifyContent="center"
+        paddingY="1rem"
+        columns={3}
+      >
         {events.map((event, idx) => (
-          <Grid key={idx}>
-            <EventCard event={event} />
+          <Grid key={idx} xl={1}>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <EventCard event={event} />
+            </div>
           </Grid>
         ))}
       </Grid>
@@ -44,7 +52,7 @@ const EventBlock = React.forwardRef((props, ref) => {
         <iframe
           title="CompE Club Event Calendar"
           src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FEdmonton&title=CompE%20Club%202023%2F24%20Events&src=Y185OTBkNDAwODcwZGI1ZWMxYmY3MTI2N2VjYzcyYzMyYzI3NTA3NjZiOTk1ZmFjY2M2ZjczZWI3ZmE4Y2RjZTQ2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237CB342"
-          style={{ width: "100%", height: "600px" }}
+          style={{ width: "100%", height: "600px", background: "white" }}
         ></iframe>
       </Paper>
       <Typography gutterBottom variant="h5" component="div" color={"white"}>
