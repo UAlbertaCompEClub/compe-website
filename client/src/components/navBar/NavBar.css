@@ -45,7 +45,7 @@
 .anchor-base:focus,
 .anchor-base:active {
   text-decoration: none !important;
-  color: inherit;
+  color: inherit !important;
   outline: 0;
   cursor: pointer;
 }
