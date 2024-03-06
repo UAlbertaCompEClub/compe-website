@@ -43,7 +43,12 @@ export default function EventCard({ event }) {
           },
         }}
       >
-        <CardMedia component="img" image={event.img} alt={event.title} />
+        <CardMedia
+          component="img"
+          loading="lazy"
+          image={event.img}
+          alt={event.title}
+        />
         <CardContent
           sx={{
             padding: 0,

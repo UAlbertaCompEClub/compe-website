@@ -51,6 +51,7 @@ const EventBlock = React.forwardRef((props, ref) => {
         </Typography>
         <iframe
           title="CompE Club Event Calendar"
+          loading="lazy"
           src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FEdmonton&title=CompE%20Club%202023%2F24%20Events&src=Y185OTBkNDAwODcwZGI1ZWMxYmY3MTI2N2VjYzcyYzMyYzI3NTA3NjZiOTk1ZmFjY2M2ZjczZWI3ZmE4Y2RjZTQ2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237CB342"
           style={{ width: "100%", height: "600px", background: "white" }}
         ></iframe>
