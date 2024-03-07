@@ -76,7 +76,7 @@ export default function EventCard({ event }) {
             component="div"
             paddingBlock="1rem"
             paddingInline="1.5rem"
-            fontSize="18px"
+            fontSize="16px"
             fontWeight="bold"
           >
             {event.description}
@@ -88,7 +88,7 @@ export default function EventCard({ event }) {
                 bottom: "1rem",
                 left: "1.5rem",
                 display: "block",
-                fontSize: "18px",
+                fontSize: "16px",
               }}
               underline="none"
               href={event.link}
