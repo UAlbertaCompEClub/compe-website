@@ -12,6 +12,7 @@ export default function TeamMemberCard({ teamMember }) {
       <CardMedia
         sx={{ height: 300 }}
         component="img"
+        loading="lazy"
         image={teamMember.img}
         alt={`${teamMember.name}'s Photo`}
       />

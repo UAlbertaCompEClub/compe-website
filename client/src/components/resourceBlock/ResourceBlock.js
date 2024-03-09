@@ -54,7 +54,7 @@ const ResourceBlock = React.forwardRef((props, ref) => {
           md={4}
           sx={{ display: "flex", justifyContent: "center" }}
         >
-          <img src="/images/resources/community.svg" alt="" />
+          <img loading="lazy" src="/images/resources/community.svg" alt="" />
         </Grid>
       </Grid>
       <Grid container spacing={2} alignItems="center">
@@ -77,7 +77,7 @@ const ResourceBlock = React.forwardRef((props, ref) => {
           md={4}
           sx={{ display: "flex", justifyContent: "center" }}
         >
-          <img src="/images/resources/interview.svg" alt="" />
+          <img loading="lazy" src="/images/resources/interview.svg" alt="" />
         </Grid>
       </Grid>
       <Grid container spacing={2} alignItems="center">
@@ -115,7 +115,11 @@ const ResourceBlock = React.forwardRef((props, ref) => {
           md={4}
           sx={{ display: "flex", justifyContent: "center" }}
         >
-          <img src="/images/resources/resume-review.svg" alt="" />
+          <img
+            loading="lazy"
+            src="/images/resources/resume-review.svg"
+            alt=""
+          />
         </Grid>
       </Grid>
     </div>
