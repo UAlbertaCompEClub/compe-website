@@ -1,37 +1,52 @@
 [
   {
-    "name": "Ethan Franz",
-    "role": "Co-President",
-    "img": "/images/teamMembers/ethan.jpeg"
-  },
-  {
-    "name": "Eric Khumbata",
-    "role": "Co-President",
-    "img": "/images/teamMembers/eric.jpg"
-  },
-  {
-    "name": "Rachel Ellis",
-    "role": "Co-VP Internal",
-    "img": "/images/teamMembers/rachel.jpeg"
-  },
-  {
-    "name": "Anushka Khare",
-    "role": "Co-VP Internal",
-    "img": "/images/teamMembers/anushka.jpg"
-  },
-  {
-    "name": "Umer Fiaz",
-    "role": "VP External",
-    "img": "/images/teamMembers/umer.jpg"
-  },
-  {
     "name": "Ruchali Aery",
-    "role": "Co-VP Social",
+    "role": "Co-President",
     "img": "/images/teamMembers/ruchali.jpg"
   },
   {
-    "name": "Basia Ofovwe",
+    "name": "Umer Fiaz",
+    "role": "Co-President",
+    "img": "/images/teamMembers/umer.jpg"
+  },
+  {
+    "name": "Rachel Ellis",
     "role": "VP Finance",
-    "img": "/images/teamMembers/basia.jpg"
+    "img": "/images/teamMembers/rachel.jpeg"
+  },
+  {
+    "name": "Ayesha Aamer",
+    "role": "Director of Hackathon",
+    "img": "/images/teamMembers/ayesha.jpg"
+  },
+  {
+    "name": "Abs Salim",
+    "role": "VP Imternal",
+    "img": "/images/teamMembers/abs.jpg"
+  },
+  {
+    "name": "Shaheer Khan",
+    "role": "Co-VP External",
+    "img": "/images/teamMembers/shaheer.jpg"
+  },
+  {
+    "name": "David Urschel",
+    "role": "Co-VP External",
+    "img": "/images/teamMembers/david.jpg"
+  },
+  {
+    "name": "Katharine Zhong",
+    "role": "VP Social",
+    "img": "/images/teamMembers/katharine.jpg"
+  },
+  {
+    "name": "Ying Wan",
+    "role": "Co-VP Academic",
+    "img": "/images/teamMembers/ying.jpg"
+  },
+  {
+    "name": "Simon Marcotte",
+    "role": "Co-VP Academic",
+    "img": "/images/teamMembers/simon.jpg"
   }
 ]

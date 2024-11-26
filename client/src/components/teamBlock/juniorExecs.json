@@ -1,27 +1,3 @@
 [
-  {
-    "name": "Jacob Feng",
-    "role": "Upper Year Rep",
-    "img": "/images/teamMembers/jacob.jpg"
-  },
-  {
-    "name": "Owen Cooke",
-    "role": "Upper Year Rep",
-    "img": "/images/teamMembers/owen.jpg"
-  },
-  {
-    "name": "Diyaa Yadav",
-    "role": "3rd Year Rep",
-    "img": "/images/teamMembers/diyaa.jpg"
-  },
-  {
-    "name": "Zhouyi Yu",
-    "role": "2nd Year Rep",
-    "img": "/images/teamMembers/zhouyi.jpg"
-  },
-  {
-    "name": "Francis Doll",
-    "role": "Geer Week Rep",
-    "img": "/images/teamMembers/francis.jpg"
-  }
+  
 ]
