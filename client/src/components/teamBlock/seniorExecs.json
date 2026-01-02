@@ -5,19 +5,24 @@
     "img": "/images/teamMembers/ruchali.jpg"
   },
   {
-    "name": "Umer Fiaz",
+    "name": "Ryan Genereux",
     "role": "Co-President",
-    "img": "/images/teamMembers/umer.jpg"
+    "img": "/images/teamMembers/Ryan.jpg"
   },
   {
-    "name": "Rachel Ellis",
-    "role": "VP Finance",
-    "img": "/images/teamMembers/rachel.jpeg"
+    "name": "Prisha Sathya",
+    "role": "Co-VP Finance",
+    "img": "/images/teamMembers/Prisha.jpg"
   },
   {
-    "name": "Ayesha Aamer",
+    "name": "Mokshada Seeballuck",
+    "role": "Co-VP Finance",
+    "img": "/images/teamMembers/Mokshada.jpg"
+  },
+  {
+    "name": "Sahibjot Singh",
     "role": "Director of Hackathon",
-    "img": "/images/teamMembers/ayesha.jpg"
+    "img": "/images/teamMembers/Sahib.png"
   },
   {
     "name": "Abs Salim",
@@ -25,28 +30,23 @@
     "img": "/images/teamMembers/abs.jpg"
   },
   {
-    "name": "Shaheer Khan",
-    "role": "Co-VP External",
-    "img": "/images/teamMembers/shaheer.jpg"
+    "name": "Suvir Duggal",
+    "role": "VP External",
+    "img": "/images/teamMembers/Suvir.png"
   },
   {
-    "name": "David Urschel",
-    "role": "Co-VP External",
-    "img": "/images/teamMembers/david.jpg"
+    "name": "Avighna Cherkupalli",
+    "role": "Co-VP Social",
+    "img": "/images/teamMembers/Avighna.jpg"
   },
   {
-    "name": "Katharine Zhong",
-    "role": "VP Social",
-    "img": "/images/teamMembers/katharine.jpg"
+    "name": "Manya Dawar",
+    "role": "Co-VP Social",
+    "img": "/images/teamMembers/Manya.jpg"
   },
   {
-    "name": "Ying Wan",
-    "role": "Co-VP Academic",
-    "img": "/images/teamMembers/ying.jpg"
-  },
-  {
-    "name": "Simon Marcotte",
-    "role": "Co-VP Academic",
-    "img": "/images/teamMembers/simon.jpg"
+    "name": "Raphael Ramos",
+    "role": "VP Academic",
+    "img": "/images/teamMembers/Raphael.jpg"
   }
 ]
