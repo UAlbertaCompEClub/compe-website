@@ -1,48 +1,52 @@
 [
   {
-    "name": "Ruchali Aery",
-    "role": "Co-President",
-    "img": "/images/teamMembers/ruchali.jpg"
-  },
-  {
-    "name": "Ryan Genereux",
-    "role": "Co-President",
-    "img": "/images/teamMembers/Ryan.jpg"
-  },
-  {
     "name": "Prisha Sathya",
-    "role": "Co-VP Finance",
+    "role": "Co-President",
     "img": "/images/teamMembers/Prisha.jpg"
   },
   {
     "name": "Mokshada Seeballuck",
+    "role": "Co-President",
+    "img": "/images/teamMembers/Mokshada.jpg"
+  },
+  {
+    "name": "Rayner Dcunha",
+    "role": "Co-VP Finance",
+    "img": "/images/teamMembers/Prisha.jpg"
+  },
+  {
+    "name": "Aymaan Khan",
     "role": "Co-VP Finance",
     "img": "/images/teamMembers/Mokshada.jpg"
   },
   {
-    "name": "Sahibjot Singh",
+    "name": "Panagiotis Dravilas",
     "role": "Director of Hackathon",
-    "img": "/images/teamMembers/Sahib.png"
+    "img": "/images/teamMembers/Panagiotis.png"
   },
   {
-    "name": "Abs Salim",
-    "role": "VP Internal",
+    "name": "Brandon Mendez",
+    "role": "Co-VP Internal",
     "img": "/images/teamMembers/abs.jpg"
   },
   {
-    "name": "Suvir Duggal",
-    "role": "VP External",
-    "img": "/images/teamMembers/Suvir.png"
+    "name": "Sam Gillies",
+    "role": "Co-VP Internal",
+    "img": "/images/teamMembers/abs.jpg"
   },
-
   {
-    "name": "Manya Dawar",
-    "role": "Co-VP Social",
+    "name": "Oghenekaro Egbevurie",
+    "role": "VP External",
+    "img": "/images/teamMembers/Karo.jpg"
+  },
+  {
+    "name": "Samridh Singh Mahal",
+    "role": "VP Social",
     "img": "/images/teamMembers/Manya.jpg"
   },
   {
-    "name": "Raphael Ramos",
+    "name": "Krish Tiwari",
     "role": "VP Academic",
-    "img": "/images/teamMembers/Raphael.jpg"
+    "img": "/images/teamMembers/Krish.png"
   }
 ]
