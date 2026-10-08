@@ -1,0 +1,213 @@
+/* ---------- event bands ---------- */
+
+.event-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--text);
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) 280px;
+  gap: 32px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.event__when {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  padding-top: 7px;
+}
+
+.event__date {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.event__date--dated {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pill--open {
+  background: var(--ember);
+  color: var(--on-ember);
+}
+
+.pill--soon {
+  background: var(--gold);
+  color: var(--on-gold);
+}
+
+.pill--closed {
+  border: 1px solid var(--line);
+  color: var(--text-2);
+}
+
+.event__title {
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.event__blurb {
+  max-width: 62ch;
+  margin-top: 10px;
+  color: var(--text-2);
+}
+
+.event__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 12px;
+  font-size: 14.5px;
+}
+
+.event__venue {
+  color: var(--text-2);
+}
+
+.event__meta a {
+  font-weight: 600;
+}
+
+.event__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 800 / 545;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--paper-2);
+}
+
+.event-list__empty {
+  padding: 28px 0;
+  border-top: 2px solid var(--text);
+  color: var(--text-2);
+}
+
+@media (max-width: 900px) {
+  .event {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 14px 24px;
+  }
+
+  .event__when {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .event {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .event__photo {
+    order: -1;
+  }
+}
+
+/* ---------- calendar ---------- */
+
+.calendar {
+  margin-top: 64px;
+}
+
+.calendar__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.calendar__head .subhead {
+  margin: 0;
+}
+
+.calendar__details summary {
+  padding: 8px 0;
+  color: var(--link);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.calendar__details iframe {
+  display: block;
+  width: 100%;
+  height: 600px;
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* ---------- gallery ---------- */
+
+.gallery {
+  margin-top: 64px;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--paper-2);
+}
+
+/* The first photo fills a 2 x 2 area; it's positioned so it never stretches the rows. */
+.gallery__item--lead {
+  position: relative;
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery__item--lead img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+@media (max-width: 720px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery__item--lead {
+    position: static;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .gallery__item--lead img {
+    position: static;
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+}

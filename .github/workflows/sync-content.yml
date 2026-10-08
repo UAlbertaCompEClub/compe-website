@@ -1,0 +1,54 @@
+name: Sync website content from Google Drive
+
+on:
+  # "Website → Publish now" in the content Sheet sends this event.
+  repository_dispatch:
+    types: [content-publish]
+  # Manual run from the Actions tab.
+  workflow_dispatch:
+  # Safety net for edits nobody published: 03:00 Edmonton time (09:00 UTC).
+  schedule:
+    - cron: "0 9 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: sync/package-lock.json
+
+      - name: Install sync dependencies
+        run: npm ci
+        working-directory: sync
+
+      - name: Pull and check content
+        run: node src/index.mjs --source google
+        working-directory: sync
+        env:
+          SHEET_ID: ${{ secrets.CONTENT_SHEET_ID }}
+          DRIVE_FOLDER_ID: ${{ secrets.CONTENT_DRIVE_FOLDER_ID }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+
+      - name: Commit content changes
+        run: |
+          git add client/src/data client/public/images/content sync/image-manifest.json
+          if git diff --cached --quiet; then
+            echo "Content is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Sync content from Google Drive"
+          git push

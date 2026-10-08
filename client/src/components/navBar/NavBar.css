@@ -1,64 +1,102 @@
 .nav {
-  top: 0px;
-  padding: 0.25rem 0.5rem;
-  background-color: #253E1E;
   position: sticky;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(13, 31, 16, 0.94);
+  border-bottom: 1px solid var(--line-dark);
+  color: var(--on-dark);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
-.nav-logo {
+.nav__inner {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  font-weight: bold;
+  gap: 24px;
+  height: 100%;
 }
 
-.nav-items {
-  padding: 0 0.5rem;
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--on-dark);
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav__menu {
+  margin-left: auto;
+  min-width: 0;
+}
+
+.nav__links {
+  display: flex;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  text-align: center;
-  font-weight: 600;
 }
 
-.nav-item {
-  display: inline-block;
-  color: white;
+.nav__link {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--on-dark-2);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease;
 }
 
-.nav-item:not(:first-child) {
-  margin-left: 3vw;
+.nav__link:hover,
+.nav__link[aria-current] {
+  color: var(--on-dark);
 }
 
-.nav-item-selected, .nav-item:hover {
-  color: rgb(235, 251, 216);
-  cursor: pointer;
+.nav__link[aria-current] {
+  box-shadow: inset 0 -2px 0 var(--ember);
+  border-radius: 6px 6px 0 0;
 }
 
-.anchor-base,
-.anchor-base:hover,
-.anchor-base:visited,
-.anchor-base:focus,
-.anchor-base:active {
-  text-decoration: none !important;
-  color: inherit !important;
-  outline: 0;
-  cursor: pointer;
+.nav__cta {
+  padding: 8px 14px;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
-@media screen and (max-width: 800px)
-{
-  .nav {
-    justify-content: center;
+@media (max-width: 880px) {
+  .nav__brand span {
+    display: none;
   }
-  .nav-item:hover {
-    text-underline-offset: 3px;
+
+  .nav__inner {
+    gap: 12px;
   }
-  .nav-logo {
+}
+
+@media (max-width: 560px) {
+  .nav__menu {
+    flex: 1;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav__menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav__link {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .nav__cta {
     display: none;
   }
 }

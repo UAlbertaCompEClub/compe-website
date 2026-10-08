@@ -1,20 +1,260 @@
-.typing {
-    font-size: 1.6rem;
-    height: 100px;
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0 104px;
 }
 
-.logo {
-    width: 30%;
-    max-height: 35vh;
+/* ---------- circuit traces ---------- */
+
+/* The traces stay hidden over the text column and fade in just past its right edge, so lines and
+   nodes beyond the text show at full colour. --text-edge = centred wrap offset + wrap padding (24px)
+   + the widest text line (the about paragraph, ~640px). The wrap only starts centring above 1120px.
+   No max() here: CRA 4's CSS minifier (postcss-calc) fails to parse max() inside calc(). */
+.hero__traces {
+  --text-edge: 664px;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent var(--text-edge),
+    #000 calc(var(--text-edge) + 160px)
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent var(--text-edge),
+    #000 calc(var(--text-edge) + 160px)
+  );
 }
 
-@media screen and (max-aspect-ratio: 6/5) {
-    .typing {
-        font-size: 1.2rem;
-        height: 120px;
-    }
-    .logo {
-        display: none;
-    }
+@media (min-width: 1120px) {
+  .hero__traces {
+    --text-edge: calc((100% - 1120px) / 2 + 664px);
+  }
 }
- 
+
+/* One colour per trace, shared by its line and its node. --trace-lit is the slightly lighter
+   shade a node takes while the pulse passes it. */
+.hero__circuit--a,
+.hero__circuit--b {
+  --trace: #416b46;
+  --trace-lit: #6ca774;
+}
+
+.hero__circuit--c {
+  --trace: #2f5535;
+  --trace-lit: #3b6641;
+}
+
+/* Pulses start after the draw-on finishes, one trace after another. */
+.hero__circuit--a {
+  --pulse-delay: 1.1s;
+}
+
+.hero__circuit--b {
+  --pulse-delay: 1.9s;
+}
+
+.hero__circuit--c {
+  --pulse-delay: 2.7s;
+}
+
+.hero__trace {
+  fill: none;
+  stroke: var(--trace);
+  stroke-width: 3;
+}
+
+.hero__trace--draw {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: hero-trace-draw 1.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
+}
+
+.hero__circuit--b .hero__trace--draw {
+  animation-delay: 0.45s;
+}
+
+@keyframes hero-trace-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* A faint segment that travels the whole trace. pathLength="100" on the element makes the dash
+   units a percentage of the trace, so every trace takes the same time. At rest (offset 14) the
+   segment sits before the start of the path and is invisible. */
+.hero__pulse {
+  fill: none;
+  stroke: var(--sage);
+  stroke-opacity: 0.22;
+  stroke-width: 3;
+  stroke-dasharray: 14 100;
+  stroke-dashoffset: 14;
+  animation: hero-pulse 4.8s linear var(--pulse-delay) infinite;
+}
+
+@keyframes hero-pulse {
+  0% {
+    stroke-dashoffset: 14;
+  }
+  55%,
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+/* Each node sits about 70% along its trace, so the pulse passes it at ~33-40% of the cycle.
+   The node only lightens a shade; its size never changes. */
+.hero__node {
+  fill: var(--trace);
+  animation: hero-node 4.8s ease-in-out var(--pulse-delay) infinite;
+}
+
+@keyframes hero-node {
+  0%,
+  28%,
+  48%,
+  100% {
+    fill: var(--trace);
+  }
+  37% {
+    fill: var(--trace-lit);
+  }
+}
+
+/* ---------- text ---------- */
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__eyebrow {
+  color: var(--sage);
+}
+
+.hero__title {
+  max-width: 12ch;
+  font-size: clamp(44px, 8vw, 84px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.hero__mission {
+  display: grid;
+  gap: 6px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+  color: var(--mist);
+}
+
+.hero__mission li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.hero__mission li::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  background: var(--ember);
+  transform: translateY(-2px);
+}
+
+.hero__about {
+  max-width: 62ch;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--on-dark-2);
+}
+
+.hero__next {
+  display: inline-flex;
+  align-items: stretch;
+  margin-top: 32px;
+  overflow: hidden;
+  border: 1px solid #3c6141;
+  border-radius: 8px;
+  color: var(--on-dark);
+  text-decoration: none;
+}
+
+.hero__next:hover {
+  border-color: var(--sage);
+}
+
+.hero__when {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  background: var(--ember);
+  color: var(--on-ember);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero__what {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  font-size: 15px;
+}
+
+.hero__what span {
+  color: var(--on-dark-2);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+/* Below 1000px the text takes most of the width and there's no room past it, so the traces
+   become faint texture behind the text instead. */
+@media (max-width: 1000px) {
+  .hero__traces {
+    opacity: 0.2;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: 64px 0 72px;
+  }
+
+  .hero__mission {
+    font-size: 16.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__trace--draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .hero__pulse {
+    display: none;
+  }
+
+  .hero__node {
+    animation: none;
+  }
+}

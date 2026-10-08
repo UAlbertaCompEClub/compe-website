@@ -1,34 +1,237 @@
-body, input[type="text"] {
-  color: white;
+/* Design tokens from the CompE Club direction deck. Component styles use these, never raw hex. */
+:root {
+  --ink: #0d1f10;
+  --bark: #1a3a1d;
+  --moss: #3f5f42;
+  --sage: #9cbe9a;
+  --mist: #cbdec8;
+  --paper: #f1f4ee;
+  --paper-2: #e6ece2;
+  --ember: #BA0079;
+  --ember-hover: #cc5ca5;
+  --gold: #c9a227;
+
+  /* Text and lines on paper */
+  --text: #15301a;
+  --text-2: #4e6752;
+  --link: #2f5a34;
+  --line: #d3ddcf;
+
+  /* Text and lines on ink */
+  --on-dark: #f1f4ee;
+  --on-dark-2: #a3bba2;
+  --line-dark: #2a4a30;
+
+  /* Text on filled accents */
+  --on-ember: #f9f3f1;
+  --on-gold: #1a1405;
+
+  --display: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --serif: "IBM Plex Serif", Georgia, serif;
+
+  --nav-h: 64px;
+  --wrap: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+}
+
+body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: 'Roboto Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.h1 .h2 .h3 .h4 .p {
-  color: white;
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
-.heading {
-  font-size: 40pt;
-  color: white;
-  margin-top: 0;
+p {
+  margin: 0;
 }
+
+a {
+  color: var(--link);
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 200;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--ember);
+  color: var(--on-ember);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- sections ---------- */
 
 .block {
-  background-color: #42654A;
-  overflow: hidden;
-  padding: 4rem;
+  padding: 88px 0;
 }
 
-@media screen and (max-aspect-ratio: 6/5) {
+.block--tint {
+  background: var(--paper-2);
+}
+
+.block--dark {
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.section-head {
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+
+.section-head h2 {
+  font-size: clamp(30px, 4.2vw, 44px);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.section-head .lede {
+  max-width: 60ch;
+  margin-top: 14px;
+  font-size: 17px;
+  color: var(--text-2);
+}
+
+.subhead {
+  margin: 56px 0 18px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ---------- controls ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn--ember {
+  background: var(--ember);
+  color: var(--on-ember);
+}
+
+.btn--ember:hover {
+  background: var(--ember-hover);
+}
+
+.btn--moss {
+  background: var(--moss);
+  color: var(--paper);
+}
+
+.btn--moss:hover {
+  background: var(--bark);
+}
+
+.btn--ghost-dark {
+  border-color: #3c6141;
+  color: var(--on-dark);
+}
+
+.btn--ghost-dark:hover {
+  border-color: var(--sage);
+}
+
+.pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
   .block {
-    padding: 2rem;
+    padding: 64px 0;
+  }
+
+  .wrap {
+    padding: 0 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

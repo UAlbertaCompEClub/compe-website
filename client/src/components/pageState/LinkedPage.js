@@ -5,6 +5,7 @@ import SocialsBlock from "../socialsBlock/SocialsBlock";
 import EventBlock from "../eventBlock/EventBlock";
 import TeamBlock from "../teamBlock/TeamBlock";
 import ResourceBlock from "../resourceBlock/ResourceBlock";
+import SponsorsBlock from "../sponsorsBlock/SponsorsBlock";
 
 class LinkedPage extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class LinkedPage extends Component {
     this.eventsRef = React.createRef();
     this.resourcesRef = React.createRef();
     this.teamRef = React.createRef();
+    this.sponsorsRef = React.createRef();
   }
 
   state = {
@@ -25,14 +27,23 @@ class LinkedPage extends Component {
   render() {
     return (
       <>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
         <NavBar visibleBlock={this.state.visibleBlock} />
-        <LandingBlock ref={this.homeRef} setBlock={this.setVisibleBlock} />
-        <EventBlock ref={this.eventsRef} setBlock={this.setVisibleBlock} />
-        <ResourceBlock
-          ref={this.resourcesRef}
-          setBlock={this.setVisibleBlock}
-        />
-        <TeamBlock ref={this.teamRef} setBlock={this.setVisibleBlock} />
+        <main id="main">
+          <LandingBlock ref={this.homeRef} setBlock={this.setVisibleBlock} />
+          <EventBlock ref={this.eventsRef} setBlock={this.setVisibleBlock} />
+          <ResourceBlock
+            ref={this.resourcesRef}
+            setBlock={this.setVisibleBlock}
+          />
+          <TeamBlock ref={this.teamRef} setBlock={this.setVisibleBlock} />
+          <SponsorsBlock
+            ref={this.sponsorsRef}
+            setBlock={this.setVisibleBlock}
+          />
+        </main>
         <SocialsBlock />
       </>
     );

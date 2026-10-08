@@ -3,14 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import WebFont from 'webfontloader';
 
-
-WebFont.load({
-  google: {
-    families: ['Roboto Mono:300,400,700', 'sans-serif']
-  }
-});
+// Fonts (Space Grotesk, IBM Plex Sans/Mono/Serif) are loaded in public/index.html.
 
 ReactDOM.render(
   <React.StrictMode>

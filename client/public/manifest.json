@@ -8,8 +8,8 @@
       "type": "image/x-icon"
     },
     {
-      "src": "compE.svg",
-      "type": "image/svg",
+      "src": "CompELogoVar1.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#253E1E",
-  "background_color": "#42654A"
+  "theme_color": "#0D1F10",
+  "background_color": "#0D1F10"
 }
