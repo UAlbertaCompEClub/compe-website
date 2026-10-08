@@ -1,0 +1,16 @@
+key,value,notes
+discord_url,https://discord.gg/Unr9cEVc4h,
+instagram_url,https://www.instagram.com/compeclub,
+linkedin_url,https://www.linkedin.com/company/computer-engineering-club-university-of-alberta,
+github_url,https://github.com/UAlbertaCompEClub,
+resources_url,https://github.com/UAlbertaCompEClub/CompE_Resources,
+contact_email,external@compeclub.com,
+sponsor_email,external@compeclub.com,
+calendar_id,c_990d400870db5ec1bf71267ecc72c32c2750766b995faccc6f73eb7fa8cdce46@group.calendar.google.com,The Google Calendar shown on the Events section
+calendar_title,CompE Club 2026/27 Events,Update every September
+hero_title,Computer Engineering Club,Big title at the top of the page
+mission,"Promote a sense of community
+Provide resources and services to facilitate career success
+Present opportunities to network and develop technical skills","One goal per line (Alt+Enter or Ctrl+Enter starts a new line in a cell)"
+about,"The Computer Engineering Club (CompE Club) is a student organization that represents all Computer Engineering students' interests to broader organizations at the University of Alberta like the Engineering Student Society and Faculty of Engineering. We also host various events and provide resources for students to grow professionally and/or take a necessary break from school.",Paragraph under the title
+sponsor_pitch,"We represent Computer Engineering students at the University of Alberta and run events like HackED, HackED Beta and Aether. If your company or organization would like to sponsor an event or collaborate with us, we'd love to hear from you.",Paragraph in the Sponsors section

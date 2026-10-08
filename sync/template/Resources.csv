@@ -1,0 +1,6 @@
+category,title,url,description,show,order,notes
+Careers,Internship and job board links,,,TRUE,1,Add a link to the matching folder in CompE_Resources
+Careers,Interview prep resources,,,TRUE,2,
+Careers,Resume making resources,,,TRUE,3,
+Reading,Cool reads,,,TRUE,4,
+Hackathons,Interesting hackathons to consider participating in,,,TRUE,5,

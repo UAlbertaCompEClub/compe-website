@@ -1,39 +1,47 @@
+import site from "../../data/site.json";
 import "./SocialsBlock.css";
+
+const LINKS = [
+  ["discordUrl", "Discord"],
+  ["instagramUrl", "Instagram"],
+  ["linkedinUrl", "LinkedIn"],
+  ["githubUrl", "GitHub"],
+];
 
 function SocialsBlock() {
   return (
-    <div className="footer-block" id="footer-block">
-      <div className="footer">
-        <p className="footer-text unecessary-footer-text">Built with React</p>
-        <p className="divider">|</p>
-        <p className="footer-text">Property of Computer Engineering Club</p>
-        <p className="divider">|</p>
-
-        <div className="socials-content">
-          <a href="https://www.linkedin.com/company/computer-engineering-club-university-of-alberta">
-            <img
-              src="/images/socials/linkedin.svg"
-              className="socials-icon highlighted"
-              alt="LinkedIn Icon"
-            />
-          </a>
-          <a href="mailto:external@compeclub.com">
-            <img
-              src="/images/socials/mail.svg"
-              className="socials-icon highlighted"
-              alt="Email Icon"
-            />
-          </a>
-          <a href="https://www.instagram.com/compeclub">
-            <img
-              src="/images/socials/instagram.svg"
-              className="socials-icon highlighted"
-              alt="Instagram Icon"
-            />
-          </a>
+    <footer className="footer">
+      <div className="wrap footer__inner">
+        <div className="footer__brand">
+          <img src="/compE.svg" width="36" height="36" alt="" />
+          <div>
+            <p className="footer__name">Computer Engineering Club</p>
+            <p className="footer__org">University of Alberta</p>
+          </div>
         </div>
+        <nav aria-label="Club links">
+          <ul className="footer__links">
+            {LINKS.filter(([key]) => site[key]).map(([key, label]) => (
+              <li key={key}>
+                <a href={site[key]} target="_blank" rel="noopener noreferrer">
+                  {label}
+                </a>
+              </li>
+            ))}
+            {site.contactEmail && (
+              <li>
+                <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+              </li>
+            )}
+          </ul>
+        </nav>
       </div>
-    </div>
+      <div className="wrap">
+        <p className="footer__legal">
+          © {new Date().getFullYear()} Computer Engineering Club
+        </p>
+      </div>
+    </footer>
   );
 }
 

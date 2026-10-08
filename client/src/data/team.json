@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Prisha Sathya",
+    "role": "Co-President",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": {
+      "src": "/images/content/team/prisha.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Prisha Sathya"
+    }
+  },
+  {
+    "name": "Mokshada Seeballuck",
+    "role": "Co-President",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": {
+      "src": "/images/content/team/mokshada.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Mokshada Seeballuck"
+    }
+  },
+  {
+    "name": "Rayner Dcunha",
+    "role": "Co-VP Finance",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": null
+  },
+  {
+    "name": "Aymaan Khan",
+    "role": "Co-VP Finance",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": null
+  },
+  {
+    "name": "Panagiotis Dravilas",
+    "role": "Director of Hackathon",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": {
+      "src": "/images/content/team/panagiotis.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Panagiotis Dravilas"
+    }
+  },
+  {
+    "name": "Brandon Mendez",
+    "role": "Co-VP Internal",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": {
+      "src": "/images/content/team/brandon.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Brandon Mendez"
+    }
+  },
+  {
+    "name": "Sam Gillies",
+    "role": "Co-VP Internal",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": null
+  },
+  {
+    "name": "Oghenekaro Egbevurie",
+    "role": "VP External",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": {
+      "src": "/images/content/team/karo.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Oghenekaro Egbevurie"
+    }
+  },
+  {
+    "name": "Samridh Singh Mahal",
+    "role": "VP Social",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": null
+  },
+  {
+    "name": "Krish Tiwari",
+    "role": "VP Academic",
+    "group": "senior",
+    "email": null,
+    "contactFor": null,
+    "image": {
+      "src": "/images/content/team/krish2.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Krish Tiwari"
+    }
+  }
+]

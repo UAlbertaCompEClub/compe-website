@@ -1,105 +1,54 @@
-import React, { useState } from "react";
-import {
-  CardActionArea,
-  Link,
-  CardContent,
-  CardMedia,
-  Typography,
-  Card,
-} from "@mui/material";
+import { formatRange } from "./eventDates";
+
+const REGISTRATION_LABELS = {
+  soon: "Registration soon",
+  open: "Registration open",
+  closed: "Registration closed",
+};
 
 export default function EventCard({ event }) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleHover = () => {
-    setIsHovered(true);
-  };
-
-  const handleLeave = () => {
-    setIsHovered(false);
-  };
+  const registration = REGISTRATION_LABELS[event.registration];
 
   return (
-    <Card
-      sx={{
-        position: "relative",
-        overflow: "hidden",
-        backgroundColor: "#90A890",
-      }}
-    >
-      <CardActionArea
-        onMouseEnter={handleHover}
-        onMouseLeave={handleLeave}
-        sx={{
-          "&:hover": {
-            backgroundColor: "inherit",
-            transition: "none",
-          },
-          "&:hover .MuiCardActionArea-focusHighlight": {
-            backgroundColor: "inherit",
-          },
-          "& .MuiTouchRipple-root": {
-            display: "none",
-          },
-        }}
-      >
-        <CardMedia
-          component="img"
-          loading="lazy"
-          image={event.img}
-          alt={event.title}
-        />
-        <CardContent
-          sx={{
-            padding: 0,
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "#90A890",
-            transition: "transform 0.3s ease-in-out",
-            transform: isHovered ? "translateY(0%)" : "translateY(82%)",
-          }}
+    <li className="event">
+      <div className="event__when">
+        <span
+          className={`event__date${event.date ? " event__date--dated" : ""}`}
         >
-          <Typography
-            variant="h5"
-            component="div"
-            textAlign="center"
-            fontWeight="bold"
-            paddingTop={isHovered ? "1rem" : "0.5rem"}
-          >
-            {event.title}
-          </Typography>
-          <Typography
-            variant="p"
-            component="div"
-            paddingBlock="1rem"
-            paddingInline="1.5rem"
-            fontSize="16px"
-            fontWeight="bold"
-          >
-            {event.description}
-          </Typography>
-          {event.link && (
-            <Link
-              sx={{
-                position: "absolute",
-                bottom: "1rem",
-                left: "1.5rem",
-                display: "block",
-                fontSize: "16px",
-              }}
-              underline="none"
-              href={event.link}
-              target="_blank"
-              rel="noopener"
-            >
-              Event Website
-            </Link>
-          )}
-        </CardContent>
-      </CardActionArea>
-    </Card>
+          {event.date ? formatRange(event.date, event.endDate) : "Every year"}
+        </span>
+        {registration && (
+          <span className={`pill pill--${event.registration}`}>
+            {registration}
+          </span>
+        )}
+      </div>
+
+      <div className="event__body">
+        <h3 className="event__title">{event.title}</h3>
+        <p className="event__blurb">{event.blurb}</p>
+        {(event.venue || event.link) && (
+          <p className="event__meta">
+            {event.venue && <span className="event__venue">{event.venue}</span>}
+            {event.link && (
+              <a href={event.link} target="_blank" rel="noopener noreferrer">
+                Event website<span aria-hidden="true"> ↗</span>
+              </a>
+            )}
+          </p>
+        )}
+      </div>
+
+      {event.image && (
+        <img
+          className="event__photo"
+          src={event.image.src}
+          width={event.image.width}
+          height={event.image.height}
+          alt={event.image.alt}
+          loading="lazy"
+        />
+      )}
+    </li>
   );
 }

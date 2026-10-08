@@ -1,0 +1,44 @@
+[
+  {
+    "src": "/images/content/gallery/career1.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Crowds of students visiting sponsor booths in the Fred Pheasey Engineering Commons, seen from above",
+    "event": "Career fair"
+  },
+  {
+    "src": "/images/content/gallery/career2.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "A DevFacto representative talking with students at their booth",
+    "event": "Career fair"
+  },
+  {
+    "src": "/images/content/gallery/career3.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Students filling the Engineering Commons during the career fair",
+    "event": "Career fair"
+  },
+  {
+    "src": "/images/content/gallery/career4.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Two students wearing name tags smiling at the career fair",
+    "event": "Career fair"
+  },
+  {
+    "src": "/images/content/gallery/career5.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Students gathered around company booths and banners",
+    "event": "Career fair"
+  },
+  {
+    "src": "/images/content/gallery/career6.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Students lining up to talk with companies at their tables",
+    "event": "Career fair"
+  }
+]

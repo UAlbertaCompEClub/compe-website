@@ -1,0 +1,98 @@
+[
+  {
+    "id": "aether",
+    "title": "Aether",
+    "date": null,
+    "endDate": null,
+    "venue": null,
+    "blurb": "Aether is a tech conference and hybrid career fair launched in February 2024, with over 1,200 attendees from across 3 countries (mainly Canada, USA, China). It's the first engineering-club hosted tech conference, and the first hybrid career fair in the UofA's history (and one of, if not the only, the first in Canada's history too!)",
+    "link": "https://careerplusplus.compeclub.com/",
+    "registration": "none",
+    "image": {
+      "src": "/images/content/events/aether.webp",
+      "width": 800,
+      "height": 545,
+      "alt": "Crowds of students visiting sponsor booths in the Fred Pheasey Engineering Commons"
+    }
+  },
+  {
+    "id": "hacked-beta",
+    "title": "HackED Beta",
+    "date": null,
+    "endDate": null,
+    "venue": null,
+    "blurb": "HackEd Beta is a 24 hour competition where students compete for prizes by creating either a software and/or hardware project in teams during Reading Week. This event is designed for beginner hackers!",
+    "link": "https://hackedbeta.compeclub.com/",
+    "registration": "none",
+    "image": {
+      "src": "/images/content/events/hacked-beta.webp",
+      "width": 800,
+      "height": 545,
+      "alt": "Smiling students working on laptops at HackED Beta"
+    }
+  },
+  {
+    "id": "hacked",
+    "title": "HackED",
+    "date": null,
+    "endDate": null,
+    "venue": null,
+    "blurb": "Similar to HackEd Beta, HackEd is a 24 hour competition where students compete for prizes by creating either a software and/or hardware project in January. This event is designed for hackers of all experience levels!",
+    "link": "https://hacked.compeclub.com/",
+    "registration": "none",
+    "image": {
+      "src": "/images/content/events/hacked.webp",
+      "width": 800,
+      "height": 545,
+      "alt": "Rows of hackers working at tables in the Engineering Commons"
+    }
+  },
+  {
+    "id": "ece-grad",
+    "title": "ECE Grad",
+    "date": null,
+    "endDate": null,
+    "venue": null,
+    "blurb": "Celebrate your freedom with your friends and classmates in the ECE Department! More details will be shared on discord closer to April. Proudly co-hosted with Electrical Engineering Club and Engineering Physics Club!",
+    "link": null,
+    "registration": "none",
+    "image": {
+      "src": "/images/content/events/ece-grad.webp",
+      "width": 800,
+      "height": 545,
+      "alt": "Graduates in formal wear sharing dinner at a long table"
+    }
+  },
+  {
+    "id": "geer-week",
+    "title": "Geer Week",
+    "date": null,
+    "endDate": null,
+    "venue": null,
+    "blurb": "Hosted by the ESS, GEER Week is a light-hearted, friendly competition between the discipline clubs in Engineering. Compete for the glory of our discipline by participating in various events such as Battle of the Bands, Movie Night, and more!",
+    "link": null,
+    "registration": "none",
+    "image": {
+      "src": "/images/content/events/geer-week.webp",
+      "width": 800,
+      "height": 545,
+      "alt": "A student band performing on stage at Battle of the Bands"
+    }
+  },
+  {
+    "id": "general-special-agm",
+    "title": "General & Special AGM",
+    "date": null,
+    "endDate": null,
+    "venue": null,
+    "blurb": "We have 2 AGMs every year to share our club's purpose and upcoming events as well as vote new executives. Junior positions are done in September (Special) and Senior are done in April (General). More info in Discord closer to the date - everyone interested is encouraged to run!",
+    "link": null,
+    "registration": "none",
+    "image": {
+      "src": "/images/content/events/agm.webp",
+      "width": 800,
+      "height": 545,
+      "alt": "Club members posing for a group photo in front of blue and white balloons"
+    }
+  }
+]

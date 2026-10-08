@@ -1,0 +1,70 @@
+.team-group:first-of-type .subhead {
+  margin-top: 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 32px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.member__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--paper-2);
+}
+
+.member__photo--initials {
+  display: grid;
+  place-items: center;
+  background: var(--moss);
+  color: var(--mist);
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.member__name {
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.member__role {
+  margin-top: 2px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+
+.member__contact {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+.member__email {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 14px;
+  }
+
+  .member__photo--initials {
+    font-size: 34px;
+  }
+}

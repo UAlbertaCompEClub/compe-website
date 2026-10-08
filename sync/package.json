@@ -1,0 +1,19 @@
+{
+  "name": "compe-content-sync",
+  "private": true,
+  "type": "module",
+  "description": "Copies website content from the club's Google Sheet and Drive folder into the React site.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "sync": "node src/index.mjs --source google",
+    "check": "node src/index.mjs --source google --check",
+    "sync:local": "node src/index.mjs --source local",
+    "check:local": "node src/index.mjs --source local --check"
+  },
+  "dependencies": {
+    "google-auth-library": "^11.0.2",
+    "sharp": "^0.35.4"
+  }
+}
