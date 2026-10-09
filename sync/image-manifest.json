@@ -71,11 +71,12 @@
     "width": 1600,
     "height": 1067
   },
-  "team/aymaan.webp": {
+  "team/aymaan-center.webp": {
     "source": "Aymaan.jpeg",
-    "hash": "c3860cd51a625d1db81d7b8cfcadeefe|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"top\"}|v1",
+    "hash": "c3860cd51a625d1db81d7b8cfcadeefe|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 600,
-    "height": 600
+    "height": 600,
+    "crop": "center"
   },
   "team/brandon.webp": {
     "source": "brandon.webp",
@@ -95,12 +96,12 @@
     "width": 600,
     "height": 600
   },
-  "team/mokshada-center.webp": {
+  "team/mokshada-bottom.webp": {
     "source": "mokshada.webp",
-    "hash": "b1803c6ac368d6190e796334f63305f5|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
+    "hash": "b1803c6ac368d6190e796334f63305f5|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"bottom\"}|v1",
     "width": 600,
     "height": 600,
-    "crop": "center"
+    "crop": "bottom"
   },
   "team/panagiotis.webp": {
     "source": "panagiotis.webp",
@@ -108,19 +109,19 @@
     "width": 600,
     "height": 600
   },
-  "team/prisha-center.webp": {
+  "team/prisha-bottom.webp": {
     "source": "prisha.webp",
-    "hash": "72ab7c18dc1e3d486e28b1800f80b96a|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
+    "hash": "72ab7c18dc1e3d486e28b1800f80b96a|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"bottom\"}|v1",
     "width": 600,
     "height": 600,
-    "crop": "center"
+    "crop": "bottom"
   },
-  "team/rayner-center.webp": {
+  "team/rayner-bottom.webp": {
     "source": "Rayner.jpeg",
-    "hash": "6706c95d8960ff6ef20fb36ec1276a83|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
+    "hash": "6706c95d8960ff6ef20fb36ec1276a83|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"bottom\"}|v1",
     "width": 600,
     "height": 600,
-    "crop": "center"
+    "crop": "bottom"
   },
   "team/sammy-center.webp": {
     "source": "Sammy.jpeg",

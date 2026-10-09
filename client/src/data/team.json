@@ -6,7 +6,7 @@
     "email": null,
     "contactFor": null,
     "image": {
-      "src": "/images/content/team/prisha-center.webp",
+      "src": "/images/content/team/prisha-bottom.webp",
       "width": 600,
       "height": 600,
       "alt": "Photo of Prisha Sathya"
@@ -19,7 +19,7 @@
     "email": null,
     "contactFor": null,
     "image": {
-      "src": "/images/content/team/mokshada-center.webp",
+      "src": "/images/content/team/mokshada-bottom.webp",
       "width": 600,
       "height": 600,
       "alt": "Photo of Mokshada Seeballuck"
@@ -32,7 +32,7 @@
     "email": null,
     "contactFor": null,
     "image": {
-      "src": "/images/content/team/rayner-center.webp",
+      "src": "/images/content/team/rayner-bottom.webp",
       "width": 600,
       "height": 600,
       "alt": "Photo of Rayner Dcunha"
@@ -45,7 +45,7 @@
     "email": null,
     "contactFor": null,
     "image": {
-      "src": "/images/content/team/aymaan.webp",
+      "src": "/images/content/team/aymaan-center.webp",
       "width": 600,
       "height": 600,
       "alt": "Photo of Aymaan Khan"
