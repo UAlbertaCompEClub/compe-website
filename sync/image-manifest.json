@@ -97,8 +97,8 @@
     "height": 600
   },
   "team/mokshada-bottom.webp": {
-    "source": "mokshada.webp",
-    "hash": "b1803c6ac368d6190e796334f63305f5|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"bottom\"}|v1",
+    "source": "Mokshada.jpg",
+    "hash": "90651b994c7ab6910a5e281bdf77dc5e|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"bottom\"}|v1",
     "width": 600,
     "height": 600,
     "crop": "bottom"
@@ -109,12 +109,11 @@
     "width": 600,
     "height": 600
   },
-  "team/prisha-bottom.webp": {
-    "source": "prisha.webp",
-    "hash": "72ab7c18dc1e3d486e28b1800f80b96a|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"bottom\"}|v1",
+  "team/prish.webp": {
+    "source": "prish.png",
+    "hash": "c60499c2051dc62aa5eab34db179a9e2|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"top\"}|v1",
     "width": 600,
-    "height": 600,
-    "crop": "bottom"
+    "height": 600
   },
   "team/rayner-bottom.webp": {
     "source": "Rayner.jpeg",
