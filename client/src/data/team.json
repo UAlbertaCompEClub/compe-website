@@ -109,7 +109,12 @@
     "group": "senior",
     "email": null,
     "contactFor": null,
-    "image": null
+    "image": {
+      "src": "/images/content/team/ishaan-bottom.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Ishaan Abraham"
+    }
   },
   {
     "name": "Krish Tiwari",
