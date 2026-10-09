@@ -1,37 +1,37 @@
 {
   "events/aether.webp": {
     "source": "aether.webp",
-    "hash": "45d1e22856fba90112f143822801c1fe|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "hash": "45d1e22856fba90112f143822801c1fe|{\"width\":800,\"height\":545,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/agm.webp": {
     "source": "agm.webp",
-    "hash": "0717622cb28f318411557e69cae62153|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "hash": "0717622cb28f318411557e69cae62153|{\"width\":800,\"height\":545,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/ece-grad.webp": {
     "source": "ece-grad.webp",
-    "hash": "9ea029c3303b92b5c70441c3a11df492|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "hash": "9ea029c3303b92b5c70441c3a11df492|{\"width\":800,\"height\":545,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/geer-week.webp": {
     "source": "geer-week.webp",
-    "hash": "f7240eebe3b9246464296f1ea9ac09df|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "hash": "f7240eebe3b9246464296f1ea9ac09df|{\"width\":800,\"height\":545,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/hacked-beta.webp": {
     "source": "hacked-beta.webp",
-    "hash": "4e5907671dd64249048db63b7548859b|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "hash": "4e5907671dd64249048db63b7548859b|{\"width\":800,\"height\":545,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/hacked.webp": {
     "source": "hacked.webp",
-    "hash": "85ae785e0376f00b4717437ae8ebb6c8|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "hash": "85ae785e0376f00b4717437ae8ebb6c8|{\"width\":800,\"height\":545,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 800,
     "height": 545
   },
@@ -73,56 +73,60 @@
   },
   "team/aymaan.webp": {
     "source": "Aymaan.jpeg",
-    "hash": "c3860cd51a625d1db81d7b8cfcadeefe|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "hash": "c3860cd51a625d1db81d7b8cfcadeefe|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"top\"}|v1",
     "width": 600,
     "height": 600
   },
   "team/brandon.webp": {
     "source": "brandon.webp",
-    "hash": "e5bd54e2d06519b173b6a219df63d26f|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "hash": "e5bd54e2d06519b173b6a219df63d26f|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"top\"}|v1",
     "width": 600,
     "height": 600
   },
   "team/karo.webp": {
     "source": "karo.webp",
-    "hash": "ce5b344dfb27f6c7dae3957bc82ed2ce|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "hash": "ce5b344dfb27f6c7dae3957bc82ed2ce|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"top\"}|v1",
     "width": 600,
     "height": 600
   },
   "team/krish2.webp": {
     "source": "krish2.webp",
-    "hash": "0bc5fce7c1819109fc37706fc38c2825|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "hash": "0bc5fce7c1819109fc37706fc38c2825|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"top\"}|v1",
     "width": 600,
     "height": 600
   },
-  "team/mokshada.webp": {
+  "team/mokshada-center.webp": {
     "source": "mokshada.webp",
-    "hash": "b1803c6ac368d6190e796334f63305f5|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "hash": "b1803c6ac368d6190e796334f63305f5|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 600,
-    "height": 600
+    "height": 600,
+    "crop": "center"
   },
   "team/panagiotis.webp": {
     "source": "panagiotis.webp",
-    "hash": "0073cb7fadefa9a779baafa52c205cab|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "hash": "0073cb7fadefa9a779baafa52c205cab|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"top\"}|v1",
     "width": 600,
     "height": 600
   },
-  "team/prisha.webp": {
+  "team/prisha-center.webp": {
     "source": "prisha.webp",
-    "hash": "72ab7c18dc1e3d486e28b1800f80b96a|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "hash": "72ab7c18dc1e3d486e28b1800f80b96a|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 600,
-    "height": 600
+    "height": 600,
+    "crop": "center"
   },
-  "team/rayner.webp": {
+  "team/rayner-center.webp": {
     "source": "Rayner.jpeg",
-    "hash": "6706c95d8960ff6ef20fb36ec1276a83|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "hash": "6706c95d8960ff6ef20fb36ec1276a83|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 600,
-    "height": 600
+    "height": 600,
+    "crop": "center"
   },
-  "team/sammy.webp": {
+  "team/sammy-center.webp": {
     "source": "Sammy.jpeg",
-    "hash": "3dbabfaeeef4fd56b4d6ba9d4946e1a9|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "hash": "3dbabfaeeef4fd56b4d6ba9d4946e1a9|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"centre\"}|v1",
     "width": 600,
-    "height": 600
+    "height": 600,
+    "crop": "center"
   }
 }

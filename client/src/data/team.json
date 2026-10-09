@@ -6,7 +6,7 @@
     "email": null,
     "contactFor": null,
     "image": {
-      "src": "/images/content/team/prisha.webp",
+      "src": "/images/content/team/prisha-center.webp",
       "width": 600,
       "height": 600,
       "alt": "Photo of Prisha Sathya"
@@ -19,7 +19,7 @@
     "email": null,
     "contactFor": null,
     "image": {
-      "src": "/images/content/team/mokshada.webp",
+      "src": "/images/content/team/mokshada-center.webp",
       "width": 600,
       "height": 600,
       "alt": "Photo of Mokshada Seeballuck"
@@ -32,7 +32,7 @@
     "email": null,
     "contactFor": null,
     "image": {
-      "src": "/images/content/team/rayner.webp",
+      "src": "/images/content/team/rayner-center.webp",
       "width": 600,
       "height": 600,
       "alt": "Photo of Rayner Dcunha"
@@ -84,7 +84,7 @@
     "email": null,
     "contactFor": null,
     "image": {
-      "src": "/images/content/team/sammy.webp",
+      "src": "/images/content/team/sammy-center.webp",
       "width": 600,
       "height": 600,
       "alt": "Photo of Sam Gillies"
