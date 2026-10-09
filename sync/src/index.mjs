@@ -10,11 +10,11 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
-import { loadManifest, processImages, removeOrphans } from './images.mjs';
+import { loadManifest, planImages, processImages, removeOrphans } from './images.mjs';
 import { SITE_TAB, TABS } from './schema.mjs';
 import { createGoogleSource } from './sources/google.mjs';
 import { createLocalSource } from './sources/local.mjs';
-import { parseSite, parseTab, resolveImageRequests } from './validate.mjs';
+import { imageKey, parseSite, parseTab, resolveImageRequests } from './validate.mjs';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DATA_DIR = path.join(REPO, 'client', 'src', 'data');
@@ -31,18 +31,26 @@ const { values: args } = parseArgs({
   },
 });
 
-// Prints to the console and, inside GitHub Actions, to the run's summary page.
+// Streams to the console as work happens. In GitHub Actions this appears live in the job log.
+const log = (line = '') => console.log(line);
+
+// Also writes to the run's summary page, which only appears once the job has finished.
 function report(lines) {
   const text = lines.join('\n');
   console.log(text);
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${text}\n`);
 }
 
-function fail(errors) {
+function notes(warnings) {
+  return warnings.length === 0 ? [] : ['', '#### Notes', ...warnings.map((w) => `- ${w}`)];
+}
+
+function fail(errors, warnings = []) {
   report([
     `### Nothing was published: ${errors.length} problem${errors.length === 1 ? '' : 's'} to fix`,
     '',
     ...errors.map((e) => `- ${e}`),
+    ...notes(warnings),
     '',
     'Fix these in the Google Sheet or Drive folder, then publish again. The live website has not changed.',
   ]);
@@ -57,6 +65,7 @@ async function writeIfChanged(file, text) {
 }
 
 const json = (data) => `${JSON.stringify(data, null, 2)}\n`;
+const kb = (bytes) => `${Math.round(bytes / 1024)} KB`;
 
 // By the order column (blanks last), then date, then position in the Sheet.
 function sortRows(rows) {
@@ -83,34 +92,78 @@ async function main() {
   }
 
   const errors = [];
+  const warnings = [];
+
+  log(`Reading content from ${source.label}...`);
   const values = await source.readTabs([...TABS.map((t) => t.name), SITE_TAB.name]);
   const parsed = TABS.map((tab) => ({ tab, result: parseTab(tab, values[tab.name], errors) }));
   const site = parseSite(SITE_TAB, values[SITE_TAB.name], errors);
 
   const listings = {};
   for (const folder of new Set(TABS.map((t) => t.imageFolder).filter(Boolean))) {
-    listings[folder] = await source.listFiles(folder);
+    listings[folder] = await source.listFolder(folder);
+    const matched = listings[folder].matchedName;
+    if (matched && matched !== folder) {
+      warnings.push(
+        `The folder "${folder}" was matched to "${matched}" in Drive. Names are compared ignoring capitalisation and a trailing slash.`,
+      );
+    }
   }
-  const requests = resolveImageRequests(parsed, listings, errors);
-  if (errors.length) fail(errors);
+  const requests = resolveImageRequests(parsed, listings, errors, warnings);
+  if (errors.length) fail(errors, warnings);
 
-  const table = ['| Tab | Shown | Hidden |', '|---|---|---|', ...parsed.map(({ tab, result }) => `| ${tab.name} | ${result.rows.length} | ${result.hidden} |`)];
+  const manifest = args.check ? {} : await loadManifest(MANIFEST);
+  const jobs = args.check ? [] : planImages({ requests, outDir: IMAGE_DIR, manifest, errors });
+  if (errors.length) fail(errors, warnings);
+
+  // The plan, printed before the slow part, so a running job shows what it is about to do.
+  const toResize = jobs.filter((job) => !job.reuse);
+  log('');
+  log('Plan');
+  for (const { tab, result } of parsed) {
+    log(`  ${tab.name.padEnd(10)} ${result.rows.length} shown, ${result.hidden} hidden`);
+  }
+  const photoPlan = args.check ? '' : ` - ${toResize.length} to resize, ${jobs.length - toResize.length} unchanged`;
+  log(`  ${'Photos'.padEnd(10)} ${requests.size} referenced${photoPlan}`);
+  for (const warning of warnings) log(`  note: ${warning}`);
+  log('');
+
+  const table = [
+    '| Tab | Shown | Hidden |',
+    '|---|---|---|',
+    ...parsed.map(({ tab, result }) => `| ${tab.name} | ${result.rows.length} | ${result.hidden} |`),
+  ];
+
   if (args.check) {
-    report(['### Content check passed', '', ...table, '', `${requests.size} photos referenced.`]);
+    report(['### Content check passed', '', ...table, '', `${requests.size} photos referenced.`, ...notes(warnings)]);
     return;
   }
 
-  const manifest = await loadManifest(MANIFEST);
-  const { byKey, next, stats } = await processImages({ requests, source, outDir: IMAGE_DIR, publicBase: PUBLIC_BASE, manifest, errors });
-  if (errors.length) fail(errors);
+  const { byKey, next, stats } = await processImages({
+    jobs,
+    source,
+    outDir: IMAGE_DIR,
+    publicBase: PUBLIC_BASE,
+    errors,
+    onProgress: ({ position, total, action, job, bytes }) => {
+      const counter = `[${String(position).padStart(String(total).length)}/${total}]`;
+      const crop = job.req.crop ? ` crop:${job.req.crop}` : '';
+      const size = bytes ? ` (${kb(bytes)})` : '';
+      log(`${counter} ${action.padEnd(9)} ${job.req.folder}/${job.req.name} -> ${job.outRel}${crop}${size}`);
+    },
+  });
+  if (errors.length) fail(errors, warnings);
 
   const changed = [];
   for (const { tab, result } of parsed) {
-    const image = (name, alt) => {
-      const img = name && byKey.get(`${tab.imageFolder}/${name}`);
-      return img ? { ...img, alt } : null;
-    };
-    const rows = sortRows(result.rows).map((row) => tab.toJson(row, image));
+    const rows = sortRows(result.rows).map((row) => {
+      const image = (name, alt) => {
+        if (!name) return null;
+        const found = byKey.get(imageKey(tab.imageFolder, name, tab.columns.crop ? row.crop : null));
+        return found ? { ...found, alt } : null;
+      };
+      return tab.toJson(row, image);
+    });
     if (await writeIfChanged(path.join(DATA_DIR, tab.output), json(rows))) changed.push(tab.output);
   }
   if (await writeIfChanged(path.join(DATA_DIR, SITE_TAB.output), json(site))) changed.push(SITE_TAB.output);
@@ -119,6 +172,7 @@ async function main() {
   await writeIfChanged(MANIFEST, json(sortedManifest));
   const removed = await removeOrphans({ outDir: IMAGE_DIR, keep: next });
 
+  log('');
   report([
     `### Content synced from ${source.label}`,
     '',
@@ -126,6 +180,7 @@ async function main() {
     '',
     `Photos: ${stats.processed} resized, ${stats.reused} unchanged, ${removed} removed.`,
     changed.length ? `Updated: ${changed.join(', ')}` : 'No data files changed.',
+    ...notes(warnings),
   ]);
 }
 

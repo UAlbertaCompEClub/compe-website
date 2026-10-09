@@ -5,6 +5,7 @@ import { existsSync } from 'node:fs';
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { parseCsv } from '../csv.mjs';
+import { looseName } from '../validate.mjs';
 
 export function createLocalSource({ sheetDir, driveDir }) {
   return {
@@ -19,11 +20,17 @@ export function createLocalSource({ sheetDir, driveDir }) {
       return out;
     },
 
-    async listFiles(folder) {
-      const dir = driveDir && path.join(driveDir, folder);
-      if (!dir || !existsSync(dir)) return [];
+    // Same shape as the Google source: folder names match loosely, and the real name is reported.
+    async listFolder(folder) {
+      if (!driveDir || !existsSync(driveDir)) return { matchedName: null, files: [], available: [] };
+      const children = await readdir(driveDir, { withFileTypes: true });
+      const available = children.filter((e) => e.isDirectory()).map((e) => e.name).sort();
+      const match = available.find((name) => looseName(name) === looseName(folder));
+      if (!match) return { matchedName: null, files: [], available };
+
+      const dir = path.join(driveDir, match);
       const entries = await readdir(dir, { withFileTypes: true });
-      return Promise.all(
+      const files = await Promise.all(
         entries
           .filter((e) => e.isFile())
           .map(async (e) => {
@@ -32,6 +39,7 @@ export function createLocalSource({ sheetDir, driveDir }) {
             return { name: e.name, id, checksum, mimeType: null };
           }),
       );
+      return { matchedName: match, files, available };
     },
 
     readFile: (file) => readFile(file.id),

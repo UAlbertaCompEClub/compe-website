@@ -12,8 +12,10 @@ Do all of this signed in as a **club-owned** Google account, not a personal one,
    `Resources`, `Gallery`, `Facts` and `Site`. Delete the empty default tab.
    Optional but helpful: turn the `show` columns into checkboxes (Insert → Checkbox), and add dropdowns
    (Data → Data validation) for `registration`, `group` and `tier`.
-2. **Create the Drive folder.** Make a folder named "CompE Website Photos" with four subfolders: `events`, `team`,
-   `sponsors` and `gallery`. Upload the photos the template refers to.
+2. **Create the Drive folder.** Make a folder named "CompE Website Photos" with four subfolders named exactly
+   `events`, `team`, `sponsors` and `gallery` - no trailing slash in the name. Upload the photos the template refers
+   to. Folder names are matched ignoring capitalisation and a trailing slash, and the sync notes when it had to do
+   that; if nothing matches, it lists the folder names it did find.
 3. **Create a service account.** In the Google Cloud console:
    create a project → enable the **Google Sheets API** and the **Google Drive API** → IAM & Admin → Service
    accounts → Create → open it → Keys → Add key → JSON. Keep the downloaded file private.
@@ -57,7 +59,7 @@ npm run check:local -- --drive-dir ../../my-photos   # checks only, writes nothi
 npm run sync:local -- --drive-dir ../../my-photos    # writes data and images
 ```
 
-`--drive-dir` is a folder laid out like the Drive folder (`events/`, `team/`, `sponsors/`, `gallery/`).
+`--drive-dir` is a folder laid out like the Drive folder, with `events`, `team`, `sponsors` and `gallery` inside.
 The CSVs come from `sync/template/` unless you pass `--sheet-dir`.
 
 To test against the real Sheet, set `SHEET_ID`, `DRIVE_FOLDER_ID` and `GOOGLE_SERVICE_ACCOUNT_JSON` in your

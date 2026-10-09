@@ -2,9 +2,11 @@
 // the website reads. If you change a tab here, update docs/updating-the-website.md too.
 
 // How photos from each Drive folder are resized. Changing a preset re-processes that folder.
+// `position` is where a photo is cropped from when it has to fill the frame. Rows in tabs with a
+// `crop` column can override it per photo.
 export const IMAGE_PRESETS = {
-  events: { width: 800, height: 545, fit: 'cover' },
-  team: { width: 600, height: 600, fit: 'cover', position: 'attention' },
+  events: { width: 800, height: 545, fit: 'cover', position: 'centre' },
+  team: { width: 600, height: 600, fit: 'cover', position: 'top' },
   sponsors: { width: 480, height: 240, fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } },
   gallery: { width: 1600, height: 1600, fit: 'inside', withoutEnlargement: true },
 };
@@ -17,6 +19,21 @@ export function slugify(value) {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
 }
+
+// What an exec may put in a `crop` column, and the sharp position each one means.
+export const CROP_POSITIONS = {
+  top: 'top',
+  center: 'centre',
+  bottom: 'bottom',
+  left: 'left',
+  right: 'right',
+  attention: 'attention', // let the library guess the most interesting part
+  entropy: 'entropy', // let the library guess the busiest part
+};
+
+// `optional: true` means a Sheet without this column still works, so adding the column later
+// doesn't break an existing Sheet.
+const crop = { type: 'enum', values: Object.keys(CROP_POSITIONS), optional: true };
 
 // Rows with show = FALSE (or blank) are skipped without being checked, so drafts can be incomplete.
 const show = { type: 'bool', default: false };
@@ -36,6 +53,7 @@ export const TABS = [
       link: { type: 'url' },
       photo: { type: 'image' },
       photo_alt: { type: 'text' },
+      crop,
       registration: { type: 'enum', values: ['none', 'soon', 'open', 'closed'], default: 'none' },
       show,
       order,
@@ -65,6 +83,7 @@ export const TABS = [
       role: { type: 'text', required: true },
       group: { type: 'enum', values: ['senior', 'junior'], required: true },
       photo: { type: 'image' },
+      crop,
       email: { type: 'email' },
       contact_for: { type: 'text' },
       show,

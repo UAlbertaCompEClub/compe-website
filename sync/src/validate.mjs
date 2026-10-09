@@ -85,7 +85,7 @@ export function parseTab(tab, values, errors) {
   }
 
   const header = values[0].map((h) => String(h ?? '').trim().toLowerCase());
-  const missing = Object.keys(tab.columns).filter((c) => !header.includes(c));
+  const missing = Object.keys(tab.columns).filter((c) => !header.includes(c) && !tab.columns[c].optional);
   if (missing.length) {
     errors.push(`The "${tab.name}" tab is missing ${missing.map((c) => `"${c}"`).join(', ')} in row 1.`);
     return result;
@@ -157,40 +157,76 @@ export function parseSite(siteTab, values, errors) {
   return out;
 }
 
+// Photo and folder names are matched ignoring capitalisation and a stray trailing slash, so
+// "Prisha.JPG" finds "prisha.jpg" and a folder called "team/" still counts as "team".
+export const looseName = (value) => String(value).trim().replace(/\/+$/, '').toLowerCase();
+
+// The key a photo is stored under. Built from the loose name so the Sheet and Drive can disagree
+// about capitalisation, and from the crop so one photo can be used twice with different crops.
+export const imageKey = (folder, name, crop) => `${folder}/${looseName(name)}#${crop || 'default'}`;
+
+function describeFolder(folder, listing) {
+  const available = listing.available ?? [];
+  if (available.length === 0) {
+    return `No subfolders were found at all, so check that DRIVE_FOLDER_ID points at the folder holding "${folder}".`;
+  }
+  return `Folders found there: ${available.map((name) => `"${name}"`).join(', ')}.`;
+}
+
 // Matches every photo named in a shown row to a file in its Drive folder.
-export function resolveImageRequests(parsed, listings, errors) {
+export function resolveImageRequests(parsed, listings, errors, warnings = []) {
   const requests = new Map();
+  const missingFolders = new Set();
+
   for (const { tab, result } of parsed) {
     if (!tab.imageFolder) continue;
     const folder = tab.imageFolder;
-    const files = listings[folder] ?? [];
-    const byName = new Map();
-    const duplicates = new Set();
-    for (const f of files) {
-      if (byName.has(f.name)) duplicates.add(f.name);
-      byName.set(f.name, f);
+    const listing = listings[folder] ?? { matchedName: null, files: [], available: [] };
+    const files = listing.files;
+
+    const byExact = new Map(files.map((file) => [file.name, file]));
+    const byLoose = new Map();
+    const ambiguous = new Set();
+    for (const file of files) {
+      const key = looseName(file.name);
+      if (byLoose.has(key)) ambiguous.add(key);
+      byLoose.set(key, file);
     }
 
     for (const row of result.rows) {
       for (const [col, def] of Object.entries(tab.columns)) {
-        const name = row[col];
-        if (def.type !== 'image' || !name) continue;
+        const written = row[col];
+        if (def.type !== 'image' || !written) continue;
         const where = `${tab.name} row ${row._row}, column "${col}"`;
-        const file = byName.get(name);
-        if (/\.hei[cf]$/i.test(name)) {
-          errors.push(`${where}: "${name}" is an iPhone HEIC photo, which the website can't use. Export it as JPG and upload that instead.`);
+        const loose = looseName(written);
+        const file = byExact.get(written) ?? byLoose.get(loose);
+
+        if (/\.hei[cf]$/i.test(written)) {
+          errors.push(`${where}: "${written}" is an iPhone HEIC photo, which the website can't use. Export it as JPG and upload that instead.`);
+        } else if (!listing.matchedName) {
+          // Once per folder, not once per row that needed it.
+          if (!missingFolders.has(folder)) {
+            missingFolders.add(folder);
+            errors.push(`There is no Drive folder named "${folder}", which ${tab.name} needs for its photos. ${describeFolder(folder, listing)}`);
+          }
         } else if (!file) {
-          const near = files.find((f) => f.name.toLowerCase() === name.toLowerCase());
-          const hint = near ? ` Did you mean "${near.name}"?` : files.length === 0 ? ` The "${folder}" folder is empty or doesn't exist.` : '';
-          errors.push(`${where}: there's no file named "${name}" in the Drive folder "${folder}".${hint}`);
-        } else if (duplicates.has(name)) {
-          errors.push(`${where}: the Drive folder "${folder}" has more than one file named "${name}". Rename or delete the extras.`);
+          const sample = files.slice(0, 6).map((f) => `"${f.name}"`).join(', ');
+          const holds = files.length === 0
+            ? 'That folder is empty.'
+            : `It holds: ${sample}${files.length > 6 ? `, and ${files.length - 6} more` : ''}.`;
+          errors.push(`${where}: there's no file named "${written}" in the Drive folder "${listing.matchedName}". ${holds}`);
+        } else if (ambiguous.has(loose)) {
+          errors.push(`${where}: the Drive folder "${listing.matchedName}" holds more than one file called "${written}" apart from capitalisation. Rename one of them.`);
         } else if (file.mimeType?.startsWith('application/vnd.google-apps')) {
-          errors.push(`${where}: "${name}" is a Google Docs file, not an uploaded image.`);
-        } else if (!IMAGE_EXT.test(name)) {
-          errors.push(`${where}: "${name}" isn't a JPG, PNG or WebP image.`);
+          errors.push(`${where}: "${written}" is a Google Docs file, not an uploaded image.`);
+        } else if (!IMAGE_EXT.test(file.name)) {
+          errors.push(`${where}: "${file.name}" isn't a JPG, PNG or WebP image.`);
         } else {
-          requests.set(`${folder}/${name}`, { folder, name, file });
+          if (file.name !== written) {
+            warnings.push(`${where}: the Sheet says "${written}" and Drive has "${file.name}". The file's own name was used.`);
+          }
+          const crop = tab.columns.crop ? row.crop ?? null : null;
+          requests.set(imageKey(folder, file.name, crop), { folder, name: file.name, file, crop });
         }
       }
     }

@@ -20,12 +20,14 @@ Edits also publish on their own every night at 3 a.m., in case nobody clicked Pu
 - **`order`**: smaller numbers come first. Blank rows go last.
 - **Dates**: `YYYY-MM-DD`, for example `2027-01-17`. A cell formatted as a date also works.
 - **Links**: the full address, starting with `https://`.
-- **Photos**: type the exact file name from the Drive folder, including the extension, for example `hacked.png`.
-  Upload photos at any size; the site resizes them. iPhone HEIC photos don't work, so export them as JPG first.
+- **Photos**: type the file name from the Drive folder, including the extension, for example `hacked.png`.
+  Capitalisation doesn't have to match: if the Sheet says `Prisha.JPG` and Drive has `prisha.jpg`, the sync uses the
+  file and says so in its notes. Upload photos at any size; the site resizes them. iPhone HEIC photos don't work,
+  so export them as JPG first.
 
 ## Tabs
 
-### Events (photos go in `events/`)
+### Events (photos go in the `events` folder)
 
 | Column | What to put |
 |---|---|
@@ -34,7 +36,8 @@ Edits also publish on their own every night at 3 a.m., in case nobody clicked Pu
 | venue | Building and room. |
 | blurb | One or two sentences. Required. |
 | link | Registration page or event website. |
-| photo, photo_alt | File name in `events/`, and a short description of the photo for screen readers. |
+| photo, photo_alt | File name in the `events` folder, and a short description of the photo for screen readers. |
+| crop | Which part of the photo to keep when it's cut to fit. Blank keeps the middle. |
 | registration | `none`, `soon`, `open` or `closed`. Anything but `none` shows a label next to the date. |
 
 How events are listed:
@@ -43,17 +46,22 @@ How events are listed:
 - Once an event's last day has passed, it disappears from the site by itself. For a yearly event like HackED,
   keep one row with no date for the description, and add a separate dated row for this year's edition.
 
-### Team (photos go in `team/`)
+### Team (photos go in the `team` folder)
 
 | Column | What to put |
 |---|---|
 | name, role | Required. |
 | group | `senior` or `junior`. Required. |
-| photo | File name in `team/`. Leave blank to show a placeholder. |
+| photo | File name in the `team` folder. Leave blank to show a placeholder. |
+| crop | Which part of the photo to keep. Blank crops from the top, which suits most headshots. |
 | email | Role email, if the club has one. |
 | contact_for | What students should contact this role about, for example "Course and instructor issues". |
 
-### Sponsors (logos go in `sponsors/`)
+**Fixing an odd crop.** Team photos are cut to a square and event photos to a wide rectangle, so something has to go.
+The `crop` column decides what stays: `top` (the default for team), `center`, `bottom`, `left`, `right`, or
+`attention` to let the computer pick the most interesting part. Change it, publish, and only that photo is redone.
+
+### Sponsors (logos go in the `sponsors` folder)
 
 `name` and `tier` (`title`, `partner`, `supporting` or `in-kind`) are required. Also: `logo`, `url`, `year`.
 
@@ -61,7 +69,7 @@ How events are listed:
 
 `category` and `title` are required. Also: `url`, `description`.
 
-### Gallery (photos go in `gallery/`)
+### Gallery (photos go in the `gallery` folder)
 
 `photo` and `alt` are required. `alt` describes what's in the photo, for example "Students talking to recruiters at the career fair". Also: `event`.
 

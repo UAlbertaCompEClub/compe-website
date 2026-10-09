@@ -1,6 +1,7 @@
 // Reads tabs from the content Google Sheet and photos from the content Drive folder, using a
 // service account that has Viewer access to both. Setup: docs/content-sync-setup.md
 import { GoogleAuth } from 'google-auth-library';
+import { looseName } from '../validate.mjs';
 
 const SHEETS = 'https://sheets.googleapis.com/v4/spreadsheets';
 const DRIVE = 'https://www.googleapis.com/drive/v3/files';
@@ -66,7 +67,20 @@ export async function createGoogleSource({ sheetId, folderId, credentialsJson })
     return files;
   }
 
-  const subfolderIds = new Map();
+  // Subfolders are listed once, then matched ignoring capitalisation and a trailing slash,
+  // so a folder someone named "team/" still counts as "team".
+  let folderIndex = null;
+  async function loadFolderIndex() {
+    if (!folderIndex) {
+      const folders = await listChildren(folderId, `mimeType = '${FOLDER_MIME}'`);
+      folderIndex = new Map();
+      for (const folder of folders) {
+        const key = looseName(folder.name);
+        if (!folderIndex.has(key)) folderIndex.set(key, folder);
+      }
+    }
+    return folderIndex;
+  }
 
   return {
     label: 'Google Drive',
@@ -90,16 +104,20 @@ export async function createGoogleSource({ sheetId, folderId, credentialsJson })
       return Object.fromEntries(present.map((n, i) => [n, data.valueRanges?.[i]?.values ?? []]));
     },
 
-    async listFiles(folder) {
-      if (!subfolderIds.has(folder)) {
-        const name = folder.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-        const matches = await listChildren(folderId, `mimeType = '${FOLDER_MIME}' and name = '${name}'`);
-        subfolderIds.set(folder, matches[0]?.id ?? null);
-      }
-      const id = subfolderIds.get(folder);
-      if (!id) return [];
-      const files = await listChildren(id, `mimeType != '${FOLDER_MIME}'`);
-      return files.map((f) => ({ name: f.name, id: f.id, checksum: f.md5Checksum ?? null, mimeType: f.mimeType }));
+    // { matchedName, files, available } - matchedName is the folder's real name in Drive,
+    // or null when nothing matched; available lists what is there instead.
+    async listFolder(folder) {
+      const index = await loadFolderIndex();
+      const available = [...index.values()].map((f) => f.name).sort();
+      const match = index.get(looseName(folder));
+      if (!match) return { matchedName: null, files: [], available };
+
+      const files = await listChildren(match.id, `mimeType != '${FOLDER_MIME}'`);
+      return {
+        matchedName: match.name,
+        available,
+        files: files.map((f) => ({ name: f.name, id: f.id, checksum: f.md5Checksum ?? null, mimeType: f.mimeType })),
+      };
     },
 
     async readFile(file) {
