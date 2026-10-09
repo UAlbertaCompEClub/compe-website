@@ -31,7 +31,12 @@
     "group": "senior",
     "email": null,
     "contactFor": null,
-    "image": null
+    "image": {
+      "src": "/images/content/team/rayner.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Rayner Dcunha"
+    }
   },
   {
     "name": "Aymaan Khan",
@@ -39,7 +44,12 @@
     "group": "senior",
     "email": null,
     "contactFor": null,
-    "image": null
+    "image": {
+      "src": "/images/content/team/aymaan.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Aymaan Khan"
+    }
   },
   {
     "name": "Panagiotis Dravilas",
@@ -73,7 +83,12 @@
     "group": "senior",
     "email": null,
     "contactFor": null,
-    "image": null
+    "image": {
+      "src": "/images/content/team/sammy.webp",
+      "width": 600,
+      "height": 600,
+      "alt": "Photo of Sam Gillies"
+    }
   },
   {
     "name": "Oghenekaro Egbevurie",
@@ -89,7 +104,7 @@
     }
   },
   {
-    "name": "Samridh Singh Mahal",
+    "name": "Ishaan Abraham",
     "role": "VP Social",
     "group": "senior",
     "email": null,

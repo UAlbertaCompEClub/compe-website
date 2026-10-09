@@ -1,109 +1,127 @@
 {
   "events/aether.webp": {
-    "source": "aether.jpg",
-    "hash": "2f37a14613b911fb76bcb14701f4c76b|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "source": "aether.webp",
+    "hash": "45d1e22856fba90112f143822801c1fe|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/agm.webp": {
-    "source": "agm.jpg",
-    "hash": "74618a6372c4c6a39bc32c2f77c5a460|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "source": "agm.webp",
+    "hash": "0717622cb28f318411557e69cae62153|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/ece-grad.webp": {
-    "source": "ece-grad.jpg",
-    "hash": "a07dc613056d638f800727f0d2dab83c|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "source": "ece-grad.webp",
+    "hash": "9ea029c3303b92b5c70441c3a11df492|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/geer-week.webp": {
-    "source": "geer-week.png",
-    "hash": "a05086bfd34e2b2b34d62d2299659720|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "source": "geer-week.webp",
+    "hash": "f7240eebe3b9246464296f1ea9ac09df|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/hacked-beta.webp": {
-    "source": "hacked-beta.png",
-    "hash": "f453a6e928db99b04123dd5e86674a01|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "source": "hacked-beta.webp",
+    "hash": "4e5907671dd64249048db63b7548859b|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
     "width": 800,
     "height": 545
   },
   "events/hacked.webp": {
-    "source": "hacked.png",
-    "hash": "3393c4ed2cd5276992dee9476a0f1667|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
+    "source": "hacked.webp",
+    "hash": "85ae785e0376f00b4717437ae8ebb6c8|{\"width\":800,\"height\":545,\"fit\":\"cover\"}|v1",
     "width": 800,
     "height": 545
   },
   "gallery/career1.webp": {
-    "source": "Career1.jpg",
-    "hash": "6e9c13eae610163936677c24b389326c|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
+    "source": "career1.webp",
+    "hash": "9533f0b326cd99bf94568664c545ddd3|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
     "width": 1600,
     "height": 1067
   },
   "gallery/career2.webp": {
-    "source": "Career2.jpg",
-    "hash": "f4ece09227ea5dbfe685f4b5ab5b567c|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
+    "source": "career2.webp",
+    "hash": "f408a50a758d1f86b65d1a564895a94c|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
     "width": 1600,
     "height": 1067
   },
   "gallery/career3.webp": {
-    "source": "Career3.jpg",
-    "hash": "fc6a7ee66ae839b92437b1de52167a98|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
+    "source": "career3.webp",
+    "hash": "28d1e1f3572219efef6330cacf52354a|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
     "width": 1600,
     "height": 1067
   },
   "gallery/career4.webp": {
-    "source": "Career4.jpg",
-    "hash": "2ecfc8e03d114351de0cd0a233c84fe1|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
+    "source": "career4.webp",
+    "hash": "dacc363a76944c74ab0330f35d5986f5|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
     "width": 1600,
     "height": 1067
   },
   "gallery/career5.webp": {
-    "source": "Career5.jpg",
-    "hash": "58a90b840faae964db55a538806a44e5|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
+    "source": "career5.webp",
+    "hash": "a6bdb4b931c4a7058d47823b07149e1d|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
     "width": 1600,
     "height": 1067
   },
   "gallery/career6.webp": {
-    "source": "Career6.jpg",
-    "hash": "1caade7460490161f08dc0503f593624|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
+    "source": "career6.webp",
+    "hash": "f763a976d32eaaafa669d11c312c7f7e|{\"width\":1600,\"height\":1600,\"fit\":\"inside\",\"withoutEnlargement\":true}|v1",
     "width": 1600,
     "height": 1067
   },
+  "team/aymaan.webp": {
+    "source": "Aymaan.jpeg",
+    "hash": "c3860cd51a625d1db81d7b8cfcadeefe|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "width": 600,
+    "height": 600
+  },
   "team/brandon.webp": {
-    "source": "Brandon.jpg",
-    "hash": "43ffb8aa73dddfb7235a7a8560d16baa|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "source": "brandon.webp",
+    "hash": "e5bd54e2d06519b173b6a219df63d26f|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
     "width": 600,
     "height": 600
   },
   "team/karo.webp": {
-    "source": "Karo.jpg",
-    "hash": "e4c0bda165a92dfa0116a612ea1bc3cb|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "source": "karo.webp",
+    "hash": "ce5b344dfb27f6c7dae3957bc82ed2ce|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
     "width": 600,
     "height": 600
   },
   "team/krish2.webp": {
-    "source": "Krish2.png",
-    "hash": "4d5bc16faf77d4c97579a8e9a023ed97|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "source": "krish2.webp",
+    "hash": "0bc5fce7c1819109fc37706fc38c2825|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
     "width": 600,
     "height": 600
   },
   "team/mokshada.webp": {
-    "source": "Mokshada.jpg",
-    "hash": "6a7ceb2cebff33e52ee74e5e3514648b|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "source": "mokshada.webp",
+    "hash": "b1803c6ac368d6190e796334f63305f5|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
     "width": 600,
     "height": 600
   },
   "team/panagiotis.webp": {
-    "source": "Panagiotis.jpg",
-    "hash": "69bcc9a2b946d3972ffeccb9bfc1df75|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "source": "panagiotis.webp",
+    "hash": "0073cb7fadefa9a779baafa52c205cab|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
     "width": 600,
     "height": 600
   },
   "team/prisha.webp": {
-    "source": "Prisha.jpg",
-    "hash": "bfcf27a088fee7ce7eeacfad4ec699b6|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "source": "prisha.webp",
+    "hash": "72ab7c18dc1e3d486e28b1800f80b96a|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "width": 600,
+    "height": 600
+  },
+  "team/rayner.webp": {
+    "source": "Rayner.jpeg",
+    "hash": "6706c95d8960ff6ef20fb36ec1276a83|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
+    "width": 600,
+    "height": 600
+  },
+  "team/sammy.webp": {
+    "source": "Sammy.jpeg",
+    "hash": "3dbabfaeeef4fd56b4d6ba9d4946e1a9|{\"width\":600,\"height\":600,\"fit\":\"cover\",\"position\":\"attention\"}|v1",
     "width": 600,
     "height": 600
   }
