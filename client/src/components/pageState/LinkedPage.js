@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import NavBar from "../navBar/NavBar";
+import PageShell from "../layout/PageShell";
 import LandingBlock from "../landing/LandingBlock";
-import SocialsBlock from "../socialsBlock/SocialsBlock";
 import EventBlock from "../eventBlock/EventBlock";
 import TeamBlock from "../teamBlock/TeamBlock";
 import ResourceBlock from "../resourceBlock/ResourceBlock";
@@ -26,26 +25,13 @@ class LinkedPage extends Component {
 
   render() {
     return (
-      <>
-        <a className="skip-link" href="#main">
-          Skip to content
-        </a>
-        <NavBar visibleBlock={this.state.visibleBlock} />
-        <main id="main">
-          <LandingBlock ref={this.homeRef} setBlock={this.setVisibleBlock} />
-          <EventBlock ref={this.eventsRef} setBlock={this.setVisibleBlock} />
-          <ResourceBlock
-            ref={this.resourcesRef}
-            setBlock={this.setVisibleBlock}
-          />
-          <TeamBlock ref={this.teamRef} setBlock={this.setVisibleBlock} />
-          <SponsorsBlock
-            ref={this.sponsorsRef}
-            setBlock={this.setVisibleBlock}
-          />
-        </main>
-        <SocialsBlock />
-      </>
+      <PageShell visibleBlock={this.state.visibleBlock}>
+        <LandingBlock ref={this.homeRef} setBlock={this.setVisibleBlock} />
+        <EventBlock ref={this.eventsRef} setBlock={this.setVisibleBlock} />
+        <ResourceBlock ref={this.resourcesRef} setBlock={this.setVisibleBlock} />
+        <TeamBlock ref={this.teamRef} setBlock={this.setVisibleBlock} />
+        <SponsorsBlock ref={this.sponsorsRef} setBlock={this.setVisibleBlock} />
+      </PageShell>
     );
   }
 }

@@ -7,6 +7,7 @@
   --mist: #cbdec8;
   --paper: #f1f4ee;
   --paper-2: #e6ece2;
+  --paper-pink: #F5F2F0;
   --ember: #BA0079;
   --ember-hover: #cc5ca5;
   --gold: #c9a227;
@@ -55,6 +56,26 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sticky footer: short pages (a submitted application, an unknown role) would otherwise end
+   partway down the screen with bare background below the footer. */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root,
+.App {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 img {

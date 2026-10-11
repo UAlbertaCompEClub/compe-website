@@ -1,4 +1,5 @@
 key,value,notes
+site_url,https://compeclub.com,Used in links posted to Discord. Leave blank to use compeclub.com
 discord_url,https://discord.gg/Unr9cEVc4h,
 instagram_url,https://www.instagram.com/compeclub,
 linkedin_url,https://www.linkedin.com/company/computer-engineering-club-university-of-alberta,
@@ -14,3 +15,6 @@ Provide resources and services to facilitate career success
 Present opportunities to network and develop technical skills","One goal per line (Alt+Enter or Ctrl+Enter starts a new line in a cell)"
 about,"The Computer Engineering Club (CompE Club) is a student organization that represents all Computer Engineering students' interests to broader organizations at the University of Alberta like the Engineering Student Society and Faculty of Engineering. We also host various events and provide resources for students to grow professionally and/or take a necessary break from school.",Paragraph under the title
 sponsor_pitch,"We represent Computer Engineering students at the University of Alberta and run events like HackED, HackED Beta and Aether. If your company or organization would like to sponsor an event or collaborate with us, we'd love to hear from you.",Paragraph in the Sponsors section
+apply_endpoint,,The Apps Script web app URL that receives applications (see docs/applications-setup.md)
+google_client_id,,Google OAuth client ID used by the Sign in with Google button
+application_year,2026-27,Names the tab each application is filed under

@@ -1,32 +1,50 @@
+import { Link, useLocation } from "react-router-dom";
 import site from "../../data/site.json";
 import "./NavBar.css";
 
-const LINKS = [
+// Sections live on the home page; pages are their own routes.
+const SECTIONS = [
   ["events", "Events"],
   ["resources", "Resources"],
   ["team", "Team"],
   ["sponsors", "Sponsors"],
 ];
 
+const PAGES = [["/join-us", "Join us"]];
+
 const NavBar = ({ visibleBlock }) => {
+  const { pathname } = useLocation();
+  const onHome = pathname === "/";
+
   return (
     <header className="nav">
       <div className="wrap nav__inner">
-        <a className="nav__brand" href="#landing">
+        <Link className="nav__brand" to="/">
           <img src="/compE.svg" width="28" height="28" alt="" />
           <span>Computer Engineering Club</span>
-        </a>
+        </Link>
         <nav className="nav__menu" aria-label="Sections">
           <ul className="nav__links">
-            {LINKS.map(([blockId, text]) => (
+            {SECTIONS.map(([blockId, text]) => (
               <li key={blockId}>
-                <a
+                <Link
                   className="nav__link"
-                  href={`#${blockId}`}
-                  aria-current={visibleBlock === blockId ? "location" : undefined}
+                  to={`/#${blockId}`}
+                  aria-current={onHome && visibleBlock === blockId ? "location" : undefined}
                 >
                   {text}
-                </a>
+                </Link>
+              </li>
+            ))}
+            {PAGES.map(([to, text]) => (
+              <li key={to}>
+                <Link
+                  className="nav__link"
+                  to={to}
+                  aria-current={pathname.startsWith(to) ? "page" : undefined}
+                >
+                  {text}
+                </Link>
               </li>
             ))}
           </ul>

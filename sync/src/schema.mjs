@@ -35,6 +35,9 @@ export const CROP_POSITIONS = {
 // doesn't break an existing Sheet.
 const crop = { type: 'enum', values: Object.keys(CROP_POSITIONS), optional: true };
 
+const splitLines = (value) => (value ? String(value).split(/\r?\n/).map((line) => line.trim()).filter(Boolean) : []);
+const splitList = (value) => (value ? String(value).split(',').map((item) => item.trim()).filter(Boolean) : []);
+
 // Rows with show = FALSE (or blank) are skipped without being checked, so drafts can be incomplete.
 const show = { type: 'bool', default: false };
 const order = { type: 'number' };
@@ -96,6 +99,47 @@ export const TABS = [
       email: row.email,
       contactFor: row.contact_for,
       image: image(row.photo, `Photo of ${row.name}`),
+    }),
+  },
+  {
+    // Volunteer and exec roles shown on /join-us. optional: a Sheet without this tab still
+    // publishes, it just has no roles, so adding the tab later doesn't break anything.
+    name: 'Roles',
+    optional: true,
+    output: 'roles.json',
+    columns: {
+      title: { type: 'text', required: true },
+      area: { type: 'text' },
+      summary: { type: 'text', required: true },
+      responsibilities: { type: 'text' },
+      skills: { type: 'text' },
+      commitment: { type: 'text' },
+      openings: { type: 'number' },
+      apply: { type: 'enum', values: ['form', 'discord', 'email'], default: 'form' },
+      discord_url: { type: 'url' },
+      email: { type: 'email' },
+      closes: { type: 'date' },
+      question_1: { type: 'text', optional: true },
+      question_2: { type: 'text', optional: true },
+      question_3: { type: 'text', optional: true },
+      show,
+      order,
+    },
+    toJson: (row) => ({
+      id: slugify(row.title),
+      title: row.title,
+      area: row.area,
+      summary: row.summary,
+      // One responsibility per line in the cell, one skill per comma.
+      responsibilities: splitLines(row.responsibilities),
+      skills: splitList(row.skills),
+      commitment: row.commitment,
+      openings: row.openings,
+      apply: row.apply,
+      discordUrl: row.discord_url,
+      email: row.email,
+      closes: row.closes,
+      questions: [row.question_1, row.question_2, row.question_3].filter(Boolean),
     }),
   },
   {
@@ -171,6 +215,7 @@ export const SITE_TAB = {
   name: 'Site',
   output: 'site.json',
   keys: {
+    site_url: { type: 'url', out: 'siteUrl' },
     discord_url: { type: 'url', required: true, out: 'discordUrl' },
     instagram_url: { type: 'url', out: 'instagramUrl' },
     linkedin_url: { type: 'url', out: 'linkedinUrl' },
@@ -183,6 +228,9 @@ export const SITE_TAB = {
     hero_title: { type: 'text', out: 'heroTitle' },
     mission: { type: 'text', out: 'mission' },
     about: { type: 'text', out: 'about' },
+    apply_endpoint: { type: 'url', out: 'applyEndpoint' },
+    google_client_id: { type: 'text', out: 'googleClientId' },
+    application_year: { type: 'text', out: 'applicationYear' },
     sponsor_pitch: { type: 'text', out: 'sponsorPitch' },
   },
 };

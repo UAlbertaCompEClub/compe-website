@@ -61,6 +61,37 @@ How events are listed:
 The `crop` column decides what stays: `top` (the default for team), `center`, `bottom`, `left`, `right`, or
 `attention` to let the computer pick the most interesting part. Change it, publish, and only that photo is redone.
 
+### Roles (the Join us page)
+
+Each row is one volunteer role on `/join-us`. `title` and `summary` are required.
+
+| Column | What to put |
+|---|---|
+| title | The role name, e.g. Photographer. It also becomes the web address and the spreadsheet tab. |
+| area | Which part of the club it belongs to, e.g. Marketing or Hackathon. |
+| summary | One or two sentences on what the role is. |
+| responsibilities | One per line (Ctrl+Enter starts a new line in a cell). |
+| skills | Comma separated. The page already says none of them are required. |
+| commitment | How much time it takes, in your own words. |
+| openings | How many people you're looking for. |
+| apply | `form` for the application form, `discord` to send people to Discord, `email` to open an email. |
+| discord_url, email | Only needed if `apply` is `discord` or `email`, or to point at a specific channel. |
+| closes | Last day to apply, as YYYY-MM-DD. Leave blank for "open until filled". |
+| question_1 … question_3 | Extra questions just for this role, on top of the standard ones. |
+
+**Closing a role.** Either set `closes` to a past date or set `show` to FALSE. With `closes`, the role
+stays visible under "Closed for this round" and points people at the Discord, which is usually better
+than making it vanish.
+
+**Where applications go.** Into a separate spreadsheet, one tab per role and year, named like
+`Designer 2026-27`. The exec team gets a Discord message for each one. The questions everyone is asked
+live in `client/src/config/application-form.json`, which the web lead edits.
+
+**Announcing a role.** Publishing a role the website has never seen also posts it to the Discord
+announcements channel, once, with its facts and an Apply link. Closed roles and hidden rows are never
+announced, and nothing is announced twice. Renaming a role counts as a new one. If you want a role
+posted again, ask the web lead: it's a tick-box on the publish Action (see docs/applications-setup.md).
+
 ### Sponsors (logos go in the `sponsors` folder)
 
 `name` and `tier` (`title`, `partner`, `supporting` or `in-kind`) are required. Also: `logo`, `url`, `year`.
@@ -84,6 +115,7 @@ One setting per row, with `key` and `value` columns. `discord_url` and `contact_
 
 | Key | Where it shows |
 |---|---|
+| `site_url` | The site's own address, used in links posted to Discord. Leave it as compeclub.com |
 | `hero_title` | The big title at the top of the page |
 | `mission` | The goals under the title, one per line (Ctrl+Enter starts a new line inside a cell) |
 | `about` | The paragraph under the goals |
@@ -93,8 +125,15 @@ One setting per row, with `key` and `value` columns. `discord_url` and `contact_
 | `contact_email` | Footer; also the sponsor email if `sponsor_email` is blank |
 | `sponsor_email` | The email button in the Sponsors section |
 | `calendar_id`, `calendar_title` | The Google Calendar in the Events section |
+| `apply_endpoint`, `google_client_id` | Connect the application form. Blank means the form is off and the page points at the Discord. See docs/applications-setup.md |
+| `application_year` | Names the tab each application is filed under, e.g. 2026-27 |
 
 ## Yearly checklist
+
+**When you're recruiting**
+- Add a row to Roles for each position, with a `closes` date. Publishing announces it in the Discord.
+- Set `application_year` in Site if the year has rolled over.
+- After the deadline, let it move itself to "Closed for this round", or set `show` to FALSE.
 
 **September, after the Special AGM**
 - Add junior execs to Team, and upload their headshots.

@@ -6,6 +6,11 @@ on:
     types: [content-publish]
   # Manual run from the Actions tab.
   workflow_dispatch:
+    inputs:
+      announce:
+        description: 'Discord role announcements: new, all, none, or role ids separated by commas'
+        required: false
+        default: new
   # Safety net for edits nobody published: 03:00 Edmonton time (09:00 UTC).
   schedule:
     - cron: "0 9 * * *"
@@ -40,10 +45,16 @@ jobs:
           SHEET_ID: ${{ secrets.CONTENT_SHEET_ID }}
           DRIVE_FOLDER_ID: ${{ secrets.CONTENT_DRIVE_FOLDER_ID }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          # Optional: without the webhook, new roles simply aren't announced anywhere.
+          DISCORD_ROLES_WEBHOOK_URL: ${{ secrets.DISCORD_ROLES_WEBHOOK_URL }}
+          DISCORD_ROLES_MENTION: ${{ vars.DISCORD_ROLES_MENTION }}
+          ANNOUNCE_ROLES: ${{ inputs.announce }}
 
       - name: Commit content changes
         run: |
           git add client/src/data client/public/images/content sync/image-manifest.json
+          # Only exists once a Discord webhook has been set, so git add would fail on it.
+          if [ -f sync/announced-roles.json ]; then git add sync/announced-roles.json; fi
           if git diff --cached --quiet; then
             echo "Content is already up to date."
             exit 0
