@@ -1,0 +1,76 @@
+{
+  "_comment": "The application form. Edit the wording here, or add and remove questions, without touching the form code. 'id' becomes the column heading in the applications spreadsheet, so changing an id starts a new column. Types: text, textarea, select. Only 'name' is required; everything else is optional on purpose.",
+  "intro": "Applications take a few minutes. Only your name is required, so answer what you like and leave the rest.",
+  "signInNote": "Sign in with Google so we know how to reach you. Any Google account works, including your @ualberta.ca one.",
+  "privacy": "Your answers go to the CompE Club exec team and are deleted once this year's hiring is done.",
+  "submitLabel": "Submit application",
+  "fields": [
+    {
+      "id": "name",
+      "label": "Your name",
+      "type": "text",
+      "required": true,
+      "maxLength": 120
+    },
+    {
+      "id": "pronouns",
+      "label": "Pronouns",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "id": "discord",
+      "label": "Discord username",
+      "type": "text",
+      "help": "So we can add you to the right channel once you're in.",
+      "maxLength": 80
+    },
+    {
+      "id": "program",
+      "label": "Program",
+      "type": "text",
+      "placeholder": "Computer Engineering, Psychology, undecided...",
+      "maxLength": 120
+    },
+    {
+      "id": "year",
+      "label": "Year of study",
+      "type": "select",
+      "options": ["1st", "2nd", "3rd", "4th", "5th or beyond", "Graduate student", "Alumni", "Not a student"]
+    },
+    {
+      "id": "motivation",
+      "label": "Why this role?",
+      "type": "textarea",
+      "help": "A couple of sentences is plenty.",
+      "maxLength": 1500
+    },
+    {
+      "id": "experience",
+      "label": "Anything you've done that's relevant",
+      "type": "textarea",
+      "help": "Clubs, courses, side projects, a job. Not required, and we hire people with none of it.",
+      "maxLength": 1500
+    },
+    {
+      "id": "links",
+      "label": "Links",
+      "type": "textarea",
+      "help": "Resume, portfolio, GitHub, LinkedIn. One per line.",
+      "maxLength": 800
+    },
+    {
+      "id": "availability",
+      "label": "Roughly how much time can you give?",
+      "type": "text",
+      "placeholder": "A few hours a week, event days only, ...",
+      "maxLength": 200
+    },
+    {
+      "id": "anything_else",
+      "label": "Anything else we should know?",
+      "type": "textarea",
+      "maxLength": 1500
+    }
+  ]
+}

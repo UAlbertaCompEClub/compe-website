@@ -3,13 +3,24 @@
 // it, and writes client/src/data/*.json and client/public/images/content/. If anything is wrong
 // it writes nothing, so the live site keeps its last good content.
 //
-//   node src/index.mjs --source google [--check]
+//   node src/index.mjs --source google [--check] [--announce new|all|none|<role ids>]
 //   node src/index.mjs --source local --drive-dir <folder> [--sheet-dir <csv folder>] [--check]
+//
+// A new role in the Roles tab is also announced in Discord; see announce.mjs.
 import { appendFileSync, existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
+import {
+  announceBase,
+  loadAnnounced,
+  parseAnnounceMode,
+  parseMention,
+  planAnnouncements,
+  postAnnouncements,
+  saveAnnounced,
+} from './announce.mjs';
 import { loadManifest, planImages, processImages, removeOrphans } from './images.mjs';
 import { SITE_TAB, TABS } from './schema.mjs';
 import { createGoogleSource } from './sources/google.mjs';
@@ -21,6 +32,7 @@ const DATA_DIR = path.join(REPO, 'client', 'src', 'data');
 const IMAGE_DIR = path.join(REPO, 'client', 'public', 'images', 'content');
 const PUBLIC_BASE = '/images/content';
 const MANIFEST = path.join(REPO, 'sync', 'image-manifest.json');
+const ANNOUNCED = path.join(REPO, 'sync', 'announced-roles.json');
 
 const { values: args } = parseArgs({
   options: {
@@ -28,6 +40,8 @@ const { values: args } = parseArgs({
     'sheet-dir': { type: 'string', default: path.join(REPO, 'sync', 'template') },
     'drive-dir': { type: 'string' },
     check: { type: 'boolean', default: false },
+    // new (default), all, none, or a comma-separated list of role ids.
+    announce: { type: 'string' },
   },
 });
 
@@ -39,6 +53,18 @@ function report(lines) {
   const text = lines.join('\n');
   console.log(text);
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${text}\n`);
+}
+
+function announcePlanLine(webhook, mode, plan) {
+  if (!webhook) return 'no webhook set, so nothing is announced';
+  if (!plan) return 'not posted on a check run';
+  if (mode.kind === 'none') return 'switched off for this run';
+  if (plan.seed.length > 0) {
+    return `first run - recording ${plan.seed.length} role${plan.seed.length === 1 ? '' : 's'} as already announced, posting nothing`;
+  }
+  if (plan.post.length === 0) return `nothing new to announce (${mode.label})`;
+  const held = plan.held.length > 0 ? `, ${plan.held.length} held for the next run` : '';
+  return `${plan.post.length} to announce: ${plan.post.map((role) => role.id).join(', ')}${held}`;
 }
 
 function notes(warnings) {
@@ -116,6 +142,19 @@ async function main() {
   const jobs = args.check ? [] : planImages({ requests, outDir: IMAGE_DIR, manifest, errors });
   if (errors.length) fail(errors, warnings);
 
+  // Which roles, if any, get announced in Discord. Worked out before the slow image step so the
+  // plan can say what is coming, and so a failed publish never announces anything.
+  const webhook = process.env.DISCORD_ROLES_WEBHOOK_URL;
+  const mode = parseAnnounceMode(args.announce ?? process.env.ANNOUNCE_ROLES);
+  const rolesTab = parsed.find(({ tab }) => tab.name === 'Roles');
+  const roleRows = rolesTab ? sortRows(rolesTab.result.rows).map((row) => rolesTab.tab.toJson(row, () => null)) : [];
+  const announced = webhook && !args.check ? await loadAnnounced(ANNOUNCED, warnings) : null;
+  const announce =
+    announced && planAnnouncements({ roles: roleRows, announced, mode, today: new Date().toISOString().slice(0, 10) });
+  for (const id of announce?.skipped ?? []) {
+    warnings.push(`Asked to announce "${id}", but no open role has that id. Role ids come from the title, so "Social Media Lead" is "social-media-lead".`);
+  }
+
   // The plan, printed before the slow part, so a running job shows what it is about to do.
   const toResize = jobs.filter((job) => !job.reuse);
   log('');
@@ -125,6 +164,7 @@ async function main() {
   }
   const photoPlan = args.check ? '' : ` - ${toResize.length} to resize, ${jobs.length - toResize.length} unchanged`;
   log(`  ${'Photos'.padEnd(10)} ${requests.size} referenced${photoPlan}`);
+  log(`  ${'Discord'.padEnd(10)} ${announcePlanLine(webhook, mode, announce)}`);
   for (const warning of warnings) log(`  note: ${warning}`);
   log('');
 
@@ -172,6 +212,27 @@ async function main() {
   await writeIfChanged(MANIFEST, json(sortedManifest));
   const removed = await removeOrphans({ outDir: IMAGE_DIR, keep: next });
 
+  // Announcements go out last, once the content they link to is on its way to the site.
+  let announceSummary = null;
+  if (announce && announce.seed.length > 0) {
+    await saveAnnounced(ANNOUNCED, announced, announce.seed);
+    announceSummary = `Discord: nothing posted. The ${announce.seed.length} role${announce.seed.length === 1 ? '' : 's'} already on the site were recorded as announced, so only roles added from now on get a message.`;
+  } else if (announce && announce.post.length > 0) {
+    log('');
+    const posted = await postAnnouncements({
+      webhook,
+      roles: announce.post,
+      baseUrl: announceBase(site.siteUrl),
+      discordUrl: site.discordUrl,
+      mention: parseMention(process.env.DISCORD_ROLES_MENTION),
+      warnings,
+      onProgress: ({ role, ok, detail }) =>
+        log(`announce  ${ok ? 'posted  ' : 'failed  '} ${role.id}${detail ? ` (${detail})` : ''}`),
+    });
+    if (posted.length > 0) await saveAnnounced(ANNOUNCED, announced, posted);
+    announceSummary = `Discord: announced ${posted.length} of ${announce.post.length} role${announce.post.length === 1 ? '' : 's'}${posted.length > 0 ? ` (${posted.join(', ')})` : ''}.`;
+  }
+
   log('');
   report([
     `### Content synced from ${source.label}`,
@@ -180,6 +241,7 @@ async function main() {
     '',
     `Photos: ${stats.processed} resized, ${stats.reused} unchanged, ${removed} removed.`,
     changed.length ? `Updated: ${changed.join(', ')}` : 'No data files changed.',
+    ...(announceSummary ? [announceSummary] : []),
     ...notes(warnings),
   ]);
 }

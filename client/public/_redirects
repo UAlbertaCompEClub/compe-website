@@ -1,0 +1,2 @@
+# Netlify: every route is served by the single-page app, so a refresh on /join-us works.
+/*    /index.html   200

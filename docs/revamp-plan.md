@@ -94,6 +94,23 @@ Page order: hero (ink) → Events (paper) → Resources (tint) → Team (paper) 
 - [ ] Mobile check at 375 px and a keyboard-only walkthrough
 - [ ] Merge to `main`
 
+## Phase 5: more pages (branch `new-sections`)
+
+The site becomes multi-page, starting with volunteer recruiting.
+
+- [x] `react-router-dom` with a Netlify rewrite (`client/public/_redirects`) so refreshes work
+- [x] `/join-us`: one section per role from a new Roles tab in the content Sheet
+- [x] `/join-us/<role>/apply`: an application form behind Google sign-in. Questions live in
+      `client/src/config/application-form.json`, plus up to three questions per role from the Sheet
+- [x] `sync/apps-script/ApplicationIntake.gs`: verifies the sign-in, files the row under
+      `<Role> <Year>` in a separate applications spreadsheet, and posts to Discord
+- [x] Closed roles stay visible and point at the Discord instead of the form
+- [x] `sync/src/announce.mjs`: a new role in the Roles tab is announced once in a public Discord
+      channel on publish, tracked in `sync/announced-roles.json` so nothing posts twice
+- [ ] Google OAuth client, applications spreadsheet and web app deployment: [applications-setup.md](applications-setup.md)
+- [ ] A review view that reads the applications sheet, so execs don't triage in a spreadsheet
+- [ ] Exec elections reuse the same page when AGM season comes round
+
 ## Open questions
 
 1. Where is compeclub.com hosted, and does it rebuild on every push to `main`? Nothing in the repo says.

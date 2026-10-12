@@ -76,7 +76,9 @@ export function coerce(def, value, where, errors) {
 export function parseTab(tab, values, errors) {
   const result = { rows: [], hidden: 0 };
   if (values === undefined) {
-    errors.push(`The "${tab.name}" tab is missing. Add a tab named exactly "${tab.name}".`);
+    if (!tab.optional) {
+      errors.push(`The "${tab.name}" tab is missing. Add a tab named exactly "${tab.name}".`);
+    }
     return result;
   }
   if (values.length === 0) {
