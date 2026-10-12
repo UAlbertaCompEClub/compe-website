@@ -1,8 +1,10 @@
 {
-  "updated": "2026-10-12T01:46:28.621Z",
+  "updated": "2026-10-12T04:18:22.207Z",
   "roles": {
     "designer": "2026-10-12T01:34:08.015Z",
     "hackathon-designer": "2026-10-12T01:46:28.621Z",
+    "hackathon-developer": "2026-10-12T04:18:22.207Z",
+    "hackathon-mentor": "2026-10-12T04:18:22.207Z",
     "hackathon-photographer": "2026-10-12T01:46:28.621Z",
     "hackathon-team-lead": "2026-10-12T01:34:08.015Z",
     "hackathon-team-member": "2026-10-12T01:46:28.621Z",

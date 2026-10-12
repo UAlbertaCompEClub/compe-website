@@ -6,7 +6,7 @@
     "summary": "Help plan and run HackED and HackED Beta, from sponsor outreach to the day itself.",
     "responsibilities": [
       "Attend planning meetings through the term",
-      "Reach out to potential sponsors and follow up",
+      "Tackle the issues faced in Outreach/operations/logistics and more!",
       "Help run the event across both hackathon days"
     ],
     "skills": [
@@ -15,7 +15,7 @@
       "comfortable talking to companies",
       "ability to take charge"
     ],
-    "commitment": "2-3 hrs/week, plus both hackathon days",
+    "commitment": "2-3 hrs/week, plus both hackathon days (Will be assigned a shift)",
     "openings": 5,
     "apply": "form",
     "discordUrl": null,
@@ -69,7 +69,7 @@
       "CapCut)",
       "an eye for candid moments"
     ],
-    "commitment": "Per event - a few hours each day",
+    "commitment": "A few hours per day of event",
     "openings": 2,
     "apply": "form",
     "discordUrl": null,
@@ -85,7 +85,7 @@
     "area": "Hackathon",
     "summary": "Help plan and run HackED and HackED Beta, from sponsor outreach to the day itself.",
     "responsibilities": [
-      "Attend planning meetings through the term",
+      "Tackle the issues faced in Outreach/operations/logistics and more!",
       "Help run the event across both hackathon days"
     ],
     "skills": [
@@ -93,7 +93,7 @@
       "ability to take charge",
       "willingness to help out"
     ],
-    "commitment": "1 hr/week, plus both hackathon days",
+    "commitment": "1 hr/week, plus both hackathon days (Will be assigned a shift)",
     "openings": 20,
     "apply": "form",
     "discordUrl": null,
@@ -102,6 +102,63 @@
     "questions": [
       "Which part interests you most: sponsorship, logistics, or running the event on the day?",
       "Have you ever led or worked in a team that was organizing an overnight event?"
+    ]
+  },
+  {
+    "id": "hackathon-developer",
+    "title": "Hackathon Developer",
+    "area": "Hackathon",
+    "summary": "Help design and build the software that powers HackEd.",
+    "responsibilities": [
+      "Attend planning meetings through the term",
+      "Help design web and app interfaces for hackers, sponsors, and organizers;",
+      "Document your code so the next developer can take over",
+      "Ship and fix features before HackEd Beta",
+      "Support the software during both events, including quick fixes on event weekend"
+    ],
+    "skills": [
+      "Web development",
+      "Git and GitHub",
+      "Basic UI and UX sense"
+    ],
+    "commitment": "3-4 hrs/week, plus both hackathon days (On-Call)",
+    "openings": 3,
+    "apply": "form",
+    "discordUrl": null,
+    "email": null,
+    "closes": "2026-10-25",
+    "questions": [
+      "Walk us through a website or app you have built",
+      "HackEd needs a registration flow, a hacker dashboard, and a sponsor page. Which would you build first, and why?",
+      "What is your weekly availability for planning meetings and build time this term"
+    ]
+  },
+  {
+    "id": "hackathon-mentor",
+    "title": "Hackathon Mentor",
+    "area": "Hackathon",
+    "summary": "Be a go-to technical guide for hackers during HackEd events.",
+    "responsibilities": [
+      "Hold scheduled office hours and float between team tables during the event",
+      "Help hackers scope ideas, debug code, and choose tools and APIs",
+      "Run or co-host at least one workshop or tech talk at HackEd Beta or the main HackEd",
+      "Give encouraging, practical feedback on projects during judging prep",
+      "Help first-time hackers feel welcome and included"
+    ],
+    "skills": [
+      "Experience in at least one language or framework",
+      "Experience at a hackathon-style competition",
+      "Patience and clear communication"
+    ],
+    "commitment": "1-2 hrs/week, plus both hackathon days (Will be assigned a shift)",
+    "openings": 10,
+    "apply": "form",
+    "discordUrl": null,
+    "email": null,
+    "closes": "2026-11-06",
+    "questions": [
+      "Tell us about a time you helped someone get unstuck on a technical problem.",
+      "Which technologies or areas could you mentor other hackers on (for example web, mobile, AI, hardware, data, or design)? Rate your confidence in each"
     ]
   }
 ]
