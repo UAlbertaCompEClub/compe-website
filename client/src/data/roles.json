@@ -1,31 +1,5 @@
 [
   {
-    "id": "designer",
-    "title": "Designer",
-    "area": "Marketing",
-    "summary": "Help us make the posters, social posts and merch that get people in the room.",
-    "responsibilities": [
-      "Make roughly two designs a month, or one per event",
-      "Work from a short brief and a couple of rounds of feedback",
-      "Hand off files in a format the next designer can reuse"
-    ],
-    "skills": [
-      "Canva",
-      "Adobe Illustrator",
-      "Photoshop",
-      "an eye for type and colour"
-    ],
-    "commitment": "Freelance-ish - the work comes in bursts around events",
-    "openings": 2,
-    "apply": "form",
-    "discordUrl": null,
-    "email": null,
-    "closes": "2026-10-20",
-    "questions": [
-      "Link a design you're proud of (any format)"
-    ]
-  },
-  {
     "id": "hackathon-team-lead",
     "title": "Hackathon Team Lead",
     "area": "Hackathon",
@@ -46,19 +20,45 @@
     "apply": "form",
     "discordUrl": null,
     "email": null,
-    "closes": "2026-11-01",
+    "closes": "2026-11-06",
     "questions": [
       "Which part interests you most: sponsorship, logistics, or running the event on the day?",
       "Have you ever led or worked in a team that was organizing an overnight event?"
     ]
   },
   {
-    "id": "photographer",
-    "title": "Photographer",
+    "id": "hackathon-designer",
+    "title": "Hackathon Designer",
     "area": "Marketing",
-    "summary": "Take photos and video at our events so the club has something worth posting the next day.",
+    "summary": "Help us make the posters, social posts and merch that get people excited for HackEd",
     "responsibilities": [
-      "Shoot at one or two events a month",
+      "Make a few designs in the build up to the event as well as during",
+      "Work from a short brief and a couple of rounds of feedback",
+      "Hand off files in a format the next designer can reuse"
+    ],
+    "skills": [
+      "Canva",
+      "Adobe Illustrator",
+      "Photoshop",
+      "an eye for type and colour"
+    ],
+    "commitment": "3-4 hrs/week",
+    "openings": 2,
+    "apply": "form",
+    "discordUrl": null,
+    "email": null,
+    "closes": "2026-11-06",
+    "questions": [
+      "Link a design you're proud of (any format)"
+    ]
+  },
+  {
+    "id": "hackathon-photographer",
+    "title": "Hackathon Photographer",
+    "area": "Marketing",
+    "summary": "Take photos and videos at HackEd!",
+    "responsibilities": [
+      "Shoot at the upcoming HackEd Beta",
       "Pick and lightly edit the best shots",
       "Upload them to the club Drive within a few days"
     ],
@@ -69,14 +69,39 @@
       "CapCut)",
       "an eye for candid moments"
     ],
-    "commitment": "Per event - a few hours each",
+    "commitment": "Per event - a few hours each day",
     "openings": 2,
     "apply": "form",
     "discordUrl": null,
     "email": null,
-    "closes": null,
+    "closes": "2026-11-06",
     "questions": [
       "Link a photo or video you've taken (any subject)"
+    ]
+  },
+  {
+    "id": "hackathon-team-member",
+    "title": "Hackathon Team Member",
+    "area": "Hackathon",
+    "summary": "Help plan and run HackED and HackED Beta, from sponsor outreach to the day itself.",
+    "responsibilities": [
+      "Attend planning meetings through the term",
+      "Help run the event across both hackathon days"
+    ],
+    "skills": [
+      "Organisation",
+      "ability to take charge",
+      "willingness to help out"
+    ],
+    "commitment": "1 hr/week, plus both hackathon days",
+    "openings": 20,
+    "apply": "form",
+    "discordUrl": null,
+    "email": null,
+    "closes": "2026-11-06",
+    "questions": [
+      "Which part interests you most: sponsorship, logistics, or running the event on the day?",
+      "Have you ever led or worked in a team that was organizing an overnight event?"
     ]
   }
 ]
