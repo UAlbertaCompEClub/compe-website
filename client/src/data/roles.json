@@ -26,8 +26,8 @@
     ]
   },
   {
-    "id": "hackathon-team-member",
-    "title": "Hackathon team member",
+    "id": "hackathon-team-lead",
+    "title": "Hackathon Team Lead",
     "area": "Hackathon",
     "summary": "Help plan and run HackED and HackED Beta, from sponsor outreach to the day itself.",
     "responsibilities": [
@@ -38,16 +38,18 @@
     "skills": [
       "Organisation",
       "clear email and messaging",
-      "comfortable talking to companies. No hackathon experience needed."
+      "comfortable talking to companies",
+      "ability to take charge"
     ],
     "commitment": "2-3 hrs/week, plus both hackathon days",
-    "openings": 10,
+    "openings": 5,
     "apply": "form",
     "discordUrl": null,
     "email": null,
     "closes": "2026-11-01",
     "questions": [
-      "Which part interests you most: sponsorship, logistics, or running the event on the day?"
+      "Which part interests you most: sponsorship, logistics, or running the event on the day?",
+      "Have you ever led or worked in a team that was organizing an overnight event?"
     ]
   },
   {

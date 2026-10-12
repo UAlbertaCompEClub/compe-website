@@ -1,4 +1,5 @@
 {
+  "siteUrl": null,
   "discordUrl": "https://discord.gg/Unr9cEVc4h",
   "instagramUrl": "https://www.instagram.com/compeclub",
   "linkedinUrl": "https://www.linkedin.com/company/computer-engineering-club-university-of-alberta",
@@ -11,8 +12,8 @@
   "heroTitle": "Computer Engineering Club",
   "mission": "Promote a sense of community\nProvide resources and services to facilitate career success\nPresent opportunities to network and develop technical skills",
   "about": "The Computer Engineering Club (CompE Club) is a student organization that represents all Computer Engineering students' interests to broader organizations at the University of Alberta like the Engineering Student Society and Faculty of Engineering. We also host various events and provide resources for students to grow professionally and/or take a necessary break from school.",
-  "sponsorPitch": "We represent Computer Engineering students at the University of Alberta and run events like HackED, HackED Beta and Aether. If your company or organization would like to sponsor an event or collaborate with us, we'd love to hear from you.",
   "applyEndpoint": "https://script.google.com/macros/s/AKfycbwc39J2FLaQJEE58jJSFgm0zDCkpW93a9kRvWVIqhUxsqGEQZzs7RGmK7D_0JyRP67G/exec",
-  "googleClientId": "831000692923-betpv88vl9meshuqclt4b0ppfqacg2ij.apps.googleusercontent.com",
-  "applicationYear": "2026/27"
+  "googleClientId": "AKfycbwc39J2FLaQJEE58jJSFgm0zDCkpW93a9kRvWVIqhUxsqGEQZzs7RGmK7D_0JyRP67G",
+  "applicationYear": "2026-27, which names the tabs",
+  "sponsorPitch": "We represent Computer Engineering students at the University of Alberta and run events like HackED, HackED Beta and Aether. If your company or organization would like to sponsor an event or collaborate with us, we'd love to hear from you."
 }
